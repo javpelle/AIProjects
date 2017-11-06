@@ -2,7 +2,7 @@ package garrafas;
 
 import aima.core.search.framework.problem.GoalTest;
 
-public class GarrafaGoalTest implements GoalTest {
+public class GarrafasGoalTest implements GoalTest {
 
 	@Override
 	public boolean isGoalState(Object state) {

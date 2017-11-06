@@ -76,7 +76,7 @@ public class Garrafas {
 			state[1] += state[0];
 			state[0] = 0;
 		} else { // desbordamiento
-			state[0] = garrafaTotal2 - state[1];
+			state[0] -= garrafaTotal2 - state[1];
 			state[1] = garrafaTotal2;
 		}
 	}
@@ -86,7 +86,7 @@ public class Garrafas {
 			state[0] += state[1];
 			state[1] = 0;
 		} else { // desbordamiento
-			state[1] = garrafaTotal1 - state[0];
+			state[1] -= garrafaTotal1 - state[0];
 			state[0] = garrafaTotal1;
 		}
 	}
