@@ -17,7 +17,7 @@ import aima.core.search.uninformed.DepthFirstSearch;
 import aima.core.search.uninformed.UniformCostSearch;
 
 public class GarrafasDemo {
-	static Garrafas garrafasDefault = new Garrafas(5, 3, 4);
+	static Garrafas garrafasDefault = new Garrafas(12, 3, 1);
 
 	public static void main(String[] args) {
 		// Búsqueda en anchura con TreeSearch
@@ -47,9 +47,12 @@ public class GarrafasDemo {
 					GarrafasFunctionFactory.getResultFunction(),
 					new GarrafasGoalTest());
 			SearchForActions search = new BreadthFirstSearch(new TreeSearch());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -64,9 +67,12 @@ public class GarrafasDemo {
 					GarrafasFunctionFactory.getResultFunction(),
 					new GarrafasGoalTest());
 			SearchForActions search = new BreadthFirstSearch(new GraphSearch());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -82,9 +88,12 @@ public class GarrafasDemo {
 					GarrafasFunctionFactory.getResultFunction(),
 					new GarrafasGoalTest());
 			SearchForActions search = new DepthFirstSearch(new GraphSearch());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -99,9 +108,12 @@ public class GarrafasDemo {
 					GarrafasFunctionFactory.getResultFunction(),
 					new GarrafasGoalTest());
 			SearchForActions search = new UniformCostSearch(new TreeSearch());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -116,9 +128,12 @@ public class GarrafasDemo {
 					GarrafasFunctionFactory.getResultFunction(),
 					new GarrafasGoalTest());
 			SearchForActions search = new UniformCostSearch(new GraphSearch());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -133,9 +148,12 @@ public class GarrafasDemo {
 					new GarrafasGoalTest());
 			SearchForActions search = new GreedyBestFirstSearch(
 					new GraphSearch(), new GarrafasHeuristicFunction());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -152,9 +170,12 @@ public class GarrafasDemo {
 					new GarrafasGoalTest());
 			SearchForActions search = new AStarSearch(new TreeSearch(),
 					new GarrafasHeuristicFunction());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -170,21 +191,25 @@ public class GarrafasDemo {
 					new GarrafasGoalTest());
 			SearchForActions search = new AStarSearch(new GraphSearch(),
 					new GarrafasHeuristicFunction());
+			long timeStart, timeEnd;
+			timeStart = System.nanoTime();
 			SearchAgent agent = new SearchAgent(problem, search);
+			timeEnd = System.nanoTime();
 			printActions(agent.getActions());
-			printInstrumentation(agent.getInstrumentation());
+			printInstrumentation(agent.getInstrumentation(), timeEnd - timeStart);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	private static void printInstrumentation(Properties properties) {
+	private static void printInstrumentation(Properties properties, long time) {
 		Iterator<Object> keys = properties.keySet().iterator();
 		while (keys.hasNext()) {
 			String key = (String) keys.next();
 			String property = properties.getProperty(key);
 			System.out.println(key + " : " + property);
 		}
+		System.out.println("Execution time: " + time + " nanoseconds.");
 
 	}
 

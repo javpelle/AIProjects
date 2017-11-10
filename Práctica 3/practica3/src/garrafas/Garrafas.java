@@ -20,7 +20,7 @@ public class Garrafas {
 	private static int garrafaTotal1;
 
 	private static int garrafaTotal2;
-	
+
 	private static int objetivo;
 
 	private int[] state;
@@ -141,14 +141,17 @@ public class Garrafas {
 	public int getGarrafa2() {
 		return state[1];
 	}
-	
+
 	public int getObjetivo() {
 		return objetivo;
 	}
 
-	/**
-	 * public int getGarrafaTotal1() { return garrafaTotal1; }
-	 * 
-	 * public int getGarrafaTotal2() { return garrafaTotal2; }
-	 **/
+	public int getGarrafaTotal1() {
+		return garrafaTotal1;
+	}
+
+	public int getGarrafaTotal2() {
+		return garrafaTotal2;
+	}
+
 }
