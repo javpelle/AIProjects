@@ -65,27 +65,28 @@ public class CFIGenAlgoUtil {
 	}
 	
 	public static class CFIFitnessFunction implements FitnessFunction<Integer> {
-		public double apply(Individual<Integer> individual, List<List<Integer>> preferencesList, int media) {
+		public double apply(Individual<Integer> individual, List<List<Integer>> preferencesList, double media, int total_turns) {
 			double fitness = 0;
 			List<Integer> representation = individual.getRepresentation();
-			List<Integer> turnPerTeacher = new List<Integer>();
 			
-			//Calculamos el número de turnos que a cada profesor le toca
+			//Calculamos el número de turnos que a cada profesor le toca y veamos si el profesor cumple turnos equilibrados
 			int k = 0;
+			int l = 0;
 			for(int j = 0; j < preferencesList.length(); ++j){
 				k = 0;
 				for(int i = 0; i < representation.length(); ++i){
-					if (representation.at(i) == j)
+					if (representation.at(i) == j){   // el profesor j tiene asignado el turno i
 						++k;
+						if(preferencesList.at(j).contains(representation.at(i)))
+							++l;
+					}
 				}
-				turnPerTeacher.add(k);
+				if(k - 1 <= media && k + 1 >= media){
+					++fitness;
+				}
 			}
-			
-			//Veamos el número de profesores que tiene turno equilibrado.
-			for(int i = 0; i < turnPerTeacher.length(); ++i){
-				if(turnPerTeacher.at(i) - 1 <= media && turnPerTeacher)
-			
-			}
+			double preferencia = l / total_turns;
+			fitness += preferencia + 1;
 			return fitness;
 		}
 	}
