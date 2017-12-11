@@ -1,8 +1,8 @@
-package cfi;
+package asignacionCfi;
 
 import aima.core.search.framework.problem.GoalTest;
 
-public class CfiGoalTest {
+public class CFIGoalTest {
 
 	public boolean isGoalState(Object state) {
 		NQueensBoard board = (NQueensBoard) state;

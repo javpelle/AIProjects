@@ -1,4 +1,4 @@
-package cfi;
+package asignacionCfi;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,7 +24,7 @@ import aima.core.util.datastructure.XYLocation;
  * estado objetivo: el número de turno es el que pide y cada profesor tiene asignado un turno de 
  * preferencia y los turnos están equilibrados.
  * */
-public class CfiGenAlgoUtil {
+public class CFIGenAlgoUtil {
 	public static FitnessFunction<Integer> getFitnessFunction() {
 		return new  CfiFitnessFunction();
 	}
@@ -53,7 +53,7 @@ public class CfiGenAlgoUtil {
 		return fab;
 	}
 	
-	public static class CfiFitnessFunction implements FitnessFunction<Integer> {
+	public static class CFIFitnessFunction implements FitnessFunction<Integer> {
 
 		public double apply(Individual<Integer> individual) {
 			double fitness = 0;
@@ -100,7 +100,7 @@ public class CfiGenAlgoUtil {
 	}
 
 	public static class CfiGenAlgoGoalTest implements GoalTest {
-		private final CfiGoalTest goalTest = new GoalTest();
+		private final CFIGoalTest goalTest = new GoalTest();
 
 		@SuppressWarnings("unchecked")
 		public boolean isGoalState(Object state) {

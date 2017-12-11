@@ -1,0 +1,19 @@
+14
+Antonio, Belen, Fernando, Guillermo, Juanan, Marlon, Raquel, Virginia
+Antonio:
+Belén: 3,4,7,8,11,12,15,16
+Fernando: 1,2,15,16
+Guillermo: 7,10,15,16
+Juanan: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,16
+Marlon: 
+Raquel: 1,2,5,6,9,10,13,14,15,16
+Virginia: 1,5,9,13,15,16
+Antonio: 1,2
+Belén: 1,6  
+Fernando:
+Guillermo: 3,4
+Juanan:
+Marlon:
+Raquel: 3,4
+Virginia: 2,4
+
