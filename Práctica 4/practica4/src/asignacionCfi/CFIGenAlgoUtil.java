@@ -45,7 +45,7 @@ public class CFIGenAlgoUtil {
 				}
 			}
 			else{
-				value = -1
+				value = -1;
 			}
 			individualRepresentation.add(value);
 			++currentTurns;
@@ -65,47 +65,27 @@ public class CFIGenAlgoUtil {
 	}
 	
 	public static class CFIFitnessFunction implements FitnessFunction<Integer> {
-
-		public double apply(Individual<Integer> individual) {
+		public double apply(Individual<Integer> individual, List<List<Integer>> preferencesList, int media) {
 			double fitness = 0;
-
-			NQueensBoard board = getBoardForIndividual(individual);
-			int boardSize = board.getSize();
-
-			// Calculate the number of non-attacking pairs of queens (refer to
-			// AIMA
-			// page 117).
-			List<XYLocation> qPositions = board.getQueenPositions();
-			for (int fromX = 0; fromX < (boardSize - 1); fromX++) {
-				for (int toX = fromX + 1; toX < boardSize; toX++) {
-					int fromY = qPositions.get(fromX).getYCoOrdinate();
-					boolean nonAttackingPair = true;
-					// Check right beside
-					int toY = fromY;
-					if (board.queenExistsAt(new XYLocation(toX, toY))) {
-						nonAttackingPair = false;
-					}
-					// Check right and above
-					toY = fromY - (toX - fromX);
-					if (toY >= 0) {
-						if (board.queenExistsAt(new XYLocation(toX, toY))) {
-							nonAttackingPair = false;
-						}
-					}
-					// Check right and below
-					toY = fromY + (toX - fromX);
-					if (toY < boardSize) {
-						if (board.queenExistsAt(new XYLocation(toX, toY))) {
-							nonAttackingPair = false;
-						}
-					}
-
-					if (nonAttackingPair) {
-						fitness += 1.0;
-					}
+			List<Integer> representation = individual.getRepresentation();
+			List<Integer> turnPerTeacher = new List<Integer>();
+			
+			//Calculamos el número de turnos que a cada profesor le toca
+			int k = 0;
+			for(int j = 0; j < preferencesList.length(); ++j){
+				k = 0;
+				for(int i = 0; i < representation.length(); ++i){
+					if (representation.at(i) == j)
+						++k;
 				}
+				turnPerTeacher.add(k);
 			}
-
+			
+			//Veamos el número de profesores que tiene turno equilibrado.
+			for(int i = 0; i < turnPerTeacher.length(); ++i){
+				if(turnPerTeacher.at(i) - 1 <= media && turnPerTeacher)
+			
+			}
 			return fitness;
 		}
 	}
