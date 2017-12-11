@@ -11,18 +11,18 @@ import aima.core.search.local.Individual;
 import aima.core.util.datastructure.XYLocation;
 
 /**
- * La representación de los indivuduos es: array de 16 posiciones que corresponde
- * con el número del turno y su valor será un número que representa al profesor.
- * Si el valor es -1, indica que el turno está vacío.
+ * La representaciÃ³n de los indivuduos es: array de 16 posiciones que corresponde
+ * con el nÃºmero del turno y su valor serÃ¡ un nÃºmero que representa al profesor.
+ * Si el valor es -1, indica que el turno estÃ¡ vacÃ­o.
  * el cruce es por un punto. Vemos cuantos turnos hay, si sobra, quitamos turnos aleatoriamente
- * y no llega a lo establecido, añadimos aleatoriamente un profesor en una posición. 
+ * y no llega a lo establecido, aÃ±adimos aleatoriamente un profesor en una posiciÃ³n. 
  * en el fitness hay que intervenir turnos equilibrados y preferencias
  * fitness = turnosEquil + Preferencias + 1
  * turnosEquil = maxTurnos - minTurnos
- * (podemos contar el número de profesor desequilibrado)
- * preferencias: número de preferencias / número de turnos
- * estado objetivo: el número de turno es el que pide y cada profesor tiene asignado un turno de 
- * preferencia y los turnos están equilibrados.
+ * (podemos contar el nÃºmero de profesor desequilibrado)
+ * preferencias: nÃºmero de preferencias / nÃºmero de turnos
+ * estado objetivo: el nÃºmero de turno es el que pide y cada profesor tiene asignado un turno de 
+ * preferencia y los turnos estÃ¡n equilibrados.
  * */
 public class CFIGenAlgoUtil {
 	public static FitnessFunction<Integer> getFitnessFunction() {
@@ -35,9 +35,20 @@ public class CFIGenAlgoUtil {
 	
 
 	public static Individual<Integer> generateRandomIndividual(int size) {
-		List<Integer> individualRepresentation = new ArrayList<Integer>();
-		for (int i = 0; i < size; i++) {
-			individualRepresentation.add(new Random().nextInt(size));
+		List<Integer> individualRepresentation = new List<Integer>();
+		int currentTurns = 0;
+		for (int i = 0; i < total_turns; i++) {
+			if(currentTurns < turns && restrictionsList.at(i).length() != total_turns){
+				int value = new Random().nextInt(teachers);
+				while(restrictionsList.at(i).contains(value)){
+					value = new Random().nextInt(size);
+				}
+			}
+			else{
+				value = -1
+			}
+			individualRepresentation.add(value);
+			++currentTurns;
 		}
 		Individual<Integer> individual = new Individual<Integer>(individualRepresentation);
 		return individual;
