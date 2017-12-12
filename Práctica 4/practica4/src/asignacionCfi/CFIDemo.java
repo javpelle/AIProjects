@@ -23,7 +23,7 @@ public class CFIDemo {
 	private static List<String> teachersName;
 
 	private static double mutationProbability = 0.05;
-	private static double reproductionProbability;
+	private static double reproductionProbability = 0.7;
 
 	public static void main(String args[]) {
 		readData();
@@ -47,9 +47,9 @@ public class CFIDemo {
 			}
 			population.add(individual);
 		}
-		GeneticAlgorithm<Integer> g = new GeneticAlgorithm<Integer>(
+		GeneticAlgorithm<Integer> g = new CFIGeneticAlgorithm(
 				TOTAL_TURNS, utils.getFiniteAlphabetForSize(restrictionsList.size()),
-				mutationProbability);
+				mutationProbability, turnsToAssign, restrictionsList);
 
 		/* Run for a ser amount of time (1 second) */
 		Individual<Integer> bestIndividual = g.geneticAlgorithm(population,
