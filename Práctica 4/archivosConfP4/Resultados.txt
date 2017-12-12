@@ -1,0 +1,114 @@
+**************ARCHIVO 1******************
+
+--Standard algorithm--
+Max. fitness: 9.0
+Media fitness: 8.97
+Min. Time: 0
+Media Time: 25
+
+--Algorithm with reproduce probability 0.7--
+Max. fitness: 9.0
+Media fitness: 8.97
+Min. Time: 3
+Media Time: 31
+
+--Algorithm with reproduce probability 0.8--
+Max. fitness: 9.0
+Media fitness: 8.96
+Min. Time: 2
+Media Time: 31
+
+--Algorithm with reproduce probability 0.9--
+Max. fitness: 9.0
+Media fitness: 8.99
+Min. Time: 2
+Media Time: 14
+--Algorithm with two children and reproduce probability 0.8--
+Max. fitness: 9.0
+Media fitness: 8.87
+Min. Time: 1
+Media Time: 71
+--Algorithm with no destruction, two children and reproduce probability 0.8--
+Max. fitness: 9.0
+Media fitness: 8.83
+Min. Time: 0
+Media Time: 89
+
+
+
+***************ARCHIVO 2************************
+
+--Standard algorithm--
+Max. fitness: 20.0
+Media fitness: 19.06
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with reproduce probability 0.7--
+Max. fitness: 20.0
+Media fitness: 19.03
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with reproduce probability 0.8--
+Max. fitness: 20.0
+Media fitness: 19.02
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with reproduce probability 0.9--
+Max. fitness: 20.0
+Media fitness: 19.14
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with two children and reproduce probability 0.8--
+Max. fitness: 20.0
+Media fitness: 18.92
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with no destruction, two children and reproduce probability 0.8--
+Max. fitness: 20.0
+Media fitness: 19.96
+Min. Time: 501
+Media Time: 501
+
+**********ARCHIVO 3*****************
+
+
+--Standard algorithm--
+Max. fitness: 20.0
+Media fitness: 18.88
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with reproduce probability 0.7--
+Max. fitness: 20.0
+Media fitness: 19.2
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with reproduce probability 0.8--
+Max. fitness: 20.0
+Media fitness: 19.12
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with reproduce probability 0.9--
+Max. fitness: 20.0
+Media fitness: 19.12
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with two children and reproduce probability 0.8--
+Max. fitness: 20.0
+Media fitness: 18.91
+Min. Time: 501
+Media Time: 501
+
+--Algorithm with no destruction, two children and reproduce probability 0.8--
+Max. fitness: 20.0
+Media fitness: 19.99
+Min. Time: 501
+Media Time: 501
