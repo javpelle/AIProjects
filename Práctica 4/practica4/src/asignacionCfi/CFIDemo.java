@@ -22,7 +22,7 @@ public class CFIDemo {
 	private static List<List<Integer>> preferencesList;
 	private static List<String> teachersName;
 
-	private static double mutationProbability = 0.05;
+	private static double mutationProbability = 0.15;
 	private static double reproductionProbability = 0.7;
 
 	public static void main(String args[]) {
@@ -36,28 +36,48 @@ public class CFIDemo {
 				turnsToAssign, restrictionsList, preferencesList);
 		GoalTest goalTest = utils.getGoalTest(turnsToAssign, restrictionsList,
 				preferencesList);
-		// Generate a population
-		Set<Individual<Integer>> population = new HashSet<Individual<Integer>>();
-		for (int i = 0; i < 50; ++i) {
-			Individual<Integer> individual = utils.generateRandomIndividual(
-					turnsToAssign, restrictionsList);
-			if (individual == null) {
-				System.out.println("-----INFEASIBLE!!!-----");
-				return;
-			}
-			population.add(individual);
+		
+		double[] maxFitness = new double[6];
+		double[] mediaFitness = new double[6];
+		long[] minTime = new long[6];
+		long[] mediaTime = new long[6];
+		for (int i = 0; i < 6; ++i) {
+			maxFitness[i] = 0;
+			mediaFitness[i] = 0;
+			minTime[i] = 99999;
+			mediaTime[i] = 0;
 		}
-		GeneticAlgorithm<Integer> g = new CFIGeneticAlgorithm(
-				TOTAL_TURNS, utils.getFiniteAlphabetForSize(restrictionsList.size()),
-				mutationProbability, turnsToAssign, restrictionsList);
+		
+		for (int iterations = 0; iterations < 100; ++iterations) {
+			Set<Individual<Integer>> population = new HashSet<Individual<Integer>>();
+			for (int i = 0; i < 50; ++i) {
+				Individual<Integer> individual = utils.generateRandomIndividual(
+						turnsToAssign, restrictionsList);
+				if (individual == null) {
+					System.out.println("No solution");
+					return;
+				}
+				population.add(individual);
+			}
+			GeneticAlgorithm<Integer> g = new CFIGeneticAlgorithm(TOTAL_TURNS,
+					utils.getFiniteAlphabetForSize(restrictionsList.size()),
+					mutationProbability, turnsToAssign, restrictionsList);
+			Individual<Integer> bestIndividual = g.geneticAlgorithm(population,
+					fitnessFunction, goalTest, 500L);
+			double fit = fitnessFunction.apply(bestIndividual);
+			if (fit > maxFitness[1]) {
+				maxFitness[1] = fit;
+			}
+			if (g.getTimeInMilliseconds() < minTime[1]) {
+				minTime[1] = g.getTimeInMilliseconds();
+			}
+			mediaFitness[1] += fit;
+			mediaTime[1] +=	g.getTimeInMilliseconds();					
+		}
+		mediaFitness[1] /= 100.0;
+		mediaTime[1] /=	100;	
 
-		/* Run for a ser amount of time (1 second) */
-		Individual<Integer> bestIndividual = g.geneticAlgorithm(population,
-				fitnessFunction, goalTest, 1000L);
-
-		printData(bestIndividual, fitnessFunction, goalTest,
-				g.getPopulationSize(), g.getIterations(),
-				g.getTimeInMilliseconds());
+		
 	}
 
 	private static void printData(Individual<Integer> bestIndividual,
@@ -68,11 +88,11 @@ public class CFIDemo {
 
 		for (int i = 0; i < bestIndividual.getRepresentation().size(); i++) {
 			int numTurn = i + 1;
-			if (bestIndividual.getRepresentation().get(i) != 0) {
-				System.out.println("Turn " + numTurn + "Professor "
-						+ bestIndividual.getRepresentation().get(i));
+			if (bestIndividual.getRepresentation().get(i) != -1) {
+				System.out.println("Turn " + (i + 1) + " Professor "
+						+ teachersName.get(bestIndividual.getRepresentation().get(i)));
 			} else {
-				System.out.println("Turn " + numTurn + "No Professor");
+				System.out.println("Turn " + numTurn + " No Professor");
 			}
 		}
 
@@ -119,7 +139,7 @@ public class CFIDemo {
 				List<Integer> subList = new ArrayList<Integer>(turns.length);
 				list.add(subList);
 				for (int j = 0; j < turns.length; ++j) {
-					list.get(i).add((Integer.parseInt(turns[j])));
+					list.get(i).add((Integer.parseInt(turns[j])) - 1);
 				}
 			}
 		}
