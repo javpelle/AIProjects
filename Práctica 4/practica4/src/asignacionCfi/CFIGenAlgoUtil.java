@@ -8,70 +8,81 @@ import java.util.Random;
 import aima.core.search.framework.problem.GoalTest;
 import aima.core.search.local.FitnessFunction;
 import aima.core.search.local.Individual;
-import aima.core.util.datastructure.XYLocation;
 
 /**
- * La representación de los indivuduos es: array de 16 posiciones que corresponde
- * con el número del turno y su valor será un número que representa al profesor.
- * Si el valor es -1, indica que el turno está vacío.
- * el cruce es por un punto. Vemos cuantos turnos hay, si sobra, quitamos turnos aleatoriamente
- * y no llega a lo establecido, añadimos aleatoriamente un profesor en una posición. 
- * en el fitness hay que intervenir turnos equilibrados y preferencias
- * fitness = turnosEquil + Preferencias + 1
- * turnosEquil = maxTurnos - minTurnos
- * (podemos contar el número de profesor desequilibrado)
- * preferencias: número de preferencias / número de turnos
- * estado objetivo: el número de turno es el que pide y cada profesor tiene asignado un turno de 
- * preferencia y los turnos están equilibrados.
+ * La representación de los indivuduos es: array de 16 posiciones que
+ * corresponde con el número del turno y su valor será un número que
+ * representa al profesor. Si el valor es -1, indica que el turno está vacío.
+ * el cruce es por un punto. Vemos cuantos turnos hay, si sobra, quitamos turnos
+ * aleatoriamente y no llega a lo establecido, añadimos aleatoriamente un
+ * profesor en una posición. en el fitness hay que intervenir turnos
+ * equilibrados y preferencias fitness = turnosEquil + Preferencias + 1
+ * turnosEquil = maxTurnos - minTurnos (podemos contar el número de profesor
+ * desequilibrado) preferencias: número de preferencias / número de turnos
+ * estado objetivo: el número de turno es el que pide y cada profesor tiene
+ * asignado un turno de preferencia y los turnos están equilibrados.
  * */
 public class CFIGenAlgoUtil {
-	public static FitnessFunction<Integer> getFitnessFunction() {
-		return new  CfiFitnessFunction();
-	}
 	
-	public static GoalTest getGoalTest() {
-		return new CfiGenAlgoGoalTest();
+	public FitnessFunction<Integer> getFitnessFunction(int turnsToAssign,
+			List<List<Integer>> restrictionsList,
+			List<List<Integer>> preferencesList) {
+		return new CFIFitnessFunction(turnsToAssign, preferencesList,
+				preferencesList);
 	}
-	
 
-	public static Individual<Integer> generateRandomIndividual(int size) {
-		List<Integer> individualRepresentation = new List<Integer>();
-		int currentTurns = 0;
-		for (int i = 0; i < total_turns; i++) {
-			if(currentTurns < turns && restrictionsList.at(i).length() != total_turns){
-				int value = new Random().nextInt(teachers);
-				while(restrictionsList.at(i).contains(value)){
-					value = new Random().nextInt(size);
-				}
-			}
-			else{
-				value = -1;
-			}
-			individualRepresentation.add(value);
-			++currentTurns;
+	public GoalTest getGoalTest(int turnsToAssign,
+			List<List<Integer>> restrictionsList,
+			List<List<Integer>> preferencesList) {
+		return new CFIGoalTest(turnsToAssign, preferencesList,
+				preferencesList);
+	}
+
+	public Individual<Integer> generateRandomIndividual(int turnsToAssign,
+			List<List<Integer>> restrictionsList) {
+		if (turnsToAssign > CFIDemo.TOTAL_TURNS) {
+			return null;
 		}
-		Individual<Integer> individual = new Individual<Integer>(individualRepresentation);
-		return individual;
+		int unAvailableTurns = 0; 
+		for (int i = 0; i < restrictionsList.size(); ++i) {
+			unAvailableTurns += restrictionsList.get(i).size();
+		}
+		if (CFIDemo.TOTAL_TURNS * restrictionsList.size() - unAvailableTurns < turnsToAssign) {
+			return null;
+		}
+		List<Integer> representation = new ArrayList<Integer>();
+		for (int i = 0; i < CFIDemo.TOTAL_TURNS; ++i) {
+			representation.add(-1);
+		}
+		for (int i = 0; i < turnsToAssign; ++i) {
+			int randomTurn, randomTeacher;
+			do {
+				randomTurn = new Random().nextInt(CFIDemo.TOTAL_TURNS);
+				randomTeacher = new Random().nextInt(restrictionsList.size());
+			} while (representation.get(randomTurn) != -1 || restrictionsList.get(randomTeacher).contains(randomTurn));
+			representation.set(randomTurn, randomTeacher);			
+		}
+		return new Individual<Integer>(representation);
 	}
 
-	public static Collection<Integer> getFiniteAlphabetForSize(int size) {
+	public Collection<Integer> getFiniteAlphabetForSize(int size) {
 		Collection<Integer> fab = new ArrayList<Integer>();
 
 		for (int i = 0; i < size; i++) {
 			fab.add(i);
 		}
-
 		return fab;
 	}
-	
+
 	public class CFIFitnessFunction implements FitnessFunction<Integer> {
-		
+
 		private int turnsToAssign;
 		private List<List<Integer>> restrictionsList;
 		private List<List<Integer>> preferencesList;
-		private List<Integer> turnsPerTeacher;
 
-		public CFIFitnessFunction(int turnsToAssign, List<List<Integer>> restrictionsList, List<List<Integer>> preferencesList) {
+		public CFIFitnessFunction(int turnsToAssign,
+				List<List<Integer>> restrictionsList,
+				List<List<Integer>> preferencesList) {
 			this.turnsToAssign = turnsToAssign;
 			this.restrictionsList = restrictionsList;
 			this.preferencesList = preferencesList;
@@ -81,46 +92,103 @@ public class CFIGenAlgoUtil {
 		public double apply(Individual<Integer> individual) {
 			double fitness = 0;
 			List<Integer> representation = individual.getRepresentation();
-			
-			// Calculamos el numero de turnos que a cada profesor le toca y vemos
-			// si el profesor cumple turnos equilibrados
-			int l = 0;
-			for(int j = 0; j < preferencesList.size(); ++j){
-				int k = 0;
-				for(int i = 0; i < representation.size(); ++i){
-					if (representation.get(i) == j){   // el profesor j tiene asignado el turno i
-						++k;
-						if(preferencesList.get(j).contains(representation.get(i)))
-							++l;
-					}
-				}
-				if(k - 1 <= media && k + 1 >= media){
-					++fitness;
+			fitness = assignedTurns(representation);
+			if (fitness == turnsToAssign) {
+				// All turns are correctly assigned
+				fitness += fitnessImprove(representation);
+				// Add 1 to fitness to avoid fitness finishes with value 0
+				return fitness + 1;
+			} else {
+				return 0.1;
+			}
+		}
+
+		/**
+		 * Returns number of turns assigned correctly, verifying restrictions.
+		 * 
+		 * @param representation
+		 * @return
+		 */
+		private int assignedTurns(List<Integer> representation) {
+			int turns = 0;
+			for (int i = 0; i < representation.size(); ++i) {
+				if (representation.get(i) != -1
+						&& !restrictionsList.get(representation.get(i))
+								.contains(i)) {
+					// If turns is assigned and teacher has not restriction, is
+					// a correct assignment.
+					++turns;
 				}
 			}
-			double preferencia = l / turnsToAssign;
-			fitness += preferencia + 1;
-			return fitness;
+			return turns;
+		}
+
+		/**
+		 * Verifies preferences and balance of assignment
+		 * 
+		 * @param representation
+		 * @return
+		 */
+		private int fitnessImprove(List<Integer> representation) {
+			int preferencesAssigned = 0;
+			List<Integer> turnsTeachers = new ArrayList<Integer>();
+			for (int i = 0; i < restrictionsList.size(); ++i) {
+				turnsTeachers.add(0);
+			}
+			for (int i = 0; i < representation.size(); ++i) {
+				if (representation.get(i) != -1) {
+					// Add a turn to correspondent teacher
+					turnsTeachers.set(representation.get(i),
+							turnsTeachers.get(representation.get(i)) + 1);
+					if (preferencesList.get(representation.get(i)).contains(i)) {
+						// If turn is a preference for a teacher, add one
+						++preferencesAssigned;
+					}
+				}
+			}
+			return preferencesAssigned - balancedAssignment(turnsTeachers);
+		}
+
+		/**
+		 * Verifies balance of assignment
+		 * 
+		 * @param turnsTeachers
+		 * @return
+		 */
+		private int balancedAssignment(List<Integer> turnsTeachers) {
+			int penalization = 0;
+			double average = ((double) turnsToAssign)
+					/ ((double) turnsTeachers.size());
+			average = Math.ceil(average);
+			for (int i = 0; i < turnsTeachers.size(); ++i) {
+				if (turnsTeachers.get(i) > average) {
+					penalization += turnsTeachers.get(i) - (int) average;
+				}
+			}
+			return penalization;
 		}
 	}
 
-	public static class CfiGenAlgoGoalTest implements GoalTest {
-		private final CFIGoalTest goalTest = new GoalTest();
+	public class CFIGoalTest implements GoalTest {
+
+		private int turnsToAssign;
+		private List<List<Integer>> restrictionsList;
+		private List<List<Integer>> preferencesList;
+
+		public CFIGoalTest(int turnsToAssign,
+				List<List<Integer>> restrictionsList,
+				List<List<Integer>> preferencesList) {
+			this.turnsToAssign = turnsToAssign;
+			this.restrictionsList = restrictionsList;
+			this.preferencesList = preferencesList;
+		}
 
 		@SuppressWarnings("unchecked")
-		public boolean isGoalState(Object state) {
-			return goalTest.isGoalState(getBoardForIndividual((Individual<Integer>) state));
+		@Override
+		public boolean isGoalState(Object individual) {
+			CFIFitnessFunction info = new CFIFitnessFunction(turnsToAssign,
+					restrictionsList, preferencesList);
+			return info.apply((Individual<Integer>) individual) == 2 * turnsToAssign + 1;
 		}
-	}
-
-	public static NQueensBoard getBoardForIndividual(Individual<Integer> individual) {
-		int boardSize = individual.length();
-		NQueensBoard board = new NQueensBoard(boardSize);
-		for (int i = 0; i < boardSize; i++) {
-			int pos = individual.getRepresentation().get(i);
-			board.addQueenAt(new XYLocation(i, pos));
-		}
-
-		return board;
 	}
 }

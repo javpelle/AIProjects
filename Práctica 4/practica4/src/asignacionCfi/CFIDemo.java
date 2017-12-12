@@ -16,14 +16,14 @@ public class CFIDemo {
 
 	public static final int TOTAL_TURNS = 16;
 
-	private static int turnsNumber;
+	private static int turnsToAssign;
 
 	private static List<List<Integer>> restrictionsList;
 	private static List<List<Integer>> preferencesList;
 	private static List<String> teachersName;
 
-	private static int mutationProbability;
-	private static int reproductionProbability;
+	private static double mutationProbability = 0.05;
+	private static double reproductionProbability;
 
 	public static void main(String args[]) {
 		readData();
@@ -31,63 +31,33 @@ public class CFIDemo {
 	}
 
 	public static void CFIGeneticAlgorithmSearch() {
-		FitnessFunction<Integer> fitnessFunction = new ExamTurnsFitnessFunction(
-				turns, restrictions, preferences);
-		GoalTest goalTest = new ExamTurnsGoalTest(turns, restrictions,
-				preferences);
-		/* Generate an initial population */
+		CFIGenAlgoUtil utils = new CFIGenAlgoUtil();
+		FitnessFunction<Integer> fitnessFunction = utils.getFitnessFunction(
+				turnsToAssign, restrictionsList, preferencesList);
+		GoalTest goalTest = utils.getGoalTest(turnsToAssign, restrictionsList,
+				preferencesList);
+		// Generate a population
 		Set<Individual<Integer>> population = new HashSet<Individual<Integer>>();
-		Boolean infeasible = false;
-		for (int i = 0; i < 50; i++) {
-			population.add(ExamTurnsUtil.generateRandomIndividual(turns,
-					professors, restrictions, infeasible));
-			if (infeasible) {
+		for (int i = 0; i < 50; ++i) {
+			Individual<Integer> individual = utils.generateRandomIndividual(
+					turnsToAssign, restrictionsList);
+			if (individual == null) {
 				System.out.println("-----INFEASIBLE!!!-----");
-				break;
+				return;
 			}
+			population.add(individual);
 		}
+		GeneticAlgorithm<Integer> g = new GeneticAlgorithm<Integer>(
+				TOTAL_TURNS, utils.getFiniteAlphabetForSize(restrictionsList.size()),
+				mutationProbability);
 
-		if (!infeasible) {
-			GeneticAlgorithm<Integer> ga = new GeneticAlgorithm<Integer>(
-					TOTAL_TURNS, ExamTurnsUtil.getFiniteAlphabet(professors),
-					mutationProbability);
+		/* Run for a ser amount of time (1 second) */
+		Individual<Integer> bestIndividual = g.geneticAlgorithm(population,
+				fitnessFunction, goalTest, 1000L);
 
-			/* Run for a ser amount of time (1 second) */
-			Individual<Integer> bestIndividual = ga.geneticAlgorithm(
-					population, fitnessFunction, goalTest, 1000L);
-
-			printData(bestIndividual, fitnessFunction, goalTest,
-					ga.getPopulationSize(), ga.getIterations(),
-					ga.getTimeInMilliseconds());
-
-			/* Run until the goal is achieved */
-			bestIndividual = ga.geneticAlgorithm(population, fitnessFunction,
-					goalTest, 0L);
-
-			printData(bestIndividual, fitnessFunction, goalTest,
-					ga.getPopulationSize(), ga.getIterations(),
-					ga.getTimeInMilliseconds());
-
-			ModifiedGeneticAlgorithm1 modGa = new ModifiedGeneticAlgorithm1(
-					TOTAL_TURNS, ExamTurnsUtil.getFiniteAlphabet(professors),
-					mutationProbability, reproductionProbability);
-
-			/* Run for a set amount of time (1 second) */
-			bestIndividual = modGa.geneticAlgorithm(population,
-					fitnessFunction, goalTest, 1000L);
-
-			printData(bestIndividual, fitnessFunction, goalTest,
-					ga.getPopulationSize(), ga.getIterations(),
-					ga.getTimeInMilliseconds());
-
-			/* Run until the goal is achieved */
-			bestIndividual = modGa.geneticAlgorithm(population,
-					fitnessFunction, goalTest, 1000L);
-
-			printData(bestIndividual, fitnessFunction, goalTest,
-					ga.getPopulationSize(), ga.getIterations(),
-					ga.getTimeInMilliseconds());
-		}
+		printData(bestIndividual, fitnessFunction, goalTest,
+				g.getPopulationSize(), g.getIterations(),
+				g.getTimeInMilliseconds());
 	}
 
 	private static void printData(Individual<Integer> bestIndividual,
@@ -106,7 +76,7 @@ public class CFIDemo {
 			}
 		}
 
-		System.out.println("Turns           = " + turnsNumber);
+		System.out.println("Turns           = " + turnsToAssign);
 		System.out.println("Fitness         = "
 				+ fitnessFunction.apply(bestIndividual));
 		System.out.println("Is Goal         = "
@@ -120,7 +90,7 @@ public class CFIDemo {
 	private static void readData() {
 		Scanner s = new Scanner(System.in);
 
-		turnsNumber = s.nextInt();
+		turnsToAssign = s.nextInt();
 
 		teachersName = new ArrayList<String>(Arrays.asList(readTeachers(s)));
 
