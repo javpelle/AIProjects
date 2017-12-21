@@ -27,14 +27,14 @@ public class CFIGenAlgoUtil {
 	public FitnessFunction<Integer> getFitnessFunction(int turnsToAssign,
 			List<List<Integer>> restrictionsList,
 			List<List<Integer>> preferencesList) {
-		return new CFIFitnessFunction(turnsToAssign, preferencesList,
+		return new CFIFitnessFunction(turnsToAssign, restrictionsList,
 				preferencesList);
 	}
 
 	public GoalTest getGoalTest(int turnsToAssign,
 			List<List<Integer>> restrictionsList,
 			List<List<Integer>> preferencesList) {
-		return new CFIGoalTest(turnsToAssign, preferencesList,
+		return new CFIGoalTest(turnsToAssign, restrictionsList,
 				preferencesList);
 	}
 
@@ -68,7 +68,7 @@ public class CFIGenAlgoUtil {
 	public Collection<Integer> getFiniteAlphabetForSize(int size) {
 		Collection<Integer> fab = new ArrayList<Integer>();
 
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; ++i) {
 			fab.add(i);
 		}
 		return fab;
@@ -90,7 +90,7 @@ public class CFIGenAlgoUtil {
 
 		@Override
 		public double apply(Individual<Integer> individual) {
-			double fitness = 0;
+		double fitness = 0;
 			List<Integer> representation = individual.getRepresentation();
 			fitness = assignedTurns(representation);
 			if (fitness == turnsToAssign) {
