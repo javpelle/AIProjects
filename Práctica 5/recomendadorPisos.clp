@@ -105,7 +105,7 @@
 	(piso (contrato alquiler) (vivienda una-planta) (planta 4) (habitaciones 5) (ascensor si) (plazas-garaje 0) (superficie 70) (precio 1350) (identificador 4))
 	(piso (contrato alquiler) (vivienda duplex) (planta 6) (habitaciones 5) (ascensor no) (plazas-garaje 0) (superficie 75) (precio 1400) (identificador 5))
 	(piso (contrato venta) (vivienda duplex) (planta 1) (habitaciones 3) (ascensor si) (plazas-garaje 2) (superficie 50) (precio 215000) (identificador 6))
-	(piso (contrato alquiler) (vivienda bajo) (planta 0) (habitaciones 2) (ascensor si) (plazas-garaje 0) (superficie 40) (precio 195000) (identificador 7))
+	(piso (contrato alquiler) (vivienda bajo) (planta 0) (habitaciones 2) (ascensor si) (plazas-garaje 0) (superficie 40) (precio 750) (identificador 7))
 	(piso (contrato alquiler) (vivienda bajo) (planta 0) (habitaciones 4) (ascensor si) (plazas-garaje 1) (superficie 65) (precio 950) (identificador 8))
 	(piso (contrato alquiler) (vivienda atico) (planta 8) (habitaciones 2) (ascensor si) (plazas-garaje 1) (superficie 50) (precio 250) (identificador 9))
 	(piso (contrato venta) (vivienda atico) (planta 6) (habitaciones 3) (ascensor si) (plazas-garaje 0) (superficie 70) (precio 210000) (identificador 10))
@@ -157,7 +157,7 @@
 
 ;---MODULO RECOMENDACION---
 
-(defmodule RECOMMEND (import MAIN ?ALL))
+(defmodule RECOMMEND (import MAIN ?ALL)(export ?ALL))
 
 ;--- Notas---
 ; Si hay un anciano, no se recomendará ningún piso sin ascensor.
@@ -191,7 +191,7 @@
 
 ;---Estudiante
 (defrule RECOMMEND::estudiante-estudio
-	(usuario (motivo estudios) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch)) (presupuesto ?limite)
+	(usuario (motivo estudios) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch) (presupuesto ?limite))
 	(piso (contrato alquiler) (vivienda estudio) (planta ?plant) (habitaciones ?hab) (ascensor ?as) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
 	(test(eq (ancianoAscensor ?mayor ?as) 1))
 	(test(eq (vertigos ?vertig ?plant) 1))
@@ -203,7 +203,7 @@
 )
 
 (defrule RECOMMEND::estudiante-otro
-	(usuario (motivo estudios) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch)) (presupuesto ?limite)
+	(usuario (motivo estudios) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch) (presupuesto ?limite))
 	(piso (contrato alquiler) (vivienda ?c) (planta ?plant) (habitaciones ?hab) (ascensor ?as) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
 	(test(eq (ancianoAscensor ?mayor ?as) 1))
 	(test(eq (vertigos ?vertig ?plant) 1))
@@ -217,7 +217,7 @@
 
 ;--- Turista
 (defrule RECOMMEND::turista
-	(usuario (motivo turismo) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch)) (presupuesto ?limite)
+	(usuario (motivo turismo) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch) (presupuesto ?limite))
 	(piso (contrato alquiler) (planta ?plant) (habitaciones ?hab) (ascensor ?as) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
 	(test(eq (ancianoAscensor ?mayor ?as) 1))
 	(test(eq (vertigos ?vertig ?plant) 1))
@@ -230,7 +230,7 @@
 
 ;---Trabajo
 (defrule RECOMMEND::trabajador
-	(usuario (motivo trabajo) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch)) (presupuesto ?limite)
+	(usuario (motivo trabajo) (pareja ?par) (huespedes ?hue) (anciano ?mayor) (vertigo ?vertig) (coches ?coch) (presupuesto ?limite))
 	(piso (planta ?plant) (habitaciones ?hab) (ascensor ?as) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
 	(test(eq (ancianoAscensor ?mayor ?as) 1))
 	(test(eq (vertigos ?vertig ?plant) 1))
