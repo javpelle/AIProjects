@@ -247,3 +247,16 @@
 ;-----MODULO REPORT-----
 
 (defmodule REPORT (import MAIN ?ALL))
+
+(defrule REPORT::sort-and-print
+  ?r1 <- (puntuacion (identificador ?idPiso1) (score ?p1))
+  (not (puntuacion (identificador ?idPiso2) (score ?p2&:(< ?p1 ?p2))))
+  (piso (contrato ?cont) (vivienda ?vi) (planta ?pl) (habitaciones ?hab) (ascensor ?as) (plazas-garaje ?pg) (superficie ?sup) (precio ?pre) (identificador ?idPiso1))
+  =>
+  (printout t crlf)
+  (printout t "EL piso recomendado es el: " ?idPiso1 ". Cuya puntuacion es: "  ?p1 crlf)
+  (printout t "Es un piso que está en " ?cont " y su precio es de " ?pre " euros." crlf)
+  (printout t "Este piso está en la planta " ?pl ". Tiene " ?sup " metros cuadrados y " ?hab " habitaciones. " crlf)
+  (printout t "Es una vivienda del tipo: " ?vi "." crlf)
+  (printout t ?as " tiene ascensor y tiene " ?pg " plazas de garaje." crlf)
+  (retract ?r1))
