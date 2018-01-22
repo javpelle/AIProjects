@@ -29,7 +29,7 @@
 		(allowed-symbols si no))
 		
 	(slot plazas-garaje
-		(type Integer)
+		(type INTEGER)
 		(default 0))
 			
 	(slot superficie
@@ -91,7 +91,7 @@
 		(default 0))
 		
 	(slot recomendado
-		(type SYMBOL
+		(type SYMBOL)
 		(default si)
 		(allowed-symbols si no))
 		
@@ -104,17 +104,18 @@
 ;--PISOS DISPONIBLES--
 
 (deffacts MAIN::pisos
-	(piso (contrato venta) (vivienda una-planta) (planta 3) (habitaciones 2)  (ascensor si) (plazas-garaje 1) (comedor si) (superficie 40) (precio 175000) (identificador 1))
-	(piso (contrato venta) (vivienda una-planta) (planta 2) (habitaciones 3) (ascensor no) (plazas-garaje 0) (comedor en-cocina) (superficie 40) (precio 190000) (identificador 2))
-	(piso (contrato venta) (vivienda una-planta) (planta 7) (habitaciones 4) (ascensor si) (plazas-garaje 2) (comedor si) (superficie 70) (precio 240000) (identificador 3))
-	(piso (contrato alquiler) (vivienda una-planta) (planta 4) (habitaciones 5) (ascensor si) (plazas-garaje 0) (comedor si) (superficie 70) (precio 1350) (identificador 4))
-	(piso (contrato alquiler) (vivienda duplex) (planta 6) (habitaciones 5) (ascensor no) (plazas-garaje 0) (comedor si) (superficie 75) (precio 1400) (identificador 5))
-	(piso (contrato venta) (vivienda duplex) (planta 1) (habitaciones 3) (ascensor si) (plazas-garaje 2) (comedor si) (superficie 50) (precio 215000) (identificador 6))
-	(piso (contrato alquiler) (vivienda bajo) (planta 0) (habitaciones 2) (ascensor si) (plazas-garaje 0) (comedor en-cocina) (superficie 40) (precio 195000)) (identificador 7))
-	(piso (contrato alquiler) (vivienda bajo) (planta 0) (habitaciones 4) (ascensor si) (plazas-garaje 1) (comedor si) (superficie 65) (precio 950) (identificador 8))
-	(piso (contrato alquiler) (vivienda atico) (planta 8) (habitaciones 2) (ascensor si) (plazas-garaje 1) (comedor en-cocina) (superficie 50) (precio 250) (identificador 9))
-	(piso (contrato venta) (vivienda atico) (planta 6) (habitaciones 3) (ascensor si) (plazas-garaje 0) (comedor si) (superficie 70) (precio 210000) (identificador 10)))
-	(piso (contrato alquiler) (vivienda estudio) (planta 3) (habitaciones 1) (ascensor si) (plazas-garaje 0) (comedor no) (superficie 15) (precio 400) (identificador 11)))
+	(piso (contrato venta) (vivienda una-planta) (planta 3) (habitaciones 2)  (ascensor si) (plazas-garaje 1) (superficie 40) (precio 175000) (identificador 1))
+	(piso (contrato venta) (vivienda una-planta) (planta 2) (habitaciones 3) (ascensor no) (plazas-garaje 0) (superficie 40) (precio 190000) (identificador 2))
+	(piso (contrato venta) (vivienda una-planta) (planta 7) (habitaciones 4) (ascensor si) (plazas-garaje 2) (superficie 70) (precio 240000) (identificador 3))
+	(piso (contrato alquiler) (vivienda una-planta) (planta 4) (habitaciones 5) (ascensor si) (plazas-garaje 0) (superficie 70) (precio 1350) (identificador 4))
+	(piso (contrato alquiler) (vivienda duplex) (planta 6) (habitaciones 5) (ascensor no) (plazas-garaje 0) (superficie 75) (precio 1400) (identificador 5))
+	(piso (contrato venta) (vivienda duplex) (planta 1) (habitaciones 3) (ascensor si) (plazas-garaje 2) (superficie 50) (precio 215000) (identificador 6))
+	(piso (contrato alquiler) (vivienda bajo) (planta 0) (habitaciones 2) (ascensor si) (plazas-garaje 0) (superficie 40) (precio 195000) (identificador 7))
+	(piso (contrato alquiler) (vivienda bajo) (planta 0) (habitaciones 4) (ascensor si) (plazas-garaje 1) (superficie 65) (precio 950) (identificador 8))
+	(piso (contrato alquiler) (vivienda atico) (planta 8) (habitaciones 2) (ascensor si) (plazas-garaje 1) (superficie 50) (precio 250) (identificador 9))
+	(piso (contrato venta) (vivienda atico) (planta 6) (habitaciones 3) (ascensor si) (plazas-garaje 0) (superficie 70) (precio 210000) (identificador 10))
+	(piso (contrato alquiler) (vivienda estudio) (planta 3) (habitaciones 1) (ascensor si) (plazas-garaje 0) (superficie 15) (precio 400) (identificador 11))
+)
 	
 ;--FUNCION MAIN--
 
@@ -148,13 +149,13 @@
 	(printout t "Vivira tu pareja, si la tienes, contigo? (si no): ")
 	(bind ?parej (read))
 	(printout t "Alguno de los ocupantes de la casa puede ser considerado una persona mayor? (si no): ")
-	(bind ?mayor (testNumPositive (read)))
+	(bind ?mayor(read))
 	(printout t "Alguno de los ocupantes de la casa padece vertigo o existe alguna razon para evitar las plantas altas? (si no):  ")
-	(bind ?vertig (testNumPositive (read)))
+	(bind ?vertig (read))
 	(printout t "Introduce el numero de coches que tienes: ")
-	(bind ?coch (testDis (read)))
+	(bind ?coch (read))
 	(printout t "Cual es su presupuesto maximo?: ")
-	(bind ?dineros (testNumPositive (read)))
+	(bind ?dineros(read))
 	(assert (usuario (motivo ?motiv) (pareja ?parej) (huespedes ?hij) (anciano ?mayor) (vertigo ?vertig) (coches ?coch) (presupuesto ?dineros)))
 )
 
@@ -174,63 +175,61 @@
 ; Para estudiantes solo se recomendará alquiler, para turismo alquiler y para trabajo venta o alquiler
 
 (deffunction  RECOMMEND::calculaHabitaciones (?pareja ?huespedes)
-	(if (= ?pareja si) then
-		(bind ?resultado (- huespedes 1))
+	(if (eq ?pareja si) then
+		(- ?huespedes 1)
 	else
-		(bind ?resultado (huespedes)))
-	(return ?resultado)
+		(* ?huespedes 1))
 )
 
-(deffunction  RECOMMEND::asignaPuntuacion (?s ?prec ?gar ?coc)
-	(if (and (> ?coc 0) (>= gar coc) ) then
-		(bind ?resultado (+ (* coc 3000) (div s prec)))
+(deffunction  RECOMMEND::asignaPuntuacion (?s ?prec ?gar ?coc ?extra)
+	(if (and (> ?coc 0) (>= ?gar ?coc) ) then
+		(+ (+ (* ?coc 3000) (div ?s ?prec)) ?extra)
 	else
-		(bind ?resultado (div s prec)))
-	(return ?resultado)
+		(div ?s ?prec))
 )
 
 ;---Estudiante
 (defrule RECOMMEND::estudiante-estudio
-	(usuario (motivo estudios) (pareja par) (huespedes hue) (coches coch))
-	(piso (contrato alquiler) (vivienda estudio) (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (id ?idPiso))
-	(puntuacion (id ?idPiso) (recomendado si))
-	(test(<= (calculaHabitaciones(?par ?hue) ?hab)))
-	(test(>= (+ (calculaHabitaciones(?par ?hue) 1) ?hab)))
+	(usuario (motivo estudios) (pareja ?par) (huespedes ?hue) (coches ?coch))
+	(piso (contrato alquiler) (vivienda estudio) (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
+	(puntuacion (identificador ?idPiso) (recomendado si))
+	(test(<= (calculaHabitaciones ?par ?hue) ?hab))
+	(test(>= (+ (calculaHabitaciones ?par ?hue) 1) ?hab))
         =>
-	(assert (puntuacion (id ?idPiso) (score (+ asignaPuntuacion(?s ?prec ?coch ? g) 10000))))
+	(assert (puntuacion (identificador ?idPiso) (score (asignaPuntuacion ?s ?prec ?coch ?g 10000))))
 )
 
 (defrule RECOMMEND::estudiante-otro
-	(usuario (motivo estudios) (pareja par) (huespedes hue) (coches coch))
-	(piso (contrato ?c) (vivienda estudio) (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (id ?idPiso))
-	(puntuacion (id ?idPiso) (recomendado si))
-	(test(not(= ?c estudio)))
-	(test(<= (calculaHabitaciones(?par ?hue) ?hab)))
-	(test(>= (+ (calculaHabitaciones(?par ?hue) 1) ?hab)))
+	(usuario (motivo estudios) (pareja ?par) (huespedes ?hue) (coches ?coch))
+	(piso (contrato ?c) (vivienda estudio) (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
+	(puntuacion (identificador ?idPiso) (recomendado si))
+	(test(not(eq ?c estudio)))
+	(test(<= (calculaHabitaciones ?par ?hue) ?hab))
+	(test(>= (+ (calculaHabitaciones ?par ?hue) 1) ?hab))
         =>
-	(assert (puntuacion (id ?idPiso) (score asignaPuntuacion(?s ?prec ?coch ? g))))
+	(assert (puntuacion (identificador ?idPiso) (score (asignaPuntuacion ?s ?prec ?coch ?g 0))))
 )
 
 ;--- Turista
 (defrule RECOMMEND::turista
-	(usuario (motivo turismo) (pareja par) (huespedes hue) (coches coch))
-	(piso (contrato alquiler) (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (id ?idPiso))
-	(puntuacion (id ?idPiso) (recomendado si))
-	(test(<= (calculaHabitaciones(?par ?hue) ?hab)))
-	(test(>= (+ (calculaHabitaciones(?par ?hue) 1) ?hab)))
+	(usuario (motivo turismo) (pareja ?par) (huespedes ?hue) (coches ?coch))
+	(piso (contrato alquiler) (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
+	(puntuacion (identificador ?idPiso) (recomendado si))
+	(test(<= (calculaHabitaciones ?par ?hue) ?hab))
+	(test(>= (+ (calculaHabitaciones ?par ?hue) 1) ?hab))
         =>
-	(assert (puntuacion (id ?idPiso) (score asignaPuntuacion(?s ?prec ?coch ? g))))
+	(assert (puntuacion (identificador ?idPiso) (score (asignaPuntuacion ?s ?prec ?coch ?g 0))))
 )
 
 ;---Trabajo
-(defrule RECOMMEND::turista
-	(usuario (motivo trabajo) (pareja par) (huespedes hue) (coches coch))
-	(piso (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (id ?idPiso))
-	(puntuacion (id ?idPiso) (recomendado si))
-	(test(<= (calculaHabitaciones(?par ?hue) ?hab)))
-	(test(>= (+ (calculaHabitaciones(?par ?hue) 1) ?hab)))
+(defrule RECOMMEND::trabajador
+	(usuario (motivo trabajo) (pareja ?par) (huespedes ?hue) (coches ?coch))
+	(piso (habitaciones ?hab) (plazas-garaje ?g) (superficie ?s) (precio ?prec) (identificador ?idPiso))
+	(puntuacion (identificador ?idPiso) (recomendado si))
+	(test(<= (calculaHabitaciones ?par ?hue) ?hab))
+	(test(>= (+ (calculaHabitaciones ?par ?hue) 1) ?hab))
         =>
-	(assert (puntuacion (id ?idPiso) (score asignaPuntuacion(?s ?prec ?coch ? g))))
+	(assert (puntuacion (identificador ?idPiso) (score (asignaPuntuacion ?s ?prec ?coch ?g 0))))
 )
 
 ;---Anciano ascensor
@@ -238,26 +237,28 @@
 	(usuario (anciano si))
 	(piso (ascensor no) (identificador ?id))
         =>
-	(assert (puntuacion (id ?id) (recomendado no)))
+	(assert (puntuacion (identificador ?id) (recomendado no)))
 )
 
 ;---Vertigo
+(defrule RECOMMEND::vert
 	(usuario (vertigo si))
 	(piso (planta ?p) (identificador ?id))
 	(test(> ?p 3))
         =>
-	(assert (puntuacion (id ?id) (recomendado no)))
+	(assert (puntuacion (identificador ?id) (recomendado no)))
 )
 	
 ;---Presupuesto
+(defrule RECOMMEND::limite
 	(usuario (presupuesto ?pres))
 	(piso (precio ?prec) (identificador ?id))
 	(test(> ?prec ?pres))
         =>
-	(assert (puntuacion (id ?id) (recomendado no)))
+	(assert (puntuacion (identificador ?id) (recomendado no)))
 )
 
 
+;-----MODULO REPORT-----
 
-
-
+(defmodule REPORT (import MAIN ?ALL))
