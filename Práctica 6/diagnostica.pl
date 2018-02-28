@@ -72,6 +72,6 @@ sintomaComponente(analgesico):- sintoma('dolor de garganta').
 sintomaComponente(antihistaminico):- sintoma('congestion nasal').
 sintomaComponente(antihistaminico):- sintoma('congestion ocular').
 
-recetar(enfermedad, medicamento):- tipoEnfermedad(enfermedad,X),componenteEnfermedad(X,Y),tipoComponente(Z,Y),contiene(medicamento,Z).
+recetar(enfermedad, medicamento):- tipoEnfermedad(enfermedad,X), componenteEnfermedad(X,Y), tipoComponente(Z,Y), contiene(medicamento,Z).
 
 diagnosticar():- sintomaEnfermedad(X),recetar(X,Y),write('recetamos el medicamento: '), nl, write(Y).
