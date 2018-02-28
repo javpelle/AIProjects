@@ -25,7 +25,7 @@ tipoEnfermedad(rinitis, alergia).
 tipoEnfermedad(faringitis, infeccion).
 tipoEnfermedad(meningitis, infeccion).
 
-síntoma(nauseas):- pregunta_si(nauseas).
+sintoma(nauseas):- pregunta_si(nauseas).
 sintoma(vomito):- pregunta_si(vomito).
 sintoma('picor nariz'):- pregunta_si('picor nariz').
 sintoma('congestion nasal'):- pregunta_si('congestion nasal').
