@@ -63,8 +63,8 @@ sintomaEnfermedad(faringitis) :- sintoma('dolor de garganta'), sintoma(fiebre), 
 sintomaEnfermedad(meningitis) :- sintoma(fiebre), sintoma('dolor de cabeza'), sintoma('rigdez en la nuca'), sintoma(nauseas).
 sintomaEnfermedad(meningitis) :- sintoma(fiebre), sintoma('dolor de cabeza'), sintoma('rigdez en la nuca'), sintoma(vomitos).
 
-componenteEnfermedad(alergia, antihistaminico) :- sintomaEnfermedad(X), tipoEnfermedad(alergia). /*sintomaEnfermedad(rinitis).*/
-componenteEnfermedad(infeccion, antibiotico) :- sintomaEnfermedad(X), tipoEnfermedad(infeccion).
+componenteEnfermedad(alergia, antihistaminico) :- sintomaEnfermedad(X), tipoEnfermedad(X,alergia). /*sintomaEnfermedad(rinitis).*/
+componenteEnfermedad(infeccion, antibiotico) :- sintomaEnfermedad(X), tipoEnfermedad(X,infeccion).
 
 sintomaComponente(analgesico):- sintoma(fiebre).
 sintomaComponente(analgesico):- sintoma('dolor de cabeza').
