@@ -7,6 +7,9 @@ sintoma('dolor de cabeza').
 sintoma('rigidez en la nuca').
 sintoma(malestar).
 
+alergico(ampicilina).
+alergico(amoxicilina).
+
 tipoComponente(tripolidina, antihistaminico).
 tipoComponente(ebastina, antihistaminico).
 tipoComponente(amoxicilina, antibiotico).
@@ -33,8 +36,8 @@ sintomaEnfermedad(meningitis) :- sintoma(fiebre), sintoma('dolor de cabeza'), si
 sintomaEnfermedad(meningitis) :- sintoma(fiebre), sintoma('dolor de cabeza'), sintoma('rigidez en la nuca'), sintoma(vomito).
 
 % para saber qué tipo de componente quimico hay que usar para un tipo de enfermedad.
-componenteEnfermedad(enfermedad,antihistaminico):- tipoEnfermedad(enfermedad, alergia).
-componenteEnfermedad(enfermedad,antibiotico):- tipoEnfermedad(enfermedad, infeccion).
+componenteEnfermedad(Enfermedad,antihistaminico):- tipoEnfermedad(Enfermedad, alergia).
+componenteEnfermedad(Enfermedad,antibiotico):- tipoEnfermedad(Enfermedad, infeccion).
 
 sintomaComponente(analgesico):- sintoma(fiebre).
 sintomaComponente(analgesico):- sintoma('dolor de cabeza').
@@ -42,5 +45,11 @@ sintomaComponente(analgesico):- sintoma('dolor de garganta').
 sintomaComponente(antihistaminico):- sintoma('congestion nasal').
 sintomaComponente(antihistaminico):- sintoma('congestion ocular').
 
-diagnosticar():- sintomaEnfermedad(X),!,write(X),componenteEnfermedad(X,A), write(A),tipoComponente(Z,A), write(Z), contiene(Y,Z),write('Te recetamos el medicamento: '), nl, write(Y).
-diagnosticar():- write('caso de fallos.').
+recetar(Enfermedad, Medicamento):- componenteEnfermedad(Enfermedad,A),tipoComponente(Z,A), \+alergico(Z), contiene(Medicamento,Z).
+
+medicamento():- sintomaEnfermedad(X),!,recetar(X,Y),write('Te recetamos el medicamento: '), nl, write(Y).
+medicamento():- write('Lo sentimos, no se ha podido diagnosticar. Te recomendamos que vaya al hospital.').
+
+aliviar():- write('Para aliviar sus sintomas, puedes tomar: '), sintomaComponente(X), tipoComponente(Z, X), contiene(Medicamento, Z), write(Medicamento), nl.
+
+diagnosticar():- medicamento(), nl, aliviar().
