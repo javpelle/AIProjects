@@ -100,7 +100,7 @@ tipoEnfermedad(rinitis, alergia).
 tipoEnfermedad(faringitis, infeccion).
 tipoEnfermedad(meningitis, infeccion).
 
-% sintomaEnfermedad(X) <--> especifica los sintomas de una enfermedad
+% sintomaEnfermedad(X) <--> especifica las sintomas de una enfermedad
 sintomaEnfermedad(rinitis) :- sintoma('picor nariz'), sintoma('congestion nasal'), sintoma('congestion ocular').
 sintomaEnfermedad(faringitis) :- sintoma('dolor de garganta'), sintoma(fiebre), sintoma(malestar).
 sintomaEnfermedad(meningitis) :- sintoma(fiebre), sintoma('dolor de cabeza'), sintoma('rigidez en la nuca'), sintoma(nauseas).
@@ -130,10 +130,13 @@ recetar(Enfermedad):- write('Lo sentimos, no podemos recertarle ningún medicame
 
 % predicado que sirve para recetar medicamentos para aliviar los sintomas del usuario en caso de no hemos podido diagnosticar la enfermedad
 % su funcionamiento es analogico al del predicado recetar
-aliviar():- write('Para aliviar sus sintomas, puedes tomar: '), sintomaComponente(X), tipoComponente(Z, X), \+alergico(Z), contiene(Medicamento, Z), write(Medicamento), nl.
+aliviar():- sintomaComponente(X), tipoComponente(Z, X), \+alergico(Z), contiene(Medicamento, Z), write('Para aliviar sus sintomas, puedes tomar: '), write(Medicamento), nl.
 aliviar():- write('Lo sentimos, no podemos recertarle ningún medicamento. Le recomendamos que acuda a un médico.'),nl.
 
-% predicado principal, sirve para especificar la enfermedad del usuario y le receta un medicamento, en caso de que no ha podido diagnosticar su enfermedad, 
-% le recetamos medicamentos para aliviar sus sintomas 
-diagnosticar():- sintomaEnfermedad(X),recetar(X), retractall(preguntado(_,_)).
-diagnosticar():- write('Lo sentimos, no hemos podido identificar la enfermadad.'), aliviar().
+% predicado que sirve para especificar la enfermedad del usuario y le receta un medicamento, en caso de que no ha podido diagnosticar, 
+% le recomendamos al usuario que acuda a un medico de verdad. 
+medicamento():- sintomaEnfermedad(X),recetar(X).
+medicamento():- write('Lo sentimos, no hemos podido identificar la enfermadad.'), aliviar().
+
+% predicado principal, recomendar medicamentos al usuario y eliminar las informaciones relacionadas con el usuario
+diagnosticar():- medicamento(), retractall(preguntado(_,_)).
