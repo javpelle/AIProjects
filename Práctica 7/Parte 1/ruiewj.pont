@@ -1,0 +1,213 @@
+; Thu Apr 05 14:11:28 CEST 2018
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot chimenea
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nomb_distr
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombre_inmo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot jardin
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot criminalidad
+		(type SYMBOL)
+		(allowed-values baja media alta)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot onLine
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot planta
+		(type SYMBOL)
+		(allowed-values baja primera segunda tercera cuarta)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pl_garaje
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot habitaciones
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot distritos
+		(type INSTANCE)
+;+		(allowed-classes Registro)
+;+		(inverse-slot distrito)
+		(create-accessor read-write))
+	(single-slot ascensor
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot contaminacion
+		(type SYMBOL)
+		(allowed-values baja media alta)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot superficie
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Inmobiliaria)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot distrito
+		(type INSTANCE)
+;+		(allowed-classes Distrito)
+;+		(cardinality 0 1)
+;+		(inverse-slot distritos)
+		(create-accessor read-write))
+	(single-slot cocina_indep
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Inmobiliaria
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre_inmo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot distritos
+		(type INSTANCE)
+;+		(allowed-classes Registro)
+		(create-accessor read-write))
+	(single-slot onLine
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Distrito
+	(is-a USER)
+	(role concrete)
+	(single-slot contaminacion
+		(type SYMBOL)
+		(allowed-values baja media alta)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nomb_distr
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot criminalidad
+		(type SYMBOL)
+		(allowed-values baja media alta)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Vivienda
+	(is-a USER)
+	(role abstract))
+
+(defclass Registro
+	(is-a Vivienda)
+	(role concrete)
+	(single-slot inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Inmobiliaria)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pl_garaje
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot habitaciones
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot distrito
+		(type INSTANCE)
+;+		(allowed-classes Distrito)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot superficie
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Tipo
+	(is-a Vivienda)
+	(role abstract))
+
+(defclass Chalet
+	(is-a Tipo)
+	(role concrete)
+	(single-slot jardin
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot chimenea
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Pisos
+	(is-a Tipo)
+	(role concrete)
+	(single-slot ascensor
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot planta
+		(type SYMBOL)
+		(allowed-values baja primera segunda tercera cuarta)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Estudios
+	(is-a Tipo)
+	(role concrete)
+	(single-slot ascensor
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot cocina_indep
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot planta
+		(type SYMBOL)
+		(allowed-values baja primera segunda tercera cuarta)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Rangos
+	(is-a Vivienda)
+	(role concrete))

@@ -1,0 +1,199 @@
+; Thu Apr 05 14:11:28 CEST 2018
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([KB_269154_Class18] of  Inmobiliaria
+
+	(distritos
+		[ruiewj_Class44]
+		[ruiewj_Class45]
+		[ruiewj_Class34]
+		[ruiewj_Class31]
+		[ruiewj_Class32]
+		[ruiewj_Class33])
+	(nombre_inmo "TuCasa")
+	(onLine FALSE))
+
+([KB_269154_Class25] of  Inmobiliaria
+
+	(distritos
+		[ruiewj_Class40]
+		[ruiewj_Class41]
+		[ruiewj_Class35]
+		[ruiewj_Class12]
+		[ruiewj_Class15]
+		[ruiewj_Class18])
+	(nombre_inmo "Idealista")
+	(onLine TRUE))
+
+([KB_269154_Class26] of  Inmobiliaria
+
+	(distritos
+		[ruiewj_Class42]
+		[ruiewj_Class43]
+		[ruiewj_Class36]
+		[ruiewj_Class21]
+		[ruiewj_Class27]
+		[ruiewj_Class29])
+	(nombre_inmo "RedPiso")
+	(onLine FALSE))
+
+([KB_269154_Class27] of  Inmobiliaria
+
+	(distritos
+		[ruiewj_Class37]
+		[ruiewj_Class38]
+		[ruiewj_Class39]
+		[KB_269154_Class7]
+		[ruiewj_Class10]
+		[ruiewj_Class11])
+	(nombre_inmo "Engels & Volkers")
+	(onLine TRUE))
+
+([KB_269154_Class7] of  Pisos
+
+	(ascensor TRUE)
+	(planta tercera))
+
+([ruiewj_Class1] of  Distrito
+
+	(contaminacion media)
+	(criminalidad alta)
+	(nomb_distr "Arganzuela"))
+
+([ruiewj_Class10] of  Pisos
+
+	(ascensor TRUE)
+	(planta segunda))
+
+([ruiewj_Class11] of  Pisos
+
+	(ascensor FALSE)
+	(planta cuarta))
+
+([ruiewj_Class12] of  Pisos
+
+	(ascensor TRUE)
+	(planta baja))
+
+([ruiewj_Class15] of  Pisos
+
+	(ascensor TRUE)
+	(planta tercera))
+
+([ruiewj_Class18] of  Pisos
+
+	(ascensor TRUE)
+	(planta primera))
+
+([ruiewj_Class2] of  Distrito
+
+	(contaminacion media)
+	(criminalidad media)
+	(nomb_distr "Moncloa-Aravaca"))
+
+([ruiewj_Class21] of  Pisos
+
+	(ascensor TRUE)
+	(planta tercera))
+
+([ruiewj_Class26] of  Distrito
+
+	(contaminacion media)
+	(criminalidad alta)
+	(nomb_distr "Chamberí"))
+
+([ruiewj_Class27] of  Pisos
+
+	(ascensor FALSE)
+	(planta tercera))
+
+([ruiewj_Class29] of  Pisos
+
+	(ascensor FALSE)
+	(planta primera))
+
+([ruiewj_Class3] of  Distrito
+
+	(contaminacion alta)
+	(criminalidad media)
+	(nomb_distr "Latina"))
+
+([ruiewj_Class31] of  Pisos
+
+	(ascensor TRUE)
+	(planta tercera))
+
+([ruiewj_Class32] of  Pisos
+
+	(ascensor TRUE)
+	(planta segunda))
+
+([ruiewj_Class33] of  Pisos
+
+	(ascensor TRUE)
+	(planta cuarta))
+
+([ruiewj_Class34] of  Estudios
+
+	(ascensor TRUE)
+	(cocina_indep TRUE)
+	(planta primera))
+
+([ruiewj_Class35] of  Estudios
+
+	(ascensor TRUE)
+	(cocina_indep FALSE)
+	(planta cuarta))
+
+([ruiewj_Class36] of  Estudios
+
+	(ascensor TRUE)
+	(cocina_indep TRUE)
+	(planta segunda))
+
+([ruiewj_Class37] of  Chalet
+
+	(chimenea TRUE)
+	(jardin TRUE))
+
+([ruiewj_Class38] of  Chalet
+
+	(chimenea FALSE)
+	(jardin TRUE))
+
+([ruiewj_Class39] of  Chalet
+
+	(chimenea TRUE)
+	(jardin FALSE))
+
+([ruiewj_Class40] of  Chalet
+
+	(chimenea FALSE)
+	(jardin FALSE))
+
+([ruiewj_Class41] of  Chalet
+
+	(chimenea TRUE)
+	(jardin TRUE))
+
+([ruiewj_Class42] of  Chalet
+
+	(chimenea TRUE)
+	(jardin FALSE))
+
+([ruiewj_Class43] of  Chalet
+
+	(chimenea TRUE)
+	(jardin TRUE))
+
+([ruiewj_Class44] of  Chalet
+
+	(chimenea TRUE)
+	(jardin FALSE))
+
+([ruiewj_Class45] of  Chalet
+
+	(chimenea FALSE)
+	(jardin TRUE))
