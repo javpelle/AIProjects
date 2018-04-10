@@ -1,4 +1,4 @@
-; Thu Apr 05 14:11:28 CEST 2018
+; Tue Apr 10 15:03:07 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -14,6 +14,10 @@
 		(create-accessor read-write))
 	(single-slot nomb_distr
 		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot superficie_minima
+		(type FLOAT)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot precio
@@ -44,15 +48,28 @@
 		(allowed-values baja primera segunda tercera cuarta)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(multislot viviendas_por_inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Registro)
+;+		(inverse-slot inmobiliaria)
+		(create-accessor read-write))
 	(single-slot pl_garaje
 		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot precio_maximo
+		(type FLOAT)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot habitaciones
 		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot distritos
+	(single-slot superficie_maxima
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot viviendas_por_distritos
 		(type INSTANCE)
 ;+		(allowed-classes Registro)
 ;+		(inverse-slot distrito)
@@ -74,13 +91,18 @@
 	(single-slot inmobiliaria
 		(type INSTANCE)
 ;+		(allowed-classes Inmobiliaria)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
+;+		(inverse-slot viviendas_por_inmobiliaria)
+		(create-accessor read-write))
+	(single-slot precio_minimo
+		(type FLOAT)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot distrito
 		(type INSTANCE)
 ;+		(allowed-classes Distrito)
-;+		(cardinality 0 1)
-;+		(inverse-slot distritos)
+;+		(cardinality 1 1)
+;+		(inverse-slot viviendas_por_distritos)
 		(create-accessor read-write))
 	(single-slot cocina_indep
 		(type SYMBOL)
@@ -91,13 +113,13 @@
 (defclass Inmobiliaria
 	(is-a USER)
 	(role concrete)
+	(multislot viviendas_por_inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Registro)
+		(create-accessor read-write))
 	(single-slot nombre_inmo
 		(type STRING)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot distritos
-		(type INSTANCE)
-;+		(allowed-classes Registro)
 		(create-accessor read-write))
 	(single-slot onLine
 		(type SYMBOL)
@@ -108,19 +130,23 @@
 (defclass Distrito
 	(is-a USER)
 	(role concrete)
+	(single-slot nomb_distr
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot contaminacion
 		(type SYMBOL)
 		(allowed-values baja media alta)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot nomb_distr
-		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot criminalidad
 		(type SYMBOL)
 		(allowed-values baja media alta)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot viviendas_por_distritos
+		(type INSTANCE)
+;+		(allowed-classes Registro)
 		(create-accessor read-write)))
 
 (defclass Vivienda
@@ -130,17 +156,17 @@
 (defclass Registro
 	(is-a Vivienda)
 	(role concrete)
-	(single-slot inmobiliaria
-		(type INSTANCE)
-;+		(allowed-classes Inmobiliaria)
-;+		(cardinality 0 1)
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot pl_garaje
 		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot precio
-		(type FLOAT)
+	(single-slot inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Inmobiliaria)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot habitaciones
@@ -150,7 +176,7 @@
 	(single-slot distrito
 		(type INSTANCE)
 ;+		(allowed-classes Distrito)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot superficie
 		(type FLOAT)
@@ -210,4 +236,20 @@
 
 (defclass Rangos
 	(is-a Vivienda)
-	(role concrete))
+	(role concrete)
+	(single-slot precio_maximo
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot superficie_maxima
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot precio_minimo
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot superficie_minima
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))

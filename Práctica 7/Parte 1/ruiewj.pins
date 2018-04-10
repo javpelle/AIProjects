@@ -1,199 +1,467 @@
-; Thu Apr 05 14:11:28 CEST 2018
+; Tue Apr 10 15:03:07 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
 ([KB_269154_Class18] of  Inmobiliaria
 
-	(distritos
-		[ruiewj_Class44]
-		[ruiewj_Class45]
-		[ruiewj_Class34]
-		[ruiewj_Class31]
-		[ruiewj_Class32]
-		[ruiewj_Class33])
 	(nombre_inmo "TuCasa")
-	(onLine FALSE))
+	(onLine FALSE)
+	(viviendas_por_inmobiliaria
+		[ruiewj_Class10012]
+		[ruiewj_Class37]
+		[ruiewj_Class36]
+		[ruiewj_Class10021]
+		[ruiewj_Class10022]
+		[ruiewj_Class10023]))
 
 ([KB_269154_Class25] of  Inmobiliaria
 
-	(distritos
-		[ruiewj_Class40]
-		[ruiewj_Class41]
-		[ruiewj_Class35]
-		[ruiewj_Class12]
-		[ruiewj_Class15]
-		[ruiewj_Class18])
 	(nombre_inmo "Idealista")
-	(onLine TRUE))
+	(onLine TRUE)
+	(viviendas_por_inmobiliaria
+		[ruiewj_Class10007]
+		[ruiewj_Class10008]
+		[ruiewj_Class34]
+		[ruiewj_Class10015]
+		[ruiewj_Class10016]
+		[ruiewj_Class10017]))
 
 ([KB_269154_Class26] of  Inmobiliaria
 
-	(distritos
-		[ruiewj_Class42]
-		[ruiewj_Class43]
-		[ruiewj_Class36]
-		[ruiewj_Class21]
-		[ruiewj_Class27]
-		[ruiewj_Class29])
 	(nombre_inmo "RedPiso")
-	(onLine FALSE))
+	(onLine FALSE)
+	(viviendas_por_inmobiliaria
+		[ruiewj_Class10010]
+		[ruiewj_Class10011]
+		[ruiewj_Class35]
+		[ruiewj_Class10018]
+		[ruiewj_Class10019]
+		[ruiewj_Class10020]))
 
 ([KB_269154_Class27] of  Inmobiliaria
 
-	(distritos
-		[ruiewj_Class37]
-		[ruiewj_Class38]
-		[ruiewj_Class39]
-		[KB_269154_Class7]
-		[ruiewj_Class10]
-		[ruiewj_Class11])
 	(nombre_inmo "Engels & Volkers")
-	(onLine TRUE))
+	(onLine TRUE)
+	(viviendas_por_inmobiliaria
+		[ruiewj_Class10004]
+		[ruiewj_Class10005]
+		[ruiewj_Class10006]
+		[KB_269154_Class7]
+		[ruiewj_Class10013]
+		[ruiewj_Class10014]))
 
-([KB_269154_Class7] of  Pisos
+([KB_269154_Class7] of  Pisos Rangos Registro
 
 	(ascensor TRUE)
-	(planta tercera))
+	(planta cuarta)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 90.0)
+	(superficie_minima 80.0)
+	(distrito [ruiewj_Class2])
+	(habitaciones 4)
+	(inmobiliaria [KB_269154_Class27])
+	(pl_garaje 1)
+	(precio 290000.0)
+	(superficie 80.0))
 
 ([ruiewj_Class1] of  Distrito
 
 	(contaminacion media)
 	(criminalidad alta)
-	(nomb_distr "Arganzuela"))
+	(nomb_distr "Arganzuela")
+	(viviendas_por_distritos
+		[ruiewj_Class10010]
+		[ruiewj_Class10011]
+		[ruiewj_Class10012]
+		[ruiewj_Class34]
+		[ruiewj_Class36]
+		[ruiewj_Class10013]))
 
-([ruiewj_Class10] of  Pisos
+([ruiewj_Class10004] of  Chalet Rangos Registro
+
+	(chimenea TRUE)
+	(jardin TRUE)
+	(precio_maximo 450000.0)
+	(precio_minimo 300000.0)
+	(superficie_maxima 80.0)
+	(superficie_minima 70.0)
+	(distrito [ruiewj_Class26])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class27])
+	(pl_garaje 2)
+	(precio 310000.0)
+	(superficie 75.0))
+
+([ruiewj_Class10005] of  Chalet Rangos Registro
+
+	(chimenea FALSE)
+	(jardin FALSE)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 70.0)
+	(superficie_minima 60.0)
+	(distrito [ruiewj_Class2])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class27])
+	(pl_garaje 1)
+	(precio 260000.0)
+	(superficie 65.0))
+
+([ruiewj_Class10006] of  Chalet Rangos Registro
+
+	(chimenea TRUE)
+	(jardin TRUE)
+	(precio_maximo 750000.0)
+	(precio_minimo 600000.0)
+	(superficie_maxima 230.0)
+	(superficie_minima 210.0)
+	(distrito [ruiewj_Class3])
+	(habitaciones 5)
+	(inmobiliaria [KB_269154_Class27])
+	(pl_garaje 3)
+	(precio 650000.0)
+	(superficie 210.0))
+
+([ruiewj_Class10007] of  Chalet Rangos Registro
+
+	(chimenea TRUE)
+	(jardin TRUE)
+	(precio_maximo 450000.0)
+	(precio_minimo 300000.0)
+	(superficie_maxima 110.0)
+	(superficie_minima 90.0)
+	(distrito [ruiewj_Class2])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class25])
+	(pl_garaje 2)
+	(precio 350000.0)
+	(superficie 100.0))
+
+([ruiewj_Class10008] of  Chalet Rangos Registro
+
+	(chimenea FALSE)
+	(jardin TRUE)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 70.0)
+	(superficie_minima 50.0)
+	(distrito [ruiewj_Class26])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class25])
+	(pl_garaje 0)
+	(precio 210000.0)
+	(superficie 60.0))
+
+([ruiewj_Class10010] of  Chalet Rangos Registro
+
+	(chimenea TRUE)
+	(jardin TRUE)
+	(precio_maximo 600000.0)
+	(precio_minimo 450000.0)
+	(superficie_maxima 290.0)
+	(superficie_minima 270.0)
+	(distrito [ruiewj_Class1])
+	(habitaciones 6)
+	(inmobiliaria [KB_269154_Class26])
+	(pl_garaje 3)
+	(precio 450000.0)
+	(superficie 280.0))
+
+([ruiewj_Class10011] of  Chalet Rangos Registro
+
+	(chimenea FALSE)
+	(jardin FALSE)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 110.0)
+	(superficie_minima 90.0)
+	(distrito [ruiewj_Class1])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class26])
+	(pl_garaje 1)
+	(precio 220000.0)
+	(superficie 105.0))
+
+([ruiewj_Class10012] of  Chalet Rangos Registro
+
+	(chimenea TRUE)
+	(jardin FALSE)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 110.0)
+	(superficie_minima 90.0)
+	(distrito [ruiewj_Class1])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class18])
+	(pl_garaje 1)
+	(precio 195000.0)
+	(superficie 98.0))
+
+([ruiewj_Class10013] of  Pisos Rangos Registro
 
 	(ascensor TRUE)
-	(planta segunda))
+	(planta segunda)
+	(precio_maximo 150000.0)
+	(precio_minimo 0.0)
+	(superficie_maxima 90.0)
+	(superficie_minima 70.0)
+	(distrito [ruiewj_Class1])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class27])
+	(pl_garaje 1)
+	(precio 140000.0)
+	(superficie 75.0))
 
-([ruiewj_Class11] of  Pisos
+([ruiewj_Class10014] of  Pisos Rangos Registro
+
+	(ascensor TRUE)
+	(planta tercera)
+	(precio_maximo 150000.0)
+	(precio_minimo 0.0)
+	(superficie_maxima 70.0)
+	(superficie_minima 50.0)
+	(distrito [ruiewj_Class2])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class27])
+	(pl_garaje 1)
+	(precio 145000.0)
+	(superficie 52.0))
+
+([ruiewj_Class10015] of  Pisos Rangos Registro
+
+	(ascensor TRUE)
+	(planta tercera)
+	(precio_maximo 1050000.0)
+	(precio_minimo 900000.0)
+	(superficie_maxima 110.0)
+	(superficie_minima 90.0)
+	(distrito [ruiewj_Class26])
+	(habitaciones 4)
+	(inmobiliaria [KB_269154_Class25])
+	(pl_garaje 2)
+	(precio 960000.0)
+	(superficie 90.0))
+
+([ruiewj_Class10016] of  Pisos Rangos Registro
+
+	(ascensor TRUE)
+	(planta cuarta)
+	(precio_maximo 150000.0)
+	(precio_minimo 0.0)
+	(superficie_maxima 30.0)
+	(superficie_minima 10.0)
+	(distrito [ruiewj_Class3])
+	(habitaciones 1)
+	(inmobiliaria [KB_269154_Class25])
+	(pl_garaje 1)
+	(precio 95000.0)
+	(superficie 28.0))
+
+([ruiewj_Class10017] of  Pisos Rangos Registro
 
 	(ascensor FALSE)
-	(planta cuarta))
+	(planta segunda)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 50.0)
+	(superficie_minima 30.0)
+	(distrito [ruiewj_Class26])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class25])
+	(pl_garaje 0)
+	(precio 250000.0)
+	(superficie 45.0))
 
-([ruiewj_Class12] of  Pisos
+([ruiewj_Class10018] of  Pisos Rangos Registro
 
 	(ascensor TRUE)
-	(planta baja))
+	(planta baja)
+	(precio_maximo 750000.0)
+	(precio_minimo 600000.0)
+	(superficie_maxima 90.0)
+	(superficie_minima 70.0)
+	(distrito [ruiewj_Class26])
+	(habitaciones 4)
+	(inmobiliaria [KB_269154_Class26])
+	(pl_garaje 1)
+	(precio 700000.0)
+	(superficie 80.0))
 
-([ruiewj_Class15] of  Pisos
+([ruiewj_Class10019] of  Pisos Rangos Registro
 
 	(ascensor TRUE)
-	(planta tercera))
+	(planta tercera)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 70.0)
+	(superficie_minima 50.0)
+	(distrito [ruiewj_Class2])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class26])
+	(pl_garaje 0)
+	(precio 290000.0)
+	(superficie 64.0))
 
-([ruiewj_Class18] of  Pisos
+([ruiewj_Class10020] of  Pisos Rangos Registro
+
+	(ascensor FALSE)
+	(planta primera)
+	(precio_maximo 450000.0)
+	(precio_minimo 300000.0)
+	(superficie_maxima 70.0)
+	(superficie_minima 50.0)
+	(distrito [ruiewj_Class26])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class26])
+	(pl_garaje 0)
+	(precio 310000.0)
+	(superficie 60.0))
+
+([ruiewj_Class10021] of  Pisos Rangos Registro
 
 	(ascensor TRUE)
-	(planta primera))
+	(planta segunda)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 70.0)
+	(superficie_minima 50.0)
+	(distrito [ruiewj_Class3])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class18])
+	(pl_garaje 0)
+	(precio 220000.0)
+	(superficie 54.0))
+
+([ruiewj_Class10022] of  Pisos Rangos Registro
+
+	(ascensor TRUE)
+	(planta baja)
+	(precio_maximo 450000.0)
+	(precio_minimo 300000.0)
+	(superficie_maxima 90.0)
+	(superficie_minima 70.0)
+	(distrito [ruiewj_Class2])
+	(habitaciones 3)
+	(inmobiliaria [KB_269154_Class18])
+	(pl_garaje 1)
+	(precio 325000.0)
+	(superficie 75.0))
+
+([ruiewj_Class10023] of  Pisos Rangos Registro
+
+	(ascensor TRUE)
+	(planta primera)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 70.0)
+	(superficie_minima 50.0)
+	(distrito [ruiewj_Class2])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class18])
+	(pl_garaje 0)
+	(precio 195000.0)
+	(superficie 52.0))
 
 ([ruiewj_Class2] of  Distrito
 
 	(contaminacion media)
 	(criminalidad media)
-	(nomb_distr "Moncloa-Aravaca"))
-
-([ruiewj_Class21] of  Pisos
-
-	(ascensor TRUE)
-	(planta tercera))
+	(nomb_distr "Moncloa-Aravaca")
+	(viviendas_por_distritos
+		[ruiewj_Class10005]
+		[ruiewj_Class10007]
+		[KB_269154_Class7]
+		[ruiewj_Class10014]
+		[ruiewj_Class10019]
+		[ruiewj_Class10022]
+		[ruiewj_Class10023]))
 
 ([ruiewj_Class26] of  Distrito
 
 	(contaminacion media)
 	(criminalidad alta)
-	(nomb_distr "Chamberí"))
-
-([ruiewj_Class27] of  Pisos
-
-	(ascensor FALSE)
-	(planta tercera))
-
-([ruiewj_Class29] of  Pisos
-
-	(ascensor FALSE)
-	(planta primera))
+	(nomb_distr "Chamberí")
+	(viviendas_por_distritos
+		[ruiewj_Class10004]
+		[ruiewj_Class10008]
+		[ruiewj_Class10015]
+		[ruiewj_Class10017]
+		[ruiewj_Class10018]
+		[ruiewj_Class10020]))
 
 ([ruiewj_Class3] of  Distrito
 
 	(contaminacion alta)
 	(criminalidad media)
-	(nomb_distr "Latina"))
+	(nomb_distr "Latina")
+	(viviendas_por_distritos
+		[ruiewj_Class10006]
+		[ruiewj_Class37]
+		[ruiewj_Class35]
+		[ruiewj_Class10016]
+		[ruiewj_Class10021]))
 
-([ruiewj_Class31] of  Pisos
-
-	(ascensor TRUE)
-	(planta tercera))
-
-([ruiewj_Class32] of  Pisos
-
-	(ascensor TRUE)
-	(planta segunda))
-
-([ruiewj_Class33] of  Pisos
-
-	(ascensor TRUE)
-	(planta cuarta))
-
-([ruiewj_Class34] of  Estudios
-
-	(ascensor TRUE)
-	(cocina_indep TRUE)
-	(planta primera))
-
-([ruiewj_Class35] of  Estudios
+([ruiewj_Class34] of  Estudios Rangos Registro
 
 	(ascensor TRUE)
 	(cocina_indep FALSE)
-	(planta cuarta))
+	(planta primera)
+	(precio_maximo 150000.0)
+	(precio_minimo 0.0)
+	(superficie_maxima 50.0)
+	(superficie_minima 30.0)
+	(distrito [ruiewj_Class1])
+	(habitaciones 1)
+	(inmobiliaria [KB_269154_Class25])
+	(pl_garaje 1)
+	(precio 130000.0)
+	(superficie 35.0))
 
-([ruiewj_Class36] of  Estudios
+([ruiewj_Class35] of  Estudios Rangos Registro
+
+	(ascensor TRUE)
+	(cocina_indep FALSE)
+	(planta tercera)
+	(precio_maximo 150000.0)
+	(precio_minimo 0.0)
+	(superficie_maxima 50.0)
+	(superficie_minima 30.0)
+	(distrito [ruiewj_Class3])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class26])
+	(pl_garaje 0)
+	(precio 115000.0)
+	(superficie 42.0))
+
+([ruiewj_Class36] of  Estudios Rangos Registro
 
 	(ascensor TRUE)
 	(cocina_indep TRUE)
-	(planta segunda))
+	(planta segunda)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 50.0)
+	(superficie_minima 30.0)
+	(distrito [ruiewj_Class1])
+	(habitaciones 2)
+	(inmobiliaria [KB_269154_Class18])
+	(pl_garaje 1)
+	(precio 155000.0)
+	(superficie 40.0))
 
-([ruiewj_Class37] of  Chalet
-
-	(chimenea TRUE)
-	(jardin TRUE))
-
-([ruiewj_Class38] of  Chalet
-
-	(chimenea FALSE)
-	(jardin TRUE))
-
-([ruiewj_Class39] of  Chalet
-
-	(chimenea TRUE)
-	(jardin FALSE))
-
-([ruiewj_Class40] of  Chalet
-
-	(chimenea FALSE)
-	(jardin FALSE))
-
-([ruiewj_Class41] of  Chalet
+([ruiewj_Class37] of  Chalet Rangos Registro
 
 	(chimenea TRUE)
-	(jardin TRUE))
-
-([ruiewj_Class42] of  Chalet
-
-	(chimenea TRUE)
-	(jardin FALSE))
-
-([ruiewj_Class43] of  Chalet
-
-	(chimenea TRUE)
-	(jardin TRUE))
-
-([ruiewj_Class44] of  Chalet
-
-	(chimenea TRUE)
-	(jardin FALSE))
-
-([ruiewj_Class45] of  Chalet
-
-	(chimenea FALSE)
-	(jardin TRUE))
+	(jardin TRUE)
+	(precio_maximo 300000.0)
+	(precio_minimo 150000.0)
+	(superficie_maxima 175.0)
+	(superficie_minima 155.0)
+	(distrito [ruiewj_Class3])
+	(habitaciones 4)
+	(inmobiliaria [KB_269154_Class18])
+	(pl_garaje 2)
+	(precio 260000.0)
+	(superficie 155.0))

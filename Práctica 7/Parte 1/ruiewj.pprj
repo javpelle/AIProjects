@@ -1,4 +1,4 @@
-; Thu Apr 05 14:11:28 CEST 2018
+; Tue Apr 10 15:03:08 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,14 +20,15 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[ruiewj_ProjectKB_Class10254]
-		[ruiewj_ProjectKB_Class10255]
-		[ruiewj_ProjectKB_Class10256]
-		[ruiewj_ProjectKB_Class10257]
-		[ruiewj_ProjectKB_Class10258]
-		[ruiewj_ProjectKB_Class10259]
-		[ruiewj_ProjectKB_Class10260]
-		[ruiewj_ProjectKB_Class10261]))
+		[ruiewj_ProjectKB_Class10203]
+		[ruiewj_ProjectKB_Class10204]
+		[ruiewj_ProjectKB_Class10205]
+		[ruiewj_ProjectKB_Class10206]
+		[ruiewj_ProjectKB_Class10207]
+		[ruiewj_ProjectKB_Class10208]
+		[ruiewj_ProjectKB_Class10209]
+		[ruiewj_ProjectKB_Class10210]
+		[ruiewj_ProjectKB_Class10211]))
 
 ([CLSES_TAB] of  Widget
 
@@ -67,6 +68,9 @@
 ([INSTANCES_TAB] of  Widget
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
+
+([KB_147424_Class0] of  Map
+)
 
 ([KB_296336_Class0] of  String
 
@@ -168,9 +172,6 @@
 
 	(properties [ruiewj_ProjectKB_Class175]))
 
-([KB_540245_Class0] of  Map
-)
-
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
@@ -254,8 +255,8 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
+		[STANDARD_SLOT_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
@@ -287,307 +288,50 @@
 ([ruiewj_ProjectKB_Class10] of  Property_List
 )
 
-([ruiewj_ProjectKB_Class100] of  Widget
+([ruiewj_ProjectKB_Class10203] of  String
 
-	(height 60)
-	(is_hidden FALSE)
-	(name "nomb_distr")
-	(property_list [ruiewj_ProjectKB_Class101])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 0))
+	(name "Registro")
+	(string_value "distrito"))
 
-([ruiewj_ProjectKB_Class101] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class10175] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "superficie")
-	(property_list [ruiewj_ProjectKB_Class10176])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 300)
-	(y 0))
-
-([ruiewj_ProjectKB_Class10176] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class10187] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "inverse_of_viviendas")
-	(property_list [ruiewj_ProjectKB_Class10188])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 300))
-
-([ruiewj_ProjectKB_Class10188] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class10189]
-		[ruiewj_ProjectKB_Class10190]))
-
-([ruiewj_ProjectKB_Class10189] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class10190] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class10191] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "inverse_of_viviendas")
-	(property_list [ruiewj_ProjectKB_Class10192])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([ruiewj_ProjectKB_Class10192] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class10193]
-		[ruiewj_ProjectKB_Class10194]))
-
-([ruiewj_ProjectKB_Class10193] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class10194] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class10195] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "inverse_of_viviendas")
-	(property_list [ruiewj_ProjectKB_Class10196])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([ruiewj_ProjectKB_Class10196] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class10197]
-		[ruiewj_ProjectKB_Class10198]))
-
-([ruiewj_ProjectKB_Class10197] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class10198] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class10199] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "inverse_of_viviendas")
-	(property_list [ruiewj_ProjectKB_Class10200])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
-	(width 200)
-	(x 0)
-	(y 300))
-
-([ruiewj_ProjectKB_Class102] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "superficie")
-	(property_list [ruiewj_ProjectKB_Class103])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 300)
-	(y 60))
-
-([ruiewj_ProjectKB_Class10200] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class10201]
-		[ruiewj_ProjectKB_Class10202]))
-
-([ruiewj_ProjectKB_Class10201] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class10202] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class10203] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "inverse_of_viviendas")
-	(property_list [ruiewj_ProjectKB_Class10204])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([ruiewj_ProjectKB_Class10204] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class10205]
-		[ruiewj_ProjectKB_Class10206]))
-
-([ruiewj_ProjectKB_Class10205] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class10206] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class10207] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "inverse_of_viviendas")
-	(property_list [ruiewj_ProjectKB_Class10208])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([ruiewj_ProjectKB_Class10208] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class10209]
-		[ruiewj_ProjectKB_Class10210]))
-
-([ruiewj_ProjectKB_Class10209] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class10210] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class10250] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "distrito")
-	(property_list [ruiewj_ProjectKB_Class10251])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 120))
-
-([ruiewj_ProjectKB_Class10251] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class10252]
-		[ruiewj_ProjectKB_Class10253]))
-
-([ruiewj_ProjectKB_Class10252] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class10253] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class10254] of  String
-
-	(name "Pisos")
-	(string_value "inmobiliaria"))
-
-([ruiewj_ProjectKB_Class10255] of  String
-
-	(name "Distrito")
-	(string_value "nomb_distr"))
-
-([ruiewj_ProjectKB_Class10256] of  String
+([ruiewj_ProjectKB_Class10204] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([ruiewj_ProjectKB_Class10257] of  String
+([ruiewj_ProjectKB_Class10205] of  String
 
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
+	(name "Distrito")
+	(string_value "nomb_distr"))
 
-([ruiewj_ProjectKB_Class10258] of  String
+([ruiewj_ProjectKB_Class10206] of  String
+
+	(name "Pisos")
+	(string_value "{PISO+}%3ANAME"))
+
+([ruiewj_ProjectKB_Class10207] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([ruiewj_ProjectKB_Class10259] of  String
+([ruiewj_ProjectKB_Class10208] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([ruiewj_ProjectKB_Class10209] of  String
 
 	(name "Chalet")
-	(string_value "inmobiliaria"))
+	(string_value "{CHALET+}%3ANAME"))
 
-([ruiewj_ProjectKB_Class10260] of  String
+([ruiewj_ProjectKB_Class10210] of  String
 
 	(name "Inmobiliaria")
 	(string_value "nombre_inmo"))
 
-([ruiewj_ProjectKB_Class10261] of  String
+([ruiewj_ProjectKB_Class10211] of  String
 
 	(name "Estudios")
-	(string_value "inmobiliaria"))
-
-([ruiewj_ProjectKB_Class103] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class106] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "ruiewj_Class4")
-	(property_list [ruiewj_ProjectKB_Class107])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([ruiewj_ProjectKB_Class107] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class108] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "inmobiliaria")
-	(property_list [ruiewj_ProjectKB_Class109])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([ruiewj_ProjectKB_Class109] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class110]
-		[ruiewj_ProjectKB_Class111]))
+	(string_value "{ESTUDIO}"))
 
 ([ruiewj_ProjectKB_Class11] of  Widget
 
@@ -595,86 +339,22 @@
 	(property_list [ruiewj_ProjectKB_Class12])
 	(widget_class_name "ezpal.EZPalTab"))
 
-([ruiewj_ProjectKB_Class110] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class111] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class112] of  Widget
+([ruiewj_ProjectKB_Class119] of  Widget
 
 	(height 60)
 	(is_hidden FALSE)
-	(name "ruiewj_Class5")
-	(property_list [ruiewj_ProjectKB_Class113])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 240))
-
-([ruiewj_ProjectKB_Class113] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class114] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "distrito")
-	(property_list [ruiewj_ProjectKB_Class115])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 240))
-
-([ruiewj_ProjectKB_Class115] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class116]
-		[ruiewj_ProjectKB_Class117]))
-
-([ruiewj_ProjectKB_Class116] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class117] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
+	(name "tipo")
+	(property_list [ruiewj_ProjectKB_Class120])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 100)
+	(y 120))
 
 ([ruiewj_ProjectKB_Class12] of  Property_List
 )
 
-([ruiewj_ProjectKB_Class121] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "viviendas")
-	(property_list [ruiewj_ProjectKB_Class122])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
-	(width 200)
-	(x 0)
-	(y 120))
-
-([ruiewj_ProjectKB_Class122] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class123]
-		[ruiewj_ProjectKB_Class124]))
-
-([ruiewj_ProjectKB_Class123] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class124] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
+([ruiewj_ProjectKB_Class120] of  Property_List
+)
 
 ([ruiewj_ProjectKB_Class13] of  Widget
 
@@ -682,117 +362,21 @@
 	(property_list [ruiewj_ProjectKB_Class14])
 	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
 
-([ruiewj_ProjectKB_Class132] of  Widget
+([ruiewj_ProjectKB_Class130] of  Widget
 
 	(height 60)
 	(is_hidden FALSE)
-	(name "inmobiliaria")
-	(property_list [ruiewj_ProjectKB_Class133])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 400)
-	(y 60))
-
-([ruiewj_ProjectKB_Class133] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class134]
-		[ruiewj_ProjectKB_Class135]))
-
-([ruiewj_ProjectKB_Class134] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class135] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class136] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "pl_garaje")
-	(property_list [ruiewj_ProjectKB_Class137])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
+	(name "tipo")
+	(property_list [ruiewj_ProjectKB_Class131])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
 	(width 100)
 	(x 100)
-	(y 120))
+	(y 60))
 
-([ruiewj_ProjectKB_Class137] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class138] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [ruiewj_ProjectKB_Class139])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 200)
-	(y 0))
-
-([ruiewj_ProjectKB_Class139] of  Property_List
+([ruiewj_ProjectKB_Class131] of  Property_List
 )
 
 ([ruiewj_ProjectKB_Class14] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class140] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "habitaciones")
-	(property_list [ruiewj_ProjectKB_Class141])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 0)
-	(y 120))
-
-([ruiewj_ProjectKB_Class141] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class144] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "distrito")
-	(property_list [ruiewj_ProjectKB_Class145])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 400)
-	(y 0))
-
-([ruiewj_ProjectKB_Class145] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class146]
-		[ruiewj_ProjectKB_Class147]))
-
-([ruiewj_ProjectKB_Class146] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class147] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class148] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "superficie")
-	(property_list [ruiewj_ProjectKB_Class149])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 300)
-	(y 0))
-
-([ruiewj_ProjectKB_Class149] of  Property_List
 )
 
 ([ruiewj_ProjectKB_Class15] of  Widget
@@ -801,88 +385,8 @@
 	(property_list [ruiewj_ProjectKB_Class16])
 	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
 
-([ruiewj_ProjectKB_Class157] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "inmobiliaria")
-	(property_list [ruiewj_ProjectKB_Class158])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 200)
-	(y 120))
-
-([ruiewj_ProjectKB_Class158] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class159]
-		[ruiewj_ProjectKB_Class160]))
-
-([ruiewj_ProjectKB_Class159] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
 ([ruiewj_ProjectKB_Class16] of  Property_List
 )
-
-([ruiewj_ProjectKB_Class160] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([ruiewj_ProjectKB_Class161] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "pl_garaje")
-	(property_list [ruiewj_ProjectKB_Class162])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 100)
-	(y 120))
-
-([ruiewj_ProjectKB_Class162] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class163] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [ruiewj_ProjectKB_Class164])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 200)
-	(y 0))
-
-([ruiewj_ProjectKB_Class164] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class165] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "habitaciones")
-	(property_list [ruiewj_ProjectKB_Class166])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 0)
-	(y 120))
-
-([ruiewj_ProjectKB_Class166] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class169] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "distrito")
-	(property_list [ruiewj_ProjectKB_Class170])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 200)
-	(y 60))
 
 ([ruiewj_ProjectKB_Class17] of  Widget
 
@@ -890,25 +394,10 @@
 	(property_list [ruiewj_ProjectKB_Class18])
 	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
 
-([ruiewj_ProjectKB_Class170] of  Property_List
-
-	(properties
-		[ruiewj_ProjectKB_Class171]
-		[ruiewj_ProjectKB_Class172]))
-
-([ruiewj_ProjectKB_Class171] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([ruiewj_ProjectKB_Class172] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
 ([ruiewj_ProjectKB_Class175] of  String
 
-	(name "SearchTab_Query"))
+	(name "SearchTab_Query")
+	(string_value "Query Name: Pregunta 1. Qué pisos con ascensor hay en Arganzuela por menos de 300.000€ y más de 70 metros cuadrados\nMatch All:true\nLength: 4\nRegistro	superficie	is greater than	Other:70	1	\nPisos	ascensor	is	Other:true	1	\nRegistro	distrito	contains	Instance:ruiewj_Class1|Arganzuela	1	\nRegistro	precio	is less than	Other:300000	1	\n\nQuery Name: Pregunta 2. Qué chalets independientes con jardín, chimenea y dos plazas de garaje se venden en Moncloa-Aravaca\nMatch All:true\nLength: 4\nChalet	jardin	is	Other:true	1	\nChalet	chimenea	is	Other:true	1	\nRegistro	pl_garaje	is	Other:2	1	\nRegistro	distrito	contains	Instance:ruiewj_Class2|Moncloa-Aravaca	1	\n\nQuery Name: Pregunta 3. Qué inmobiliarias online tienen pisos a la venta en Latina\nMatch All:true\nLength: 1\nInmobiliaria	onLine	is	Other:true	1	\n\n"))
 
 ([ruiewj_ProjectKB_Class18] of  Property_List
 )
@@ -1195,67 +684,25 @@
 ([ruiewj_ProjectKB_Class8] of  Property_List
 )
 
+([ruiewj_ProjectKB_Class82] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "tipo")
+	(property_list [ruiewj_ProjectKB_Class83])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 0)
+	(y 120))
+
+([ruiewj_ProjectKB_Class83] of  Property_List
+)
+
 ([ruiewj_ProjectKB_Class9] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [ruiewj_ProjectKB_Class10])
 	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
-
-([ruiewj_ProjectKB_Class90] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "pl_garaje")
-	(property_list [ruiewj_ProjectKB_Class91])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 300)
-	(y 0))
-
-([ruiewj_ProjectKB_Class91] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class92] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [ruiewj_ProjectKB_Class93])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 200)
-	(y 60))
-
-([ruiewj_ProjectKB_Class93] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class94] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "habitaciones")
-	(property_list [ruiewj_ProjectKB_Class95])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 200)
-	(y 0))
-
-([ruiewj_ProjectKB_Class95] of  Property_List
-)
-
-([ruiewj_ProjectKB_Class98] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "nombre_inmo")
-	(property_list [ruiewj_ProjectKB_Class99])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 60))
-
-([ruiewj_ProjectKB_Class99] of  Property_List
-)
 
 ([SLOTS_TAB] of  Widget
 
