@@ -1,4 +1,4 @@
-; Tue Apr 10 15:03:07 CEST 2018
+; Wed Apr 11 09:36:06 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -55,6 +55,7 @@
 
 	(ascensor TRUE)
 	(planta cuarta)
+	(tipo Piso)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 90.0)
@@ -76,13 +77,13 @@
 		[ruiewj_Class10011]
 		[ruiewj_Class10012]
 		[ruiewj_Class34]
-		[ruiewj_Class36]
 		[ruiewj_Class10013]))
 
 ([ruiewj_Class10004] of  Chalet Rangos Registro
 
 	(chimenea TRUE)
 	(jardin TRUE)
+	(tipo Chalet)
 	(precio_maximo 450000.0)
 	(precio_minimo 300000.0)
 	(superficie_maxima 80.0)
@@ -98,6 +99,7 @@
 
 	(chimenea FALSE)
 	(jardin FALSE)
+	(tipo Chalet)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 70.0)
@@ -113,6 +115,7 @@
 
 	(chimenea TRUE)
 	(jardin TRUE)
+	(tipo Chalet)
 	(precio_maximo 750000.0)
 	(precio_minimo 600000.0)
 	(superficie_maxima 230.0)
@@ -128,6 +131,7 @@
 
 	(chimenea TRUE)
 	(jardin TRUE)
+	(tipo Chalet)
 	(precio_maximo 450000.0)
 	(precio_minimo 300000.0)
 	(superficie_maxima 110.0)
@@ -143,21 +147,23 @@
 
 	(chimenea FALSE)
 	(jardin TRUE)
-	(precio_maximo 300000.0)
-	(precio_minimo 150000.0)
-	(superficie_maxima 70.0)
-	(superficie_minima 50.0)
+	(tipo Chalet)
+	(precio_maximo 1350000.0)
+	(precio_minimo 1200000.0)
+	(superficie_maxima 370.0)
+	(superficie_minima 350.0)
 	(distrito [ruiewj_Class26])
-	(habitaciones 2)
+	(habitaciones 7)
 	(inmobiliaria [KB_269154_Class25])
-	(pl_garaje 0)
-	(precio 210000.0)
-	(superficie 60.0))
+	(pl_garaje 4)
+	(precio 1200000.0)
+	(superficie 350.0))
 
 ([ruiewj_Class10010] of  Chalet Rangos Registro
 
 	(chimenea TRUE)
 	(jardin TRUE)
+	(tipo Chalet)
 	(precio_maximo 600000.0)
 	(precio_minimo 450000.0)
 	(superficie_maxima 290.0)
@@ -173,6 +179,7 @@
 
 	(chimenea FALSE)
 	(jardin FALSE)
+	(tipo Chalet)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 110.0)
@@ -188,6 +195,7 @@
 
 	(chimenea TRUE)
 	(jardin FALSE)
+	(tipo Chalet)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 110.0)
@@ -203,6 +211,7 @@
 
 	(ascensor TRUE)
 	(planta segunda)
+	(tipo Piso)
 	(precio_maximo 150000.0)
 	(precio_minimo 0.0)
 	(superficie_maxima 90.0)
@@ -218,6 +227,7 @@
 
 	(ascensor TRUE)
 	(planta tercera)
+	(tipo Piso)
 	(precio_maximo 150000.0)
 	(precio_minimo 0.0)
 	(superficie_maxima 70.0)
@@ -233,6 +243,7 @@
 
 	(ascensor TRUE)
 	(planta tercera)
+	(tipo Piso)
 	(precio_maximo 1050000.0)
 	(precio_minimo 900000.0)
 	(superficie_maxima 110.0)
@@ -248,6 +259,7 @@
 
 	(ascensor TRUE)
 	(planta cuarta)
+	(tipo Piso)
 	(precio_maximo 150000.0)
 	(precio_minimo 0.0)
 	(superficie_maxima 30.0)
@@ -263,6 +275,7 @@
 
 	(ascensor FALSE)
 	(planta segunda)
+	(tipo Piso)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 50.0)
@@ -278,6 +291,7 @@
 
 	(ascensor TRUE)
 	(planta baja)
+	(tipo Piso)
 	(precio_maximo 750000.0)
 	(precio_minimo 600000.0)
 	(superficie_maxima 90.0)
@@ -293,6 +307,7 @@
 
 	(ascensor TRUE)
 	(planta tercera)
+	(tipo Piso)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 70.0)
@@ -308,6 +323,7 @@
 
 	(ascensor FALSE)
 	(planta primera)
+	(tipo Piso)
 	(precio_maximo 450000.0)
 	(precio_minimo 300000.0)
 	(superficie_maxima 70.0)
@@ -323,6 +339,7 @@
 
 	(ascensor TRUE)
 	(planta segunda)
+	(tipo Piso)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 70.0)
@@ -338,6 +355,7 @@
 
 	(ascensor TRUE)
 	(planta baja)
+	(tipo Piso)
 	(precio_maximo 450000.0)
 	(precio_minimo 300000.0)
 	(superficie_maxima 90.0)
@@ -353,6 +371,7 @@
 
 	(ascensor TRUE)
 	(planta primera)
+	(tipo Piso)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 70.0)
@@ -380,8 +399,8 @@
 
 ([ruiewj_Class26] of  Distrito
 
-	(contaminacion media)
-	(criminalidad alta)
+	(contaminacion baja)
+	(criminalidad baja)
 	(nomb_distr "Chamberí")
 	(viviendas_por_distritos
 		[ruiewj_Class10004]
@@ -389,7 +408,8 @@
 		[ruiewj_Class10015]
 		[ruiewj_Class10017]
 		[ruiewj_Class10018]
-		[ruiewj_Class10020]))
+		[ruiewj_Class10020]
+		[ruiewj_Class36]))
 
 ([ruiewj_Class3] of  Distrito
 
@@ -408,6 +428,7 @@
 	(ascensor TRUE)
 	(cocina_indep FALSE)
 	(planta primera)
+	(tipo Estudio)
 	(precio_maximo 150000.0)
 	(precio_minimo 0.0)
 	(superficie_maxima 50.0)
@@ -424,6 +445,7 @@
 	(ascensor TRUE)
 	(cocina_indep FALSE)
 	(planta tercera)
+	(tipo Estudio)
 	(precio_maximo 150000.0)
 	(precio_minimo 0.0)
 	(superficie_maxima 50.0)
@@ -440,11 +462,12 @@
 	(ascensor TRUE)
 	(cocina_indep TRUE)
 	(planta segunda)
+	(tipo Estudio)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 50.0)
 	(superficie_minima 30.0)
-	(distrito [ruiewj_Class1])
+	(distrito [ruiewj_Class26])
 	(habitaciones 2)
 	(inmobiliaria [KB_269154_Class18])
 	(pl_garaje 1)
@@ -455,6 +478,7 @@
 
 	(chimenea TRUE)
 	(jardin TRUE)
+	(tipo Chalet)
 	(precio_maximo 300000.0)
 	(precio_minimo 150000.0)
 	(superficie_maxima 175.0)
