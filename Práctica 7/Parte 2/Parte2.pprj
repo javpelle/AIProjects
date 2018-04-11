@@ -1,4 +1,4 @@
-; Wed Apr 11 09:38:37 CEST 2018
+; Wed Apr 11 12:15:31 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,18 +20,22 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Parte2_ProjectKB_Class75]
-		[Parte2_ProjectKB_Class76]
-		[Parte2_ProjectKB_Class77]
-		[Parte2_ProjectKB_Class78]
-		[Parte2_ProjectKB_Class79]
-		[Parte2_ProjectKB_Class80]
-		[Parte2_ProjectKB_Class81]
-		[Parte2_ProjectKB_Class82]
-		[Parte2_ProjectKB_Class83]))
+		[Parte2_ProjectKB_Class20090]
+		[Parte2_ProjectKB_Class20091]
+		[Parte2_ProjectKB_Class20092]
+		[Parte2_ProjectKB_Class20093]
+		[Parte2_ProjectKB_Class20094]
+		[Parte2_ProjectKB_Class20095]
+		[Parte2_ProjectKB_Class20096]
+		[Parte2_ProjectKB_Class20097]
+		[Parte2_ProjectKB_Class20098]
+		[Parte2_ProjectKB_Class20099]
+		[Parte2_ProjectKB_Class20100]
+		[Parte2_ProjectKB_Class20101]))
 
 ([CLSES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.ClsesTab"))
 
 ([CREATION_TIMESTAMP_WIDGET] of  Widget
@@ -44,6 +48,7 @@
 
 ([FORMS_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.FormsTab"))
 
 ([INSTANCE_ANNOTATION_FORM_WIDGET] of  Widget
@@ -67,6 +72,7 @@
 
 ([INSTANCES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
 ([KB_296336_Class0] of  String
@@ -75,7 +81,11 @@
 	(string_value "edu.stanford.smi.protege.storage.clips.ClipsKnowledgeBaseFactory"))
 
 ([KB_296336_Class1] of  Map
-)
+
+	(entries
+		[Parte2_ProjectKB_Class20102]
+		[Parte2_ProjectKB_Class20103]
+		[Parte2_ProjectKB_Class20104]))
 
 ([KB_296336_Class173] of  String
 
@@ -169,7 +179,7 @@
 
 	(properties [ruiewj_ProjectKB_Class175]))
 
-([KB_843306_Class0] of  Map
+([KB_408676_Class3] of  Map
 )
 
 ([LAYOUT_PROPERTIES] of  Property_List
@@ -184,6 +194,7 @@
 	(display_hidden_classes TRUE)
 	(display_multi_parent_class_icon TRUE)
 	(is_readonly FALSE)
+	(tabbed_instance_form_layout FALSE)
 	(undo_enabled TRUE)
 	(update_modification_slots FALSE))
 
@@ -250,397 +261,1034 @@
 	(x 0)
 	(y 60))
 
-([Parte1_ProjectKB_Class1] of  Widget
+([Parte2_ProjectKB_Class1] of  Widget
 
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class2])
+	(is_hidden FALSE)
+	(property_list [Parte2_ProjectKB_Class2])
 	(widget_class_name "se.liu.ida.JessTab.JessTab"))
 
-([Parte1_ProjectKB_Class10] of  Property_List
+([Parte2_ProjectKB_Class10] of  Property_List
 )
 
-([Parte1_ProjectKB_Class11] of  Widget
+([Parte2_ProjectKB_Class10075] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-ENGINE")
+	(property_list [Parte2_ProjectKB_Class10082])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10082] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10083]
+		[Parte2_ProjectKB_Class10084]
+		[Parte2_ProjectKB_Class10086]))
+
+([Parte2_ProjectKB_Class10083] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10084] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Startup file name")
+	(name ":STARTUP-FILE")
+	(property_list [Parte2_ProjectKB_Class10085])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 250)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10085] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10086] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Startup expression")
+	(name ":STARTUP-EXPRESSION")
+	(property_list [Parte2_ProjectKB_Class10087])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 250)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10087] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10088] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-RULE")
+	(property_list [Parte2_ProjectKB_Class10099])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10099] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10100]
+		[Parte2_ProjectKB_Class10101]
+		[Parte2_ProjectKB_Class10103]
+		[Parte2_ProjectKB_Class10105]
+		[Parte2_ProjectKB_Class10107]))
+
+([Parte2_ProjectKB_Class10100] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10101] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [Parte2_ProjectKB_Class10102])
+	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
+	(width 200)
+	(x 250)
+	(y 0))
+
+([Parte2_ProjectKB_Class10102] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10103] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":DEFINITION-NAME")
+	(property_list [Parte2_ProjectKB_Class10104])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10104] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10105] of  Widget
+
+	(height 30)
+	(is_hidden FALSE)
+	(label "Save definition in knowledge base")
+	(name ":KB-SAVE")
+	(property_list [Parte2_ProjectKB_Class10106])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 250)
+	(x 0)
+	(y 380))
+
+([Parte2_ProjectKB_Class10106] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10107] of  Widget
+
+	(height 250)
+	(is_hidden FALSE)
+	(label "Jess definition")
+	(name ":DEFINITION")
+	(property_list [Parte2_ProjectKB_Class10108])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
+	(width 450)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10108] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10109] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-FUNCTION")
+	(property_list [Parte2_ProjectKB_Class10120])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10120] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10121]
+		[Parte2_ProjectKB_Class10122]
+		[Parte2_ProjectKB_Class10124]
+		[Parte2_ProjectKB_Class10126]
+		[Parte2_ProjectKB_Class10128]))
+
+([Parte2_ProjectKB_Class10121] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10122] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [Parte2_ProjectKB_Class10123])
+	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
+	(width 200)
+	(x 250)
+	(y 0))
+
+([Parte2_ProjectKB_Class10123] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10124] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":DEFINITION-NAME")
+	(property_list [Parte2_ProjectKB_Class10125])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10125] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10126] of  Widget
+
+	(height 30)
+	(is_hidden FALSE)
+	(label "Save definition in knowledge base")
+	(name ":KB-SAVE")
+	(property_list [Parte2_ProjectKB_Class10127])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 250)
+	(x 0)
+	(y 380))
+
+([Parte2_ProjectKB_Class10127] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10128] of  Widget
+
+	(height 250)
+	(is_hidden FALSE)
+	(label "Jess definition")
+	(name ":DEFINITION")
+	(property_list [Parte2_ProjectKB_Class10129])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
+	(width 450)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10129] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10130] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-DEFGLOBAL")
+	(property_list [Parte2_ProjectKB_Class10139])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10139] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10140]
+		[Parte2_ProjectKB_Class10141]
+		[Parte2_ProjectKB_Class10143]
+		[Parte2_ProjectKB_Class10145]))
+
+([Parte2_ProjectKB_Class10140] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10141] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":DEFINITION-NAME")
+	(property_list [Parte2_ProjectKB_Class10142])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10142] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10143] of  Widget
+
+	(height 30)
+	(is_hidden FALSE)
+	(label "Save definition in knowledge base")
+	(name ":KB-SAVE")
+	(property_list [Parte2_ProjectKB_Class10144])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 250)
+	(x 0)
+	(y 380))
+
+([Parte2_ProjectKB_Class10144] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10145] of  Widget
+
+	(height 250)
+	(is_hidden FALSE)
+	(label "Jess definition")
+	(name ":DEFINITION")
+	(property_list [Parte2_ProjectKB_Class10146])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
+	(width 450)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10146] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10147] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-DEFTEMPLATE")
+	(property_list [Parte2_ProjectKB_Class10158])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10158] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10159]
+		[Parte2_ProjectKB_Class10160]
+		[Parte2_ProjectKB_Class10162]
+		[Parte2_ProjectKB_Class10164]
+		[Parte2_ProjectKB_Class10166]))
+
+([Parte2_ProjectKB_Class10159] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10160] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [Parte2_ProjectKB_Class10161])
+	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
+	(width 200)
+	(x 250)
+	(y 0))
+
+([Parte2_ProjectKB_Class10161] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10162] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":DEFINITION-NAME")
+	(property_list [Parte2_ProjectKB_Class10163])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10163] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10164] of  Widget
+
+	(height 30)
+	(is_hidden FALSE)
+	(label "Save definition in knowledge base")
+	(name ":KB-SAVE")
+	(property_list [Parte2_ProjectKB_Class10165])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 250)
+	(x 0)
+	(y 380))
+
+([Parte2_ProjectKB_Class10165] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10166] of  Widget
+
+	(height 250)
+	(is_hidden FALSE)
+	(label "Jess definition")
+	(name ":DEFINITION")
+	(property_list [Parte2_ProjectKB_Class10167])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
+	(width 450)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10167] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10168] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-DEFFACTS")
+	(property_list [Parte2_ProjectKB_Class10179])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10179] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10180]
+		[Parte2_ProjectKB_Class10181]
+		[Parte2_ProjectKB_Class10183]
+		[Parte2_ProjectKB_Class10185]
+		[Parte2_ProjectKB_Class10187]))
+
+([Parte2_ProjectKB_Class10180] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10181] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [Parte2_ProjectKB_Class10182])
+	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
+	(width 200)
+	(x 250)
+	(y 0))
+
+([Parte2_ProjectKB_Class10182] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10183] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":DEFINITION-NAME")
+	(property_list [Parte2_ProjectKB_Class10184])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10184] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10185] of  Widget
+
+	(height 30)
+	(is_hidden FALSE)
+	(label "Save definition in knowledge base")
+	(name ":KB-SAVE")
+	(property_list [Parte2_ProjectKB_Class10186])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 250)
+	(x 0)
+	(y 380))
+
+([Parte2_ProjectKB_Class10186] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10187] of  Widget
+
+	(height 250)
+	(is_hidden FALSE)
+	(label "Jess definition")
+	(name ":DEFINITION")
+	(property_list [Parte2_ProjectKB_Class10188])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
+	(width 450)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10188] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10189] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-DEFMESSAGE-HANDLER")
+	(property_list [Parte2_ProjectKB_Class10200])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10200] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10201]
+		[Parte2_ProjectKB_Class10202]
+		[Parte2_ProjectKB_Class10204]
+		[Parte2_ProjectKB_Class10206]
+		[Parte2_ProjectKB_Class10208]))
+
+([Parte2_ProjectKB_Class10201] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10202] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [Parte2_ProjectKB_Class10203])
+	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
+	(width 200)
+	(x 250)
+	(y 0))
+
+([Parte2_ProjectKB_Class10203] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10204] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":DEFINITION-NAME")
+	(property_list [Parte2_ProjectKB_Class10205])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10205] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10206] of  Widget
+
+	(height 30)
+	(is_hidden FALSE)
+	(label "Save definition in knowledge base")
+	(name ":KB-SAVE")
+	(property_list [Parte2_ProjectKB_Class10207])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 250)
+	(x 0)
+	(y 380))
+
+([Parte2_ProjectKB_Class10207] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10208] of  Widget
+
+	(height 250)
+	(is_hidden FALSE)
+	(label "Jess definition")
+	(name ":DEFINITION")
+	(property_list [Parte2_ProjectKB_Class10209])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
+	(width 450)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10209] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10210] of  Widget
+
+	(is_hidden FALSE)
+	(name ":JESS-DEFMETHOD")
+	(property_list [Parte2_ProjectKB_Class10221])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([Parte2_ProjectKB_Class10221] of  Property_List
+
+	(properties
+		[Parte2_ProjectKB_Class10222]
+		[Parte2_ProjectKB_Class10223]
+		[Parte2_ProjectKB_Class10225]
+		[Parte2_ProjectKB_Class10227]
+		[Parte2_ProjectKB_Class10229]))
+
+([Parte2_ProjectKB_Class10222] of  Property_List
+
+	(name "layout properties"))
+
+([Parte2_ProjectKB_Class10223] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [Parte2_ProjectKB_Class10224])
+	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
+	(width 200)
+	(x 250)
+	(y 0))
+
+([Parte2_ProjectKB_Class10224] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10225] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":DEFINITION-NAME")
+	(property_list [Parte2_ProjectKB_Class10226])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([Parte2_ProjectKB_Class10226] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10227] of  Widget
+
+	(height 30)
+	(is_hidden FALSE)
+	(label "Save definition in knowledge base")
+	(name ":KB-SAVE")
+	(property_list [Parte2_ProjectKB_Class10228])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 250)
+	(x 0)
+	(y 380))
+
+([Parte2_ProjectKB_Class10228] of  Property_List
+)
+
+([Parte2_ProjectKB_Class10229] of  Widget
+
+	(height 250)
+	(is_hidden FALSE)
+	(label "Jess definition")
+	(name ":DEFINITION")
+	(property_list [Parte2_ProjectKB_Class10230])
+	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
+	(width 450)
+	(x 0)
+	(y 120))
+
+([Parte2_ProjectKB_Class10230] of  Property_List
+)
+
+([Parte2_ProjectKB_Class11] of  Widget
 
 	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class12])
+	(property_list [Parte2_ProjectKB_Class12])
 	(widget_class_name "ezpal.EZPalTab"))
 
-([Parte1_ProjectKB_Class12] of  Property_List
+([Parte2_ProjectKB_Class12] of  Property_List
 )
 
-([Parte1_ProjectKB_Class13] of  Widget
+([Parte2_ProjectKB_Class13] of  Widget
 
 	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class14])
+	(property_list [Parte2_ProjectKB_Class14])
 	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
 
-([Parte1_ProjectKB_Class14] of  Property_List
+([Parte2_ProjectKB_Class14] of  Property_List
 )
 
-([Parte1_ProjectKB_Class15] of  Widget
+([Parte2_ProjectKB_Class15] of  Widget
 
 	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class16])
+	(property_list [Parte2_ProjectKB_Class16])
 	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
 
-([Parte1_ProjectKB_Class16] of  Property_List
+([Parte2_ProjectKB_Class16] of  Property_List
 )
 
-([Parte1_ProjectKB_Class17] of  Widget
+([Parte2_ProjectKB_Class17] of  Widget
 
 	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class18])
+	(property_list [Parte2_ProjectKB_Class18])
 	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
 
-([Parte1_ProjectKB_Class18] of  Property_List
+([Parte2_ProjectKB_Class18] of  Property_List
 )
 
-([Parte1_ProjectKB_Class19] of  Widget
+([Parte2_ProjectKB_Class19] of  Widget
 
 	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class20])
+	(property_list [Parte2_ProjectKB_Class20])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
 
-([Parte1_ProjectKB_Class2] of  Property_List
+([Parte2_ProjectKB_Class2] of  Property_List
 )
 
-([Parte1_ProjectKB_Class20] of  Property_List
+([Parte2_ProjectKB_Class20] of  Property_List
 )
 
-([Parte1_ProjectKB_Class21] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class22])
-	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
-
-([Parte1_ProjectKB_Class22] of  Property_List
-)
-
-([Parte1_ProjectKB_Class23] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class24])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
-
-([Parte1_ProjectKB_Class24] of  Property_List
-)
-
-([Parte1_ProjectKB_Class25] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class26])
-	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
-
-([Parte1_ProjectKB_Class26] of  Property_List
-)
-
-([Parte1_ProjectKB_Class27] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class28])
-	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
-
-([Parte1_ProjectKB_Class28] of  Property_List
-)
-
-([Parte1_ProjectKB_Class29] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class30])
-	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
-
-([Parte1_ProjectKB_Class3] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class4])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
-
-([Parte1_ProjectKB_Class30] of  Property_List
-)
-
-([Parte1_ProjectKB_Class31] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class32])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
-
-([Parte1_ProjectKB_Class32] of  Property_List
-)
-
-([Parte1_ProjectKB_Class33] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class34])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
-
-([Parte1_ProjectKB_Class34] of  Property_List
-)
-
-([Parte1_ProjectKB_Class35] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class36])
-	(widget_class_name "org.protege.owl.mm.portability.protege3.MappingMasterTab"))
-
-([Parte1_ProjectKB_Class36] of  Property_List
-)
-
-([Parte1_ProjectKB_Class37] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class38])
-	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
-
-([Parte1_ProjectKB_Class38] of  Property_List
-)
-
-([Parte1_ProjectKB_Class39] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class40])
-	(widget_class_name "TGViztab.TGVizTab"))
-
-([Parte1_ProjectKB_Class4] of  Property_List
-)
-
-([Parte1_ProjectKB_Class40] of  Property_List
-)
-
-([Parte1_ProjectKB_Class41] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class42])
-	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
-
-([Parte1_ProjectKB_Class42] of  Property_List
-)
-
-([Parte1_ProjectKB_Class43] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class44])
-	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
-
-([Parte1_ProjectKB_Class44] of  Property_List
-)
-
-([Parte1_ProjectKB_Class45] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class46])
-	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
-
-([Parte1_ProjectKB_Class46] of  Property_List
-)
-
-([Parte1_ProjectKB_Class47] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class48])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
-
-([Parte1_ProjectKB_Class48] of  Property_List
-)
-
-([Parte1_ProjectKB_Class49] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class50])
-	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
-
-([Parte1_ProjectKB_Class5] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class6])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
-
-([Parte1_ProjectKB_Class50] of  Property_List
-)
-
-([Parte1_ProjectKB_Class51] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class52])
-	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
-
-([Parte1_ProjectKB_Class52] of  Property_List
-)
-
-([Parte1_ProjectKB_Class53] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class54])
-	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
-
-([Parte1_ProjectKB_Class54] of  Property_List
-)
-
-([Parte1_ProjectKB_Class55] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class56])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
-
-([Parte1_ProjectKB_Class56] of  Property_List
-)
-
-([Parte1_ProjectKB_Class57] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class58])
-	(widget_class_name "script.ProtegeScriptTab"))
-
-([Parte1_ProjectKB_Class58] of  Property_List
-)
-
-([Parte1_ProjectKB_Class59] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class60])
-	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
-
-([Parte1_ProjectKB_Class6] of  Property_List
-)
-
-([Parte1_ProjectKB_Class60] of  Property_List
-)
-
-([Parte1_ProjectKB_Class61] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class62])
-	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
-
-([Parte1_ProjectKB_Class62] of  Property_List
-)
-
-([Parte1_ProjectKB_Class63] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class64])
-	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
-
-([Parte1_ProjectKB_Class64] of  Property_List
-)
-
-([Parte1_ProjectKB_Class65] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class66])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
-
-([Parte1_ProjectKB_Class66] of  Property_List
-)
-
-([Parte1_ProjectKB_Class67] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class68])
-	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
-
-([Parte1_ProjectKB_Class68] of  Property_List
-)
-
-([Parte1_ProjectKB_Class69] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class70])
-	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
-
-([Parte1_ProjectKB_Class7] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class8])
-	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
-
-([Parte1_ProjectKB_Class70] of  Property_List
-)
-
-([Parte1_ProjectKB_Class71] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class72])
-	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
-
-([Parte1_ProjectKB_Class72] of  Property_List
-)
-
-([Parte1_ProjectKB_Class73] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class74])
-	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
-
-([Parte1_ProjectKB_Class74] of  Property_List
-)
-
-([Parte1_ProjectKB_Class8] of  Property_List
-)
-
-([Parte1_ProjectKB_Class9] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [Parte1_ProjectKB_Class10])
-	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
-
-([Parte2_ProjectKB_Class75] of  String
+([Parte2_ProjectKB_Class20090] of  String
 
 	(name "Pisos")
 	(string_value "{PISO+}%3ANAME"))
 
-([Parte2_ProjectKB_Class76] of  String
+([Parte2_ProjectKB_Class20091] of  String
 
 	(name "Distrito")
 	(string_value "nomb_distr"))
 
-([Parte2_ProjectKB_Class77] of  String
+([Parte2_ProjectKB_Class20092] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([Parte2_ProjectKB_Class78] of  String
+([Parte2_ProjectKB_Class20093] of  String
 
 	(name "Registro")
 	(string_value "distrito"))
 
-([Parte2_ProjectKB_Class79] of  String
+([Parte2_ProjectKB_Class20094] of  String
+
+	(name ":RULE")
+	(string_value "%3ADEFINITION-NAME"))
+
+([Parte2_ProjectKB_Class20095] of  String
+
+	(name ":FUNCTION")
+	(string_value "%3ADEFINITION-NAME"))
+
+([Parte2_ProjectKB_Class20096] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([Parte2_ProjectKB_Class80] of  String
+([Parte2_ProjectKB_Class20097] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([Parte2_ProjectKB_Class81] of  String
+([Parte2_ProjectKB_Class20098] of  String
 
 	(name "Chalet")
 	(string_value "{CHALET+}%3ANAME"))
 
-([Parte2_ProjectKB_Class82] of  String
+([Parte2_ProjectKB_Class20099] of  String
 
 	(name "Inmobiliaria")
 	(string_value "nombre_inmo"))
 
-([Parte2_ProjectKB_Class83] of  String
+([Parte2_ProjectKB_Class20100] of  String
 
 	(name "Estudios")
 	(string_value "{ESTUDIO}"))
+
+([Parte2_ProjectKB_Class20101] of  String
+
+	(name ":JESS-DEFINITION")
+	(string_value "%3ADEFINITION-NAME"))
+
+([Parte2_ProjectKB_Class20102] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([Parte2_ProjectKB_Class20103] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([Parte2_ProjectKB_Class20104] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([Parte2_ProjectKB_Class21] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class22])
+	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
+
+([Parte2_ProjectKB_Class22] of  Property_List
+)
+
+([Parte2_ProjectKB_Class23] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class24])
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([Parte2_ProjectKB_Class24] of  Property_List
+)
+
+([Parte2_ProjectKB_Class25] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class26])
+	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
+
+([Parte2_ProjectKB_Class26] of  Property_List
+)
+
+([Parte2_ProjectKB_Class27] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class28])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([Parte2_ProjectKB_Class28] of  Property_List
+)
+
+([Parte2_ProjectKB_Class29] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class30])
+	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
+
+([Parte2_ProjectKB_Class3] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class4])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
+
+([Parte2_ProjectKB_Class30] of  Property_List
+)
+
+([Parte2_ProjectKB_Class31] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class32])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
+
+([Parte2_ProjectKB_Class32] of  Property_List
+)
+
+([Parte2_ProjectKB_Class33] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class34])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
+
+([Parte2_ProjectKB_Class34] of  Property_List
+)
+
+([Parte2_ProjectKB_Class35] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class36])
+	(widget_class_name "org.protege.owl.mm.portability.protege3.MappingMasterTab"))
+
+([Parte2_ProjectKB_Class36] of  Property_List
+)
+
+([Parte2_ProjectKB_Class37] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class38])
+	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
+
+([Parte2_ProjectKB_Class38] of  Property_List
+)
+
+([Parte2_ProjectKB_Class39] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class40])
+	(widget_class_name "TGViztab.TGVizTab"))
+
+([Parte2_ProjectKB_Class4] of  Property_List
+)
+
+([Parte2_ProjectKB_Class40] of  Property_List
+)
+
+([Parte2_ProjectKB_Class41] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class42])
+	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
+
+([Parte2_ProjectKB_Class42] of  Property_List
+)
+
+([Parte2_ProjectKB_Class43] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class44])
+	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+
+([Parte2_ProjectKB_Class44] of  Property_List
+)
+
+([Parte2_ProjectKB_Class45] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class46])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([Parte2_ProjectKB_Class46] of  Property_List
+)
+
+([Parte2_ProjectKB_Class47] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class48])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([Parte2_ProjectKB_Class48] of  Property_List
+)
+
+([Parte2_ProjectKB_Class49] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class50])
+	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
+
+([Parte2_ProjectKB_Class5] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class6])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
+
+([Parte2_ProjectKB_Class50] of  Property_List
+)
+
+([Parte2_ProjectKB_Class51] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class52])
+	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
+
+([Parte2_ProjectKB_Class52] of  Property_List
+)
+
+([Parte2_ProjectKB_Class53] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class54])
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
+
+([Parte2_ProjectKB_Class54] of  Property_List
+)
+
+([Parte2_ProjectKB_Class55] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class56])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+
+([Parte2_ProjectKB_Class56] of  Property_List
+)
+
+([Parte2_ProjectKB_Class57] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class58])
+	(widget_class_name "script.ProtegeScriptTab"))
+
+([Parte2_ProjectKB_Class58] of  Property_List
+)
+
+([Parte2_ProjectKB_Class59] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class60])
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
+
+([Parte2_ProjectKB_Class6] of  Property_List
+)
+
+([Parte2_ProjectKB_Class60] of  Property_List
+)
+
+([Parte2_ProjectKB_Class61] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class62])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+
+([Parte2_ProjectKB_Class62] of  Property_List
+)
+
+([Parte2_ProjectKB_Class63] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class64])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([Parte2_ProjectKB_Class64] of  Property_List
+)
+
+([Parte2_ProjectKB_Class65] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class66])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([Parte2_ProjectKB_Class66] of  Property_List
+)
+
+([Parte2_ProjectKB_Class67] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class68])
+	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
+
+([Parte2_ProjectKB_Class68] of  Property_List
+)
+
+([Parte2_ProjectKB_Class69] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class70])
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([Parte2_ProjectKB_Class7] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class8])
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([Parte2_ProjectKB_Class70] of  Property_List
+)
+
+([Parte2_ProjectKB_Class71] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class72])
+	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
+
+([Parte2_ProjectKB_Class72] of  Property_List
+)
+
+([Parte2_ProjectKB_Class73] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class74])
+	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
+
+([Parte2_ProjectKB_Class74] of  Property_List
+)
+
+([Parte2_ProjectKB_Class8] of  Property_List
+)
+
+([Parte2_ProjectKB_Class9] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [Parte2_ProjectKB_Class10])
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
 
 ([PROJECT] of  Project
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET]
+		[Parte2_ProjectKB_Class10075]
+		[Parte2_ProjectKB_Class10130]
+		[Parte2_ProjectKB_Class10168]
 		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
-		[STANDARD_CLASS_FORM_WIDGET])
+		[Parte2_ProjectKB_Class10147]
+		[STANDARD_CLASS_FORM_WIDGET]
+		[Parte2_ProjectKB_Class10088]
+		[Parte2_ProjectKB_Class10109]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[Parte2_ProjectKB_Class10189]
+		[STANDARD_SLOT_FORM_WIDGET]
+		[Parte2_ProjectKB_Class10210])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
 	(default_slot_metaclass ":STANDARD-SLOT")
+	(journaling_enabled FALSE)
 	(next_frame_number 0)
 	(options [option_instance])
 	(property_map [KB_296336_Class1])
@@ -650,10 +1298,48 @@
 		[SLOTS_TAB]
 		[FORMS_TAB]
 		[INSTANCES_TAB]
-		[QUERIES_TAB]))
+		[QUERIES_TAB]
+		[Parte2_ProjectKB_Class37]
+		[Parte2_ProjectKB_Class59]
+		[Parte2_ProjectKB_Class23]
+		[Parte2_ProjectKB_Class67]
+		[Parte2_ProjectKB_Class9]
+		[Parte2_ProjectKB_Class63]
+		[Parte2_ProjectKB_Class17]
+		[Parte2_ProjectKB_Class15]
+		[Parte2_ProjectKB_Class1]
+		[Parte2_ProjectKB_Class43]
+		[Parte2_ProjectKB_Class65]
+		[Parte2_ProjectKB_Class29]
+		[Parte2_ProjectKB_Class25]
+		[Parte2_ProjectKB_Class69]
+		[Parte2_ProjectKB_Class21]
+		[Parte2_ProjectKB_Class55]
+		[Parte2_ProjectKB_Class19]
+		[Parte2_ProjectKB_Class73]
+		[Parte2_ProjectKB_Class7]
+		[Parte2_ProjectKB_Class57]
+		[Parte2_ProjectKB_Class53]
+		[Parte2_ProjectKB_Class39]
+		[Parte2_ProjectKB_Class45]
+		[Parte2_ProjectKB_Class51]
+		[Parte2_ProjectKB_Class41]
+		[Parte2_ProjectKB_Class71]
+		[Parte2_ProjectKB_Class49]
+		[Parte2_ProjectKB_Class11]
+		[Parte2_ProjectKB_Class35]
+		[Parte2_ProjectKB_Class31]
+		[Parte2_ProjectKB_Class33]
+		[Parte2_ProjectKB_Class3]
+		[Parte2_ProjectKB_Class5]
+		[Parte2_ProjectKB_Class27]
+		[Parte2_ProjectKB_Class47]
+		[Parte2_ProjectKB_Class61]
+		[Parte2_ProjectKB_Class13]))
 
 ([QUERIES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(property_list [KB_296336_Class98])
 	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
 
@@ -664,6 +1350,7 @@
 
 ([SLOTS_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.SlotsTab"))
 
 ([SOURCES] of  Property_List
