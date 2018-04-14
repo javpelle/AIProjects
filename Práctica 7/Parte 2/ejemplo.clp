@@ -1,3 +1,4 @@
+// he añadido un campo nuevo: tipo_vivienda a la clase cliente
 (mapclass Inmobiliaria)
 
 (deftemplate Inmobiliaria
