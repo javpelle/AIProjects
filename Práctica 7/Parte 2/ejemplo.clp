@@ -5,13 +5,6 @@
    (slot onLine)
    (slot viviendas_por_inmobiliaria))
 
-(deffacts inicio
-   (Inmobiliaria (nombre_inmo "a")(onLine TRUE))
-   (Inmobiliaria (nombre_inmo "b")(onLine FALSE)))
-   
-(defrule cargar (Inmobiliaria (nombre_inmo ?m)(onLine ?mo)) => (make-instance of Inmobiliaria (nombre_inmo ?m)(onLine ?mo)))
-
-
 (mapclass Cliente)
 
 (deftemplate Cliente
@@ -22,7 +15,8 @@
    (slot presupuesto_maximo)
    (slot presupuesto_minimo)
    (slot tipo_vivienda)
-   (slot viviendas_recomendadas))
+   (slot viviendas_recomendadas)
+)
 
 (mapclass Registro)
 
@@ -35,19 +29,24 @@
    (slot superficie)
 )
 
-(deffunction necesarioAscensor (?tipo ?necesario ?ascen ?planta)
-	(if (and(and(and (eq ?necesario TRUE) (neq ?tipo chalet)) (neq ?planta bajo)) (eq ?ascen FALSE)) then (+ 0 0) else (+ 1 0)))
 
-
-
-(defrule buscarVivienda 
-	?r0<-(Cliente (nombre_cliente ?nombre) (necesario_accesibilidad ?necesario) (num_coches ?coche) (num_habitaciones ?num_hab) (presupuesto_maximo ?max) (tipo_vivienda ?tipo))
-	?r1<-(Registro (habitaciones ?num_habita) (pl_garaje ?coche) (precio ?precio))
-	(test(<= ?num_habita ?num_hab))
-=>
 	
-	(slot-insert& ?r0 viviendas_recomendadas 1 ?r1)
+//problema con la función member, si añado (test...(member...)), la funcion slot insert no inserta nada
+//si no usas member, un mismo piso se inserta infinitas veces en el slot viviendas_recomendadas		
 
+// esta regla busca las viviendas que satisfacen a las restricciones de cliente sin 
+//ajustar a su perfil
+
+(defrule buscarViviendaMinima
+	?r0<-(object(is-a Cliente) (tipo_vivienda ?piso) (nombre_cliente ?nom) (num_habitaciones ?num_hab) (viviendas_recomendadas ?rec) (presupuesto_maximo ?max) (num_coches ?coche))
+	?r1<-(object(is-a ?piso) (precio ?pre) (habitaciones ?num_habita) (pl_garaje ?coche))
+	(test(<= ?num_hab ?num_habita))
+	(test(<= ?pre ?max))
+	(test(not(member$ ?r1 ?rec)))
+=>
+	(printout t ?rec)
+	(slot-insert$ ?r0 viviendas_recomendadas 1 ?r1)
 )
+
 (reset)
 (run)
