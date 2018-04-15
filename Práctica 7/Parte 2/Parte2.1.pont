@@ -1,4 +1,4 @@
-; Sun Apr 15 02:50:31 CEST 2018
+; Sun Apr 15 03:01:17 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -27,6 +27,10 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot viviendas_recomendadas
+		(type INSTANCE)
+;+		(allowed-classes Vivienda)
+		(create-accessor read-write))
+	(multislot viv_rec_min
 		(type INSTANCE)
 ;+		(allowed-classes Vivienda)
 		(create-accessor read-write))
@@ -444,6 +448,10 @@
 	(single-slot nombre_cliente
 		(type STRING)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot viv_rec_min
+		(type INSTANCE)
+;+		(allowed-classes Vivienda)
 		(create-accessor read-write))
 	(single-slot num_habitaciones
 		(type INTEGER)
