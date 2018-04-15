@@ -77,13 +77,12 @@
 //ajustar a su perfil
 
 (defrule buscarViviendaMinima
-	?r0<-(object(is-a Cliente) (tipo_vivienda ?piso) (num_habitaciones ?num_hab) (presupuesto_maximo ?max) (viviendas_recomendadas ?rec) (num_coches ?coche))
-	?r1<-(object(is-a Registro) (tipo ?piso) (precio ?pre) (habitaciones ?num_habita) (pl_garaje ?coche))
-	(test(<= ?num_hab ?num_habita))
-	(test(<= ?pre ?max))
+	(declare(no-loop TRUE))
+	(object(is-a Cliente) (OBJECT ?r0) (tipo_vivienda ?piso) (num_habitaciones ?num_hab) (presupuesto_maximo ?max) (viviendas_recomendadas $?rec) (num_coches ?coche))
+	(object(is-a Registro) (OBJECT ?r1) (tipo ?piso) (precio ?pre) (habitaciones ?num_habita) (pl_garaje ?coche))
 	(test(not(member$ ?r1 ?rec)))
 =>
-	(printout t ?r1)
+	(slot-insert$ ?r0 viv_rec_min 1 ?r1)
 )
 
 (reset)
