@@ -78,7 +78,6 @@
 	(test(<= ?pre ?max))
 	(test(eq (member$ ?r1 ?rec) FALSE))
 =>
-	(printout t ?rec)
 	(slot-insert$ ?r0 viviendas_recomendadas 1 ?r1)
 )
 (reset)
