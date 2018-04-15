@@ -1,4 +1,3 @@
-// he añadido un campo nuevo: tipo_vivienda a la clase cliente
 (mapclass Inmobiliaria)
 
 (deftemplate Inmobiliaria
@@ -16,9 +15,10 @@
    (slot presupuesto_maximo)
    (slot presupuesto_minimo)
    (slot tipo_vivienda)
-   (slot viv_rec_min)
-   (slot viviendas_recomendadas)
+   (multislot viv_rec_min)
+   (multislot viviendas_recomendadas)
 )
+
 
 (mapclass Registro)
 
@@ -29,6 +29,7 @@
    (slot pl_garaje)
    (slot precio)
    (slot superficie)
+   (slot tipo)
 )
 
 (mapclass Distrito)
@@ -65,22 +66,25 @@
 	(slot planta)
 	(slot tipo)
 )
-	
-//problema con la función member, si añado (test...(member...)), la funcion slot insert no inserta nada
+
+
+
+
+//problema con la función member, si a?ado (test...(member...)), la funcion slot insert no inserta nada
 //si no usas member, un mismo piso se inserta infinitas veces en el slot viviendas_recomendadas		
 
 // esta regla busca las viviendas que satisfacen a las restricciones de cliente sin 
 //ajustar a su perfil
 
 (defrule buscarViviendaMinima
-	?r0<-(object(is-a Cliente) (tipo_vivienda ?piso) (nombre_cliente ?nom) (num_habitaciones ?num_hab) (viv_rec_min ?recM) (viviendas_recomendadas ?rec)(presupuesto_maximo ?max) (num_coches ?coche))
-	?r1<-(object(is-a ?piso) (precio ?pre) (habitaciones ?num_habita) (pl_garaje ?coche))
+	?r0<-(object(is-a Cliente) (tipo_vivienda ?piso) (num_habitaciones ?num_hab) (presupuesto_maximo ?max) (viviendas_recomendadas ?rec) (num_coches ?coche))
+	?r1<-(object(is-a Registro) (tipo ?piso) (precio ?pre) (habitaciones ?num_habita) (pl_garaje ?coche))
 	(test(<= ?num_hab ?num_habita))
 	(test(<= ?pre ?max))
-	(test(eq (member$ ?r1 ?recM) FALSE))
-	(test(eq (member$ ?r1 ?rec) FALSE))
+	(test(not(member$ ?r1 ?rec)))
 =>
-	(slot-insert$ ?r0 viv_rec_min 1 ?r1)
+	(printout t ?r1)
 )
+
 (reset)
 (run)
