@@ -30,7 +30,40 @@
    (slot superficie)
 )
 
+(mapclass Distrito)
 
+(deftemplate Distrito
+	(slot contaminacion)
+	(slot criminalidad)
+	(slot nomb_distr)
+	(slot viviendas_por_distritos)
+)
+
+(mapclass Chalet)
+
+(deftemplate Chalet
+	(slot chimenea)
+	(slot jardin)
+	(slot tipo)
+)	
+
+
+(mapclass Estudios)
+
+(deftemplate Estudios
+	(slot ascensor)
+	(slot cocina_indep)
+	(slot planta)
+	(slot tipo)
+)
+
+(mapclass Pisos)
+
+(deftemplate Pisos
+	(slot ascensor)
+	(slot planta)
+	(slot tipo)
+)
 	
 //problema con la función member, si añado (test...(member...)), la funcion slot insert no inserta nada
 //si no usas member, un mismo piso se inserta infinitas veces en el slot viviendas_recomendadas		
