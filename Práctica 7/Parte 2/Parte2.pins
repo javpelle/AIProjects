@@ -1,4 +1,4 @@
-; Sun Apr 15 19:27:32 CEST 2018
+; Sun Apr 15 21:21:20 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -74,7 +74,7 @@
 
 	(nombre_cliente "Mariano")
 	(num_coches 2)
-	(num_habitaciones 4)
+	(num_habitaciones 3)
 	(presupuesto_maximo 400000.0)
 	(tipo_vivienda none))
 
