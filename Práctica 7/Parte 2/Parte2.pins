@@ -1,4 +1,4 @@
-; Sun Apr 15 16:04:54 CEST 2018
+; Sun Apr 15 19:27:32 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -70,16 +70,41 @@
 	(superficie_maxima 90.0)
 	(superficie_minima 80.0))
 
+([Parte2.1_Class10079] of  Cliente
+
+	(nombre_cliente "Mariano")
+	(num_coches 2)
+	(num_habitaciones 4)
+	(presupuesto_maximo 400000.0)
+	(tipo_vivienda none))
+
+([Parte2.1_Class56] of  %3AJESS-RULE
+
+	(%3ADEFINITION "(defrule MAIN::clientesTrabajo \n   (object (is-a Cliente) (OBJECT ?r0) (tipo_vivienda trabajo) (nombre_cliente ?name)) \n   => \n   (assert (MAIN::perfilCliente (perfil trabajo) (cliente ?name))))")
+	(%3ADEFINITION-NAME "MAIN::clientesTrabajo")
+	(%3AKB-SAVE TRUE))
+
+([Parte2.1_Class57] of  Cliente
+
+	(nombre_cliente "Pepe")
+	(num_coches 2)
+	(num_habitaciones 6)
+	(presupuesto_maximo 800000.0)
+	(tipo_vivienda trabajo))
+
+([Parte2.1_Class58] of  %3AJESS-RULE
+
+	(%3ADEFINITION "(defrule MAIN::clientesFamiliar \n   (and (object (is-a Cliente) (OBJECT ?r0) (tipo_vivienda none) (nombre_cliente ?name) (num_habitaciones ?n)) \n        (test (< ?n 4))) \n   => \n   (assert (MAIN::perfilCliente (perfil familiar) (cliente ?name))) \n   (run))")
+	(%3ADEFINITION-NAME "MAIN::clientesFamiliar")
+	(%3AKB-SAVE TRUE))
+
 ([Parte2_Class0] of  Cliente
 
-	(necesario_accesibilidad FALSE)
 	(nombre_cliente "Maria")
 	(num_coches 1)
 	(num_habitaciones 1)
-	(presupuesto_maximo 2.14574326E10)
-	(presupuesto_minimo 200.0)
-	(tipo_vivienda Piso)
-	(viviendas_recomendadas [ruiewj_Class10013]))
+	(presupuesto_maximo 135000.0)
+	(tipo_vivienda estudios))
 
 ([ruiewj_Class1] of  Distrito
 
@@ -288,7 +313,7 @@
 ([ruiewj_Class10017] of  Registro Pisos Rangos
 
 	(distrito [ruiewj_Class26])
-	(habitaciones 2)
+	(habitaciones 1)
 	(inmobiliaria [KB_269154_Class25])
 	(pl_garaje 0)
 	(precio 250000.0)
