@@ -1,4 +1,4 @@
-; Wed Apr 11 12:15:31 CEST 2018
+; Sun Apr 15 15:14:36 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -7,56 +7,74 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(multislot viviendas_recomendadas
-		(type INSTANCE)
-;+		(allowed-classes Vivienda)
-		(create-accessor read-write))
 	(single-slot chimenea
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot nombre_cliente
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot nomb_distr
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot tipo
-		(type SYMBOL)
-		(allowed-values Piso Chalet Estudio)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot superficie_minima
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot precio
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot nombre_inmo
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot jardin
+	(single-slot onLine
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot necesario_accesibilidad
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
+	(single-slot %3ASTARTUP-FILE
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot num_recomen
+		(type INTEGER)
+		(default 1)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot viviendas_recomendadas
+		(type INSTANCE)
+;+		(allowed-classes Vivienda)
+		(create-accessor read-write))
+	(multislot viv_rec_min
+		(type INSTANCE)
+;+		(allowed-classes Vivienda)
+		(create-accessor read-write))
+	(single-slot num_habitaciones
+		(type INTEGER)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot contaminacion
+		(type SYMBOL)
+		(allowed-values baja media alta)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot viviendas_por_distritos
+		(type INSTANCE)
+;+		(allowed-classes Registro)
+;+		(inverse-slot distrito)
+		(create-accessor read-write))
+	(single-slot num_coches
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot viviendas_por_inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Registro)
+;+		(inverse-slot inmobiliaria)
 		(create-accessor read-write))
 	(single-slot criminalidad
 		(type SYMBOL)
 		(allowed-values baja media alta)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot onLine
+	(single-slot %3ASTARTUP-EXPRESSION
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot superficie_maxima
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot habitaciones
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot necesario_accesibilidad
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
@@ -66,79 +84,13 @@
 		(allowed-values baja primera segunda tercera cuarta)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot viviendas_por_inmobiliaria
-		(type INSTANCE)
-;+		(allowed-classes Registro)
-;+		(inverse-slot inmobiliaria)
+	(single-slot nomb_distr
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot %3ADEFINITION-NAME
+	(single-slot Parte2_Class10008
 		(type STRING)
 ;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot %3AKB-SAVE
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-		(default FALSE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot pl_garaje
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot precio_maximo
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot presupuesto_maximo
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot %3ASTARTUP-FILE
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot %3ASTARTUP-EXPRESSION
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot habitaciones
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot presupuesto+minimo
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot superficie_maxima
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot %3ADEFINITION
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot viviendas_por_distritos
-		(type INSTANCE)
-;+		(allowed-classes Registro)
-;+		(inverse-slot distrito)
-		(create-accessor read-write))
-	(single-slot ascensor
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot num_coches
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot contaminacion
-		(type SYMBOL)
-		(allowed-values baja media alta)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot superficie
-		(type FLOAT)
-;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot inmobiliaria
 		(type INSTANCE)
@@ -146,8 +98,79 @@
 ;+		(cardinality 1 1)
 ;+		(inverse-slot viviendas_por_inmobiliaria)
 		(create-accessor read-write))
+	(single-slot presupuesto_maximo
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot cocina_indep
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot presupuesto_minimo
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot %3ADEFINITION-NAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot precio_minimo
 		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot jardin
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ascensor
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombre_inmo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot %3AKB-SAVE
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot superficie
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tipo
+		(type SYMBOL)
+		(allowed-values Piso Chalet Estudio)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot precio_maximo
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tipo_vivienda
+		(type SYMBOL)
+		(allowed-values Pisos Chalet Estudios)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot superficie_minima
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot %3ADEFINITION
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre_cliente
+		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot distrito
@@ -156,12 +179,7 @@
 ;+		(cardinality 1 1)
 ;+		(inverse-slot viviendas_por_distritos)
 		(create-accessor read-write))
-	(single-slot cocina_indep
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot num_habitaciones
+	(single-slot pl_garaje
 		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
@@ -169,11 +187,11 @@
 (defclass %3AJESS-ENGINE
 	(is-a %3ASYSTEM-CLASS)
 	(role concrete)
-	(single-slot %3ASTARTUP-FILE
+	(single-slot %3ASTARTUP-EXPRESSION
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot %3ASTARTUP-EXPRESSION
+	(single-slot %3ASTARTUP-FILE
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
@@ -185,14 +203,14 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot %3ADEFINITION
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot %3AKB-SAVE
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 		(default FALSE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot %3ADEFINITION
-		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
@@ -269,33 +287,33 @@
 (defclass Inmobiliaria
 	(is-a USER)
 	(role concrete)
-	(multislot viviendas_por_inmobiliaria
-		(type INSTANCE)
-;+		(allowed-classes Registro)
+	(single-slot onLine
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot nombre_inmo
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot onLine
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 1 1)
+	(multislot viviendas_por_inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Registro)
 		(create-accessor read-write)))
 
 (defclass Distrito
 	(is-a USER)
 	(role concrete)
-	(single-slot contaminacion
-		(type SYMBOL)
-		(allowed-values baja media alta)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot nomb_distr
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot criminalidad
+		(type SYMBOL)
+		(allowed-values baja media alta)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot contaminacion
 		(type SYMBOL)
 		(allowed-values baja media alta)
 ;+		(cardinality 1 1)
@@ -312,15 +330,6 @@
 (defclass Registro
 	(is-a Vivienda)
 	(role concrete)
-	(single-slot inmobiliaria
-		(type INSTANCE)
-;+		(allowed-classes Inmobiliaria)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot pl_garaje
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
 ;+		(cardinality 1 1)
@@ -329,9 +338,23 @@
 		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(single-slot tipo
+		(type SYMBOL)
+		(allowed-values Piso Chalet Estudio)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inmobiliaria
+		(type INSTANCE)
+;+		(allowed-classes Inmobiliaria)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot distrito
 		(type INSTANCE)
 ;+		(allowed-classes Distrito)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pl_garaje
+		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot superficie
@@ -341,22 +364,17 @@
 
 (defclass Tipo
 	(is-a Vivienda)
-	(role abstract)
-	(single-slot tipo
-		(type SYMBOL)
-		(allowed-values Piso Chalet Estudio)
-;+		(cardinality 1 1)
-		(create-accessor read-write)))
+	(role abstract))
 
 (defclass Chalet
 	(is-a Tipo)
 	(role concrete)
-	(single-slot jardin
+	(single-slot chimenea
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot chimenea
+	(single-slot jardin
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
@@ -379,12 +397,12 @@
 (defclass Estudios
 	(is-a Tipo)
 	(role concrete)
-	(single-slot ascensor
+	(single-slot cocina_indep
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot cocina_indep
+	(single-slot ascensor
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
@@ -398,14 +416,6 @@
 (defclass Rangos
 	(is-a Vivienda)
 	(role concrete)
-	(single-slot superficie_maxima
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot precio_maximo
-		(type FLOAT)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot precio_minimo
 		(type FLOAT)
 ;+		(cardinality 1 1)
@@ -413,21 +423,38 @@
 	(single-slot superficie_minima
 		(type FLOAT)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot superficie_maxima
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot precio_maximo
+		(type FLOAT)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
 (defclass Cliente
 	(is-a USER)
 	(role concrete)
-	(single-slot num_coches
-		(type INTEGER)
+	(single-slot presupuesto_minimo
+		(type FLOAT)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot viviendas_recomendadas
+	(single-slot tipo_vivienda
+		(type SYMBOL)
+		(allowed-values Pisos Chalet Estudios)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombre_cliente
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot viv_rec_min
 		(type INSTANCE)
 ;+		(allowed-classes Vivienda)
 		(create-accessor read-write))
-	(single-slot presupuesto+minimo
-		(type FLOAT)
+	(single-slot num_habitaciones
+		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot necesario_accesibilidad
@@ -435,15 +462,15 @@
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot nombre_cliente
-		(type STRING)
-;+		(cardinality 1 1)
+	(multislot viviendas_recomendadas
+		(type INSTANCE)
+;+		(allowed-classes Vivienda)
 		(create-accessor read-write))
 	(single-slot presupuesto_maximo
 		(type FLOAT)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot num_habitaciones
+	(single-slot num_coches
 		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))

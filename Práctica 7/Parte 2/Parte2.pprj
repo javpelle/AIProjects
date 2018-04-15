@@ -1,4 +1,4 @@
-; Wed Apr 11 12:15:31 CEST 2018
+; Sun Apr 15 15:14:36 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,18 +20,19 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Parte2_ProjectKB_Class20090]
-		[Parte2_ProjectKB_Class20091]
-		[Parte2_ProjectKB_Class20092]
-		[Parte2_ProjectKB_Class20093]
-		[Parte2_ProjectKB_Class20094]
-		[Parte2_ProjectKB_Class20095]
-		[Parte2_ProjectKB_Class20096]
-		[Parte2_ProjectKB_Class20097]
-		[Parte2_ProjectKB_Class20098]
-		[Parte2_ProjectKB_Class20099]
-		[Parte2_ProjectKB_Class20100]
-		[Parte2_ProjectKB_Class20101]))
+		[Parte2_ProjectKB_Class20077]
+		[Parte2_ProjectKB_Class20078]
+		[Parte2_ProjectKB_Class20079]
+		[Parte2_ProjectKB_Class20080]
+		[Parte2_ProjectKB_Class20081]
+		[Parte2_ProjectKB_Class20082]
+		[Parte2_ProjectKB_Class20083]
+		[Parte2_ProjectKB_Class20084]
+		[Parte2_ProjectKB_Class20085]
+		[Parte2_ProjectKB_Class20086]
+		[Parte2_ProjectKB_Class20087]
+		[Parte2_ProjectKB_Class20088]
+		[Parte2_ProjectKB_Class20089]))
 
 ([CLSES_TAB] of  Widget
 
@@ -75,6 +76,9 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
+([KB_262000_Class3] of  Map
+)
+
 ([KB_296336_Class0] of  String
 
 	(name "factory_class_name")
@@ -83,9 +87,9 @@
 ([KB_296336_Class1] of  Map
 
 	(entries
-		[Parte2_ProjectKB_Class20102]
-		[Parte2_ProjectKB_Class20103]
-		[Parte2_ProjectKB_Class20104]))
+		[Parte2_ProjectKB_Class20090]
+		[Parte2_ProjectKB_Class20091]
+		[Parte2_ProjectKB_Class20092]))
 
 ([KB_296336_Class173] of  String
 
@@ -178,9 +182,6 @@
 ([KB_296336_Class98] of  Property_List
 
 	(properties [ruiewj_ProjectKB_Class175]))
-
-([KB_408676_Class3] of  Map
-)
 
 ([LAYOUT_PROPERTIES] of  Property_List
 
@@ -910,83 +911,88 @@
 ([Parte2_ProjectKB_Class20] of  Property_List
 )
 
-([Parte2_ProjectKB_Class20090] of  String
+([Parte2_ProjectKB_Class20077] of  String
 
-	(name "Pisos")
-	(string_value "{PISO+}%3ANAME"))
+	(name "Cliente")
+	(string_value "nombre_cliente"))
 
-([Parte2_ProjectKB_Class20091] of  String
-
-	(name "Distrito")
-	(string_value "nomb_distr"))
-
-([Parte2_ProjectKB_Class20092] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([Parte2_ProjectKB_Class20093] of  String
-
-	(name "Registro")
-	(string_value "distrito"))
-
-([Parte2_ProjectKB_Class20094] of  String
-
-	(name ":RULE")
-	(string_value "%3ADEFINITION-NAME"))
-
-([Parte2_ProjectKB_Class20095] of  String
+([Parte2_ProjectKB_Class20078] of  String
 
 	(name ":FUNCTION")
 	(string_value "%3ADEFINITION-NAME"))
 
-([Parte2_ProjectKB_Class20096] of  String
+([Parte2_ProjectKB_Class20079] of  String
 
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
+	(name "Registro")
+	(string_value "distrito"))
 
-([Parte2_ProjectKB_Class20097] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([Parte2_ProjectKB_Class20098] of  String
-
-	(name "Chalet")
-	(string_value "{CHALET+}%3ANAME"))
-
-([Parte2_ProjectKB_Class20099] of  String
-
-	(name "Inmobiliaria")
-	(string_value "nombre_inmo"))
-
-([Parte2_ProjectKB_Class20100] of  String
+([Parte2_ProjectKB_Class20080] of  String
 
 	(name "Estudios")
 	(string_value "{ESTUDIO}"))
 
-([Parte2_ProjectKB_Class20101] of  String
+([Parte2_ProjectKB_Class20081] of  String
 
 	(name ":JESS-DEFINITION")
 	(string_value "%3ADEFINITION-NAME"))
 
-([Parte2_ProjectKB_Class20102] of  Map_Entry
+([Parte2_ProjectKB_Class20082] of  String
+
+	(name "Pisos")
+	(string_value "{PISO+}%3ANAME"))
+
+([Parte2_ProjectKB_Class20083] of  String
+
+	(name "Distrito")
+	(string_value "nomb_distr"))
+
+([Parte2_ProjectKB_Class20084] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([Parte2_ProjectKB_Class20085] of  String
+
+	(name "Chalet")
+	(string_value "{CHALET+}%3ANAME"))
+
+([Parte2_ProjectKB_Class20086] of  String
+
+	(name ":RULE")
+	(string_value "%3ADEFINITION-NAME"))
+
+([Parte2_ProjectKB_Class20087] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([Parte2_ProjectKB_Class20088] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([Parte2_ProjectKB_Class20089] of  String
+
+	(name "Inmobiliaria")
+	(string_value "nombre_inmo"))
+
+([Parte2_ProjectKB_Class20090] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([Parte2_ProjectKB_Class20091] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([Parte2_ProjectKB_Class20103] of  Map_Entry
+([Parte2_ProjectKB_Class20092] of  Map_Entry
 
 	(key "change_tracking_active")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([Parte2_ProjectKB_Class20104] of  Map_Entry
-
-	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
@@ -1271,19 +1277,19 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
-		[Parte2_ProjectKB_Class10075]
+		[STANDARD_CLASS_FORM_WIDGET]
 		[Parte2_ProjectKB_Class10130]
+		[STANDARD_SLOT_FORM_WIDGET]
+		[Parte2_ProjectKB_Class10109]
 		[Parte2_ProjectKB_Class10168]
+		[Parte2_ProjectKB_Class10210]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[Parte2_ProjectKB_Class10189]
 		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[Parte2_ProjectKB_Class10147]
-		[STANDARD_CLASS_FORM_WIDGET]
 		[Parte2_ProjectKB_Class10088]
-		[Parte2_ProjectKB_Class10109]
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[Parte2_ProjectKB_Class10189]
-		[STANDARD_SLOT_FORM_WIDGET]
-		[Parte2_ProjectKB_Class10210])
+		[Parte2_ProjectKB_Class10075])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -1346,7 +1352,7 @@
 ([ruiewj_ProjectKB_Class175] of  String
 
 	(name "SearchTab_Query")
-	(string_value "Query Name: Pregunta 1. Qué pisos con ascensor hay en Arganzuela por menos de 300.000€ y más de 70 metros cuadrados\nMatch All:true\nLength: 4\nRegistro	superficie	is greater than	Other:70	1	\nPisos	ascensor	is	Other:true	1	\nRegistro	distrito	contains	Instance:ruiewj_Class1|Arganzuela	1	\nRegistro	precio	is less than	Other:300000	1	\n\nQuery Name: Pregunta 2. Qué chalets independientes con jardín, chimenea y dos plazas de garaje se venden en Moncloa-Aravaca\nMatch All:true\nLength: 4\nChalet	jardin	is	Other:true	1	\nChalet	chimenea	is	Other:true	1	\nRegistro	pl_garaje	is	Other:2	1	\nRegistro	distrito	contains	Instance:ruiewj_Class2|Moncloa-Aravaca	1	\n\nQuery Name: Pregunta 3. Qué inmobiliarias online tienen pisos a la venta en Latina\nMatch All:true\nLength: 2\nInmobiliaria	onLine	is	Other:true	1	\nInmobiliaria	viviendas_por_inmobiliaria	contains	Query:Aux 3. Pisos en La Latina|Aux 3. Pisos en La Latina	1	\n\nQuery Name: Aux 3. Pisos en La Latina\nMatch All:true\nLength: 2\nRegistro	distrito	contains	Instance:ruiewj_Class3|Latina	1	\nTipo	tipo	is	Other:Piso	1	\n\nQuery Name: Pregunta 4. Qué estudios con cocina independiente vende en Chamberí la inmobiliaria física TuCasa\nMatch All:true\nLength: 3\nEstudios	cocina_indep	is	Other:true	1	\nRegistro	distrito	contains	Instance:ruiewj_Class26|Chamberí	1	\nRegistro	inmobiliaria	contains	Instance:KB_269154_Class18|TuCasa	1	\n\nQuery Name: Aux 5.2. Chalets de mas de 1 millon de euros vendidos por inmobiliarias online\nMatch All:true\nLength: 3\nChalet	tipo	is	Other:Chalet	1	\nRegistro	inmobiliaria	contains	Instance: | 	1	\nRegistro	precio	is greater than	Other:1000000	1	\n\nQuery Name: Aux 5.1 Inmobiliarias Online\nMatch All:true\nLength: 1\nInmobiliaria	onLine	is	Other:true	1	\n\nQuery Name: Pregunta 5. Qué distritos tienen chalets en venta en inmobiliarias online con precios superiores al millón de euros\nMatch All:true\nLength: 1\nDistrito	viviendas_por_distritos	contains	Instance: | 	1	\n\nQuery Name: Aux 6. Distritos con criminalidad baja y nivel de contaminación bajo\nMatch All:true\nLength: 2\nDistrito	contaminacion	is	Other:baja	1	\nDistrito	criminalidad	is	Other:baja	1	\n\nQuery Name: Pregunta 6. Qué viviendas de tres dormitorios hay a la venta en distritos con criminalidad baja y nivel de contaminación bajo\nMatch All:true\nLength: 2\nRegistro	habitaciones	is	Other:3	1	\nRegistro	distrito	contains	Query:Aux 6. Distritos con criminalidad baja y nivel de contaminación bajo|Aux 6. Distritos con criminalidad baja y nivel de contaminación bajo	1	\n\nQuery Name: Pregunta 7. Qué viviendas son accesibles (son chalets, pisos bajos o tienen ascensor)\nMatch All:false\nLength: 3\nChalet	tipo	is	Other:Chalet	1	\nPisos	planta	is	Other:baja	1	\nPisos	ascensor	is	Other:true	1	\n\n"))
+	(string_value "Query Name: Pregunta 1. Qu� pisos con ascensor hay en Arganzuela por menos de 300.000� y m�s de 70 metros cuadrados\nMatch All:true\nLength: 4\nRegistro	superficie	is greater than	Other:70	1	\nPisos	ascensor	is	Other:true	1	\nRegistro	distrito	contains	Instance:ruiewj_Class1|Arganzuela	1	\nRegistro	precio	is less than	Other:300000	1	\n\nQuery Name: Pregunta 2. Qu� chalets independientes con jard�n, chimenea y dos plazas de garaje se venden en Moncloa-Aravaca\nMatch All:true\nLength: 4\nChalet	jardin	is	Other:true	1	\nChalet	chimenea	is	Other:true	1	\nRegistro	pl_garaje	is	Other:2	1	\nRegistro	distrito	contains	Instance:ruiewj_Class2|Moncloa-Aravaca	1	\n\nQuery Name: Pregunta 3. Qu� inmobiliarias online tienen pisos a la venta en Latina\nMatch All:true\nLength: 2\nInmobiliaria	onLine	is	Other:true	1	\nInmobiliaria	viviendas_por_inmobiliaria	contains	Query:Aux 3. Pisos en La Latina|Aux 3. Pisos en La Latina	1	\n\nQuery Name: Aux 3. Pisos en La Latina\nMatch All:true\nLength: 2\nRegistro	distrito	contains	Instance:ruiewj_Class3|Latina	1	\nTipo	tipo	is	Other:Piso	1	\n\nQuery Name: Pregunta 4. Qu� estudios con cocina independiente vende en Chamber� la inmobiliaria f�sica TuCasa\nMatch All:true\nLength: 3\nEstudios	cocina_indep	is	Other:true	1	\nRegistro	distrito	contains	Instance:ruiewj_Class26|Chamberí	1	\nRegistro	inmobiliaria	contains	Instance:KB_269154_Class18|TuCasa	1	\n\nQuery Name: Aux 5.2. Chalets de mas de 1 millon de euros vendidos por inmobiliarias online\nMatch All:true\nLength: 3\nChalet	tipo	is	Other:Chalet	1	\nRegistro	inmobiliaria	contains	Instance: | 	1	\nRegistro	precio	is greater than	Other:1000000	1	\n\nQuery Name: Aux 5.1 Inmobiliarias Online\nMatch All:true\nLength: 1\nInmobiliaria	onLine	is	Other:true	1	\n\nQuery Name: Pregunta 5. Qu� distritos tienen chalets en venta en inmobiliarias online con precios superiores al mill�n de euros\nMatch All:true\nLength: 1\nDistrito	viviendas_por_distritos	contains	Instance: | 	1	\n\nQuery Name: Aux 6. Distritos con criminalidad baja y nivel de contaminaci�n bajo\nMatch All:true\nLength: 2\nDistrito	contaminacion	is	Other:baja	1	\nDistrito	criminalidad	is	Other:baja	1	\n\nQuery Name: Pregunta 6. Qu� viviendas de tres dormitorios hay a la venta en distritos con criminalidad baja y nivel de contaminaci�n bajo\nMatch All:true\nLength: 2\nRegistro	habitaciones	is	Other:3	1	\nRegistro	distrito	contains	Query:Aux 6. Distritos con criminalidad baja y nivel de contaminaci�n bajo|Aux 6. Distritos con criminalidad baja y nivel de contaminaci�n bajo	1	\n\nQuery Name: Pregunta 7. Qu� viviendas son accesibles (son chalets, pisos bajos o tienen ascensor)\nMatch All:false\nLength: 3\nChalet	tipo	is	Other:Chalet	1	\nPisos	planta	is	Other:baja	1	\nPisos	ascensor	is	Other:true	1	\n\n"))
 
 ([SLOTS_TAB] of  Widget
 
