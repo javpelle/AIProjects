@@ -16,6 +16,7 @@
    (slot presupuesto_maximo)
    (slot presupuesto_minimo)
    (slot tipo_vivienda)
+   (slot viv_rec_min)
    (slot viviendas_recomendadas)
 )
 
@@ -72,13 +73,14 @@
 //ajustar a su perfil
 
 (defrule buscarViviendaMinima
-	?r0<-(object(is-a Cliente) (tipo_vivienda ?piso) (nombre_cliente ?nom) (num_habitaciones ?num_hab) (viviendas_recomendadas ?rec) (presupuesto_maximo ?max) (num_coches ?coche))
+	?r0<-(object(is-a Cliente) (tipo_vivienda ?piso) (nombre_cliente ?nom) (num_habitaciones ?num_hab) (viv_rec_min ?recM) (viviendas_recomendadas ?rec)(presupuesto_maximo ?max) (num_coches ?coche))
 	?r1<-(object(is-a ?piso) (precio ?pre) (habitaciones ?num_habita) (pl_garaje ?coche))
 	(test(<= ?num_hab ?num_habita))
 	(test(<= ?pre ?max))
+	(test(eq (member$ ?r1 ?recM) FALSE))
 	(test(eq (member$ ?r1 ?rec) FALSE))
 =>
-	(slot-insert$ ?r0 viviendas_recomendadas 1 ?r1)
+	(slot-insert$ ?r0 viv_rec_min 1 ?r1)
 )
 (reset)
 (run)
