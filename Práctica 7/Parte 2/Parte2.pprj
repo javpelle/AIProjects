@@ -1,4 +1,4 @@
-; Sun Apr 15 15:14:36 CEST 2018
+; Sun Apr 15 16:04:54 CEST 2018
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,19 +20,19 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Parte2_ProjectKB_Class20077]
-		[Parte2_ProjectKB_Class20078]
-		[Parte2_ProjectKB_Class20079]
-		[Parte2_ProjectKB_Class20080]
-		[Parte2_ProjectKB_Class20081]
-		[Parte2_ProjectKB_Class20082]
-		[Parte2_ProjectKB_Class20083]
-		[Parte2_ProjectKB_Class20084]
-		[Parte2_ProjectKB_Class20085]
-		[Parte2_ProjectKB_Class20086]
-		[Parte2_ProjectKB_Class20087]
-		[Parte2_ProjectKB_Class20088]
-		[Parte2_ProjectKB_Class20089]))
+		[Parte2_ProjectKB_Class10029]
+		[Parte2_ProjectKB_Class10030]
+		[Parte2_ProjectKB_Class10031]
+		[Parte2_ProjectKB_Class10032]
+		[Parte2_ProjectKB_Class10033]
+		[Parte2_ProjectKB_Class10034]
+		[Parte2_ProjectKB_Class10035]
+		[Parte2_ProjectKB_Class10036]
+		[Parte2_ProjectKB_Class10037]
+		[Parte2_ProjectKB_Class10038]
+		[Parte2_ProjectKB_Class10039]
+		[Parte2_ProjectKB_Class10040]
+		[Parte2_ProjectKB_Class10041]))
 
 ([CLSES_TAB] of  Widget
 
@@ -76,9 +76,6 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_262000_Class3] of  Map
-)
-
 ([KB_296336_Class0] of  String
 
 	(name "factory_class_name")
@@ -87,9 +84,9 @@
 ([KB_296336_Class1] of  Map
 
 	(entries
-		[Parte2_ProjectKB_Class20090]
-		[Parte2_ProjectKB_Class20091]
-		[Parte2_ProjectKB_Class20092]))
+		[Parte2_ProjectKB_Class10042]
+		[Parte2_ProjectKB_Class10043]
+		[Parte2_ProjectKB_Class10044]))
 
 ([KB_296336_Class173] of  String
 
@@ -183,6 +180,9 @@
 
 	(properties [ruiewj_ProjectKB_Class175]))
 
+([KB_490846_Class3] of  Map
+)
+
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
@@ -270,6 +270,92 @@
 
 ([Parte2_ProjectKB_Class10] of  Property_List
 )
+
+([Parte2_ProjectKB_Class10029] of  String
+
+	(name "Cliente")
+	(string_value "nombre_cliente"))
+
+([Parte2_ProjectKB_Class10030] of  String
+
+	(name ":FUNCTION")
+	(string_value "%3ADEFINITION-NAME"))
+
+([Parte2_ProjectKB_Class10031] of  String
+
+	(name "Registro")
+	(string_value "distrito"))
+
+([Parte2_ProjectKB_Class10032] of  String
+
+	(name "Estudios")
+	(string_value "{ESTUDIO}"))
+
+([Parte2_ProjectKB_Class10033] of  String
+
+	(name ":JESS-DEFINITION")
+	(string_value "%3ADEFINITION-NAME"))
+
+([Parte2_ProjectKB_Class10034] of  String
+
+	(name "Pisos")
+	(string_value "{PISO+}%3ANAME"))
+
+([Parte2_ProjectKB_Class10035] of  String
+
+	(name "Distrito")
+	(string_value "nomb_distr"))
+
+([Parte2_ProjectKB_Class10036] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([Parte2_ProjectKB_Class10037] of  String
+
+	(name "Chalet")
+	(string_value "{CHALET+}%3ANAME"))
+
+([Parte2_ProjectKB_Class10038] of  String
+
+	(name ":RULE")
+	(string_value "%3ADEFINITION-NAME"))
+
+([Parte2_ProjectKB_Class10039] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([Parte2_ProjectKB_Class10040] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([Parte2_ProjectKB_Class10041] of  String
+
+	(name "Inmobiliaria")
+	(string_value "nombre_inmo"))
+
+([Parte2_ProjectKB_Class10042] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([Parte2_ProjectKB_Class10043] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([Parte2_ProjectKB_Class10044] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
 
 ([Parte2_ProjectKB_Class10075] of  Widget
 
@@ -910,92 +996,6 @@
 
 ([Parte2_ProjectKB_Class20] of  Property_List
 )
-
-([Parte2_ProjectKB_Class20077] of  String
-
-	(name "Cliente")
-	(string_value "nombre_cliente"))
-
-([Parte2_ProjectKB_Class20078] of  String
-
-	(name ":FUNCTION")
-	(string_value "%3ADEFINITION-NAME"))
-
-([Parte2_ProjectKB_Class20079] of  String
-
-	(name "Registro")
-	(string_value "distrito"))
-
-([Parte2_ProjectKB_Class20080] of  String
-
-	(name "Estudios")
-	(string_value "{ESTUDIO}"))
-
-([Parte2_ProjectKB_Class20081] of  String
-
-	(name ":JESS-DEFINITION")
-	(string_value "%3ADEFINITION-NAME"))
-
-([Parte2_ProjectKB_Class20082] of  String
-
-	(name "Pisos")
-	(string_value "{PISO+}%3ANAME"))
-
-([Parte2_ProjectKB_Class20083] of  String
-
-	(name "Distrito")
-	(string_value "nomb_distr"))
-
-([Parte2_ProjectKB_Class20084] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([Parte2_ProjectKB_Class20085] of  String
-
-	(name "Chalet")
-	(string_value "{CHALET+}%3ANAME"))
-
-([Parte2_ProjectKB_Class20086] of  String
-
-	(name ":RULE")
-	(string_value "%3ADEFINITION-NAME"))
-
-([Parte2_ProjectKB_Class20087] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([Parte2_ProjectKB_Class20088] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([Parte2_ProjectKB_Class20089] of  String
-
-	(name "Inmobiliaria")
-	(string_value "nombre_inmo"))
-
-([Parte2_ProjectKB_Class20090] of  Map_Entry
-
-	(key "suppress_instance_counting")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([Parte2_ProjectKB_Class20091] of  Map_Entry
-
-	(key "add_name_on_instance_form")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([Parte2_ProjectKB_Class20092] of  Map_Entry
-
-	(key "change_tracking_active")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
 
 ([Parte2_ProjectKB_Class21] of  Widget
 
