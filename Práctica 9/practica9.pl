@@ -6,10 +6,10 @@ transformar(_, 3, 3).
 
 % queremos que la lista de palabras queda separada como un conjunto de palabras
 
+unaPalabra(":", ":"):-!. 
+unaPalabra("\"", "\""):-!. 
 unaPalabra("¿", "¿"):-!. 
 unaPalabra("?", "?"):-!. 
-unaPalabra("\"", "\""):-!. 
-unaPalabra(":", ":"):-!. 
 unaPalabra(String, Atomico) :- atom_string(Atomico, String). 
 
 % si la frase entrada es vacía, entonces, hemos terminado
