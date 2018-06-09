@@ -26,7 +26,7 @@ cambiar(Frase):- write(Frase), nl, frase(X, Frase, []), !,
 
 % cambiar pronombres reflexivos: me, te, se, nos, os, se
 % en persona guardamos informaciones relacionadas con persona en sujeto
-% y en complemento indirecto
+% y en la oración subordinada
 
 cambiarPalabra(Personas, PRdirecto, PRindirecto):-
 	esPronRef(Pdirecto, Persona, Numero), 
