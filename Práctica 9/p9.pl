@@ -1,7 +1,16 @@
+% Debido a la falta de tiempo porque estamos en el periodo de examenes, no hemos hecho la parte 2, 
+% y en la primera parte solo hemos el reconocimiento de frases en directo o en indirecto.
+
+
+
+
+% el programa recibe una frase en directo o en indirecto, lo reconocemos y hacemos el cambio directo-indirecto o 
+% indirecto-directo.
+
 frase(Salida) --> Directo(Salida).
 frase(Salida) --> Indirecto(Salida).
 
-
+% tansformar una frase en directo a indirecto
 directo (Salida) --> 
 	principioOracion(OracionPpio, Sujeto, CIndirecto), 
 	[":"], ["\""],
@@ -12,6 +21,7 @@ directo (Salida) -->
 		%componerFraseIndirecta(Modo, FrasePrincipal, OracionSubordinadaIndirecta, Salida)
 	}.
 
+% transformar una frase indirecto a directo
 indirecto(Salida) -->
 	principioOracion(OracionPpio, Sujeto, CIndirecto), 
 	[que],
@@ -28,7 +38,9 @@ interrogacion(si) --> [¿].
 interrogacion(no) --> [].
 interrogacion(si) --> [?]
 
-principioOracion(OracionPpio, Sujeto(Persona, Num), CIndirecto(PersonaCI, NumCI))) -->
+% transforma la oración principal. 
+
+principioOracion(OracionPpio, Sujeto(Persona, Num), CIndirecto(PersonaCI, NumCI)) -->
 	sujeto(Sujeto, Persona, Num, _),
 	[CI], {pronAtono(CI, PersonaCI, NumCI)}, 
 	[Verbo], {verboDecir(Verbo, Persona, Num)},
@@ -38,6 +50,7 @@ principioOracion(OracionPpio, Sujeto(Persona, Num), CIndirecto(PersonaCI, NumCI)
 sujeto([Pronombre], Persona, Numero, Genero) --> [Pronombre], {pronPersonal(Pronombre,Persona, Numero, _)}.
 sujeto([Nombre], 3, singular, Genero) --> [Nombre], {nombrePropio(Nombre, _)}
 
+% transforma la oración con verbos nominales, es decir, ser, estar, parecer.
 oracionFinal(OracionFinal) --> 
 	(sujeto(Sujeto, Persona, Numero, Genero) ; {Sujeto = []}),
 	[Verbo], {verboCop(Verbo, _, _, Persona, Numero)}, 
@@ -45,6 +58,7 @@ oracionFinal(OracionFinal) -->
 	(sPreposicional(SP) ; {SP = []}),
 	{append([Sujeto, [Verbo], Atributo, SP], OracionSubordinada)}.
 
+% transforma las oraciones con complemento directo
 oracionFinal(OracionFinal)-->
 	(sujeto(Sujeto, Persona, Numero) ; {Sujeto = []}), 
 	[Verbo], {verboPred(Verbo, _, _, Persona, Numero)}, 
@@ -55,21 +69,25 @@ oracionFinal(OracionFinal)-->
 atributo(Atributo, Genero, Numero) --> sAdjetival(Atributo, Genero, Numero).
 atributo(Atributo, _, _) --> sNominal(Atributo).
 
+% sintagma adjetival
 sAdjetival(Adjetival, Genero, Numero) --> 
 	[Adjetivo], {adjetivo(Adjetivo, Numero, Genero)},
 	(sPreposicional(SP) ; {SP = []}),
 	{append([[Adj], SP], Adjetival)}.
 
+% sintagma preposicional con sintagma nomial
 sPreposicional(SP) --> 
 	[Prep], {preposicion(Prep)},
 	sNominal(SN),
 	{append([[Prep], SN], SP)}.
 	
+% sintagma preposicional con sintagma verbal
 sPreposicional(SP) --> 
 	[Prep], {preposicion(Prep)},
 	sVerbal(SV),
 	{append([[Prep], SN], SP)}.
 	
+% sintagma nominal
 sNominal(SN) --> 
 	[Det], {determinante(Det, Numero, Genero)}, 
 	[Sust],{sustantivo(Sust, Genero, Numero)}.
@@ -77,9 +95,10 @@ sNominal(SN) -->
 
 sNominal([Nombre]) --> [Nombre], {nombrePropio(Nombre, _)}.
 
+% sintagma verbal
 sVerbal([SV]) --> infinitivo(SV).
 
-
+% complemento directo, que puede ser un sintagma nominal o un sintagma preposicional 
 cDirecto(CD) --> sNominal(CD)
 cDirecto(CD) --> sPreposicional(CD)).
 
@@ -204,7 +223,7 @@ prep(de).
 prep(en).
 
 
-
+%programa principal
 consulta:- write('Escribe frase entre corchetes separando palabras con comas '), nl,
 write('o lista vacía para parar '), nl,
 read(F),
@@ -216,3 +235,11 @@ trata(F):- frase(Salida, F, []), write(Salida), consulta.
 
 trata([]):- write('final').
 % tratamiento final
+
+% transformarADirecta(Sujeto, CIndirecto, OracionSubordinadaDirecta, OracionSubordinadaIndirecta)
+% transforma de palabra a palabra en forma directa, por ejemplo
+cambiarPalabra(Var, Var):- nombrePropio(Var, _).
+cambiarPalabra(Var, Var):- verboDecir(Var, _ ,_ ).
+cambiarPalabra(Var, Var):- adjetivo(Var, _ ,_ ).
+cambiarPalabra(Var, Var):- sustantivo(Var,_,_).
+% es decir, mantenos los nombres propio, conjugaciones de verbo decir, adjetivos y los sustantivos.
