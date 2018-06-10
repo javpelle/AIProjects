@@ -1,0 +1,15 @@
+Javier Pellejero Ortega y Zhaoyan Ni.
+
+Nos ha sido imposible realizar la entraga por completo. La parte 2 relativa a la agrupación de noticias
+con Weka no la hemos podido realizar.
+
+En cuanto a la parte 1, hemos realizado la gramática junto cn un diccionario de tal manera que podemos
+analizar frases en estilo directo e indirecto, pero no hemos realizado las funciones que tranformarían
+de un estilo a otro tras el análisis. El archivo compila.
+
+La razón de tan poca realización del trabajo ha sido la mala organización junto con un calendario de 
+exámenes más que comprimido. Si sirve de consuelo, hemos entendido la construcción de las herramientas que
+conforman la parte 1 y creemos que podríamos haber reproducido por completo dichas herramientas con un poco más
+de tiempo y que en el examen podremos realizar el correspondiente ejercicio relacionado con esta práctica correctamente.
+
+Un saludo de parte de los dos alumnos y disculpas por tan escueta entrega.

@@ -1,24 +1,25 @@
+﻿% Javier Pellejero Ortega. Zhaoyan Ni
 % Debido a la falta de tiempo porque estamos en el periodo de examenes, no hemos hecho la parte 2, 
 % y en la primera parte solo hemos el reconocimiento de frases en directo o en indirecto.
 
-
+% A priori, lo que falta es la tranformación de la frase subordinada. La gramática está completa y compila.
 
 
 % el programa recibe una frase en directo o en indirecto, lo reconocemos y hacemos el cambio directo-indirecto o 
 % indirecto-directo.
 
-frase(Salida) --> Directo(Salida).
-frase(Salida) --> Indirecto(Salida).
+frase(Salida) --> directo(Salida).
+frase(Salida) --> indirecto(Salida).
 
 % tansformar una frase en directo a indirecto
-directo (Salida) --> 
+directo(Salida) -->	
 	principioOracion(OracionPpio, Sujeto, CIndirecto), 
 	[":"], ["\""],
 	interrogacion(Int),
 	oracionFinal(Directa), interrogacion(Int), ["\""],
 	{
-		%transformarAIndirecta(Sujeto, CIndirecto, OracionSubordinadaDirecta, OracionSubordinadaIndirecta),
-		%componerFraseIndirecta(Modo, FrasePrincipal, OracionSubordinadaIndirecta, Salida)
+		%transformarAIndirecta(Sujeto, CIndirecto, Pregunta, Directa, Indirecta),
+		%fraseFinal(Oracion Ppio, Indirecta, Salida).
 	}.
 
 % transformar una frase indirecto a directo
@@ -28,19 +29,18 @@ indirecto(Salida) -->
 	pregunta(Pregunta),
 	oracionFinal(Indirecta),
 	{
-		%transformarADirecta(Sujeto, CIndirecto, OracionSubordinadaDirecta, OracionSubordinadaIndirecta),
-		%componerFraseDirecta(Modo, FrasePrincipal, OracionSubordinadaDirecta, Salida)
+		%transformarADirecta(Sujeto, CIndirecto, Pregunta, Indirecta, Directa),
+		%fraseFinal(Oracion Ppio, Directa, Salida).
 	}.
 
 pregunta(si) --> [si].
 pregunta(no) --> [].
-interrogacion(si) --> [¿].
+interrogacion(si) --> ["¿"].
 interrogacion(no) --> [].
-interrogacion(si) --> [?]
+interrogacion(si) --> ["?"].
 
-% transforma la oración principal. 
-
-principioOracion(OracionPpio, Sujeto(Persona, Num), CIndirecto(PersonaCI, NumCI)) -->
+% transforma la oración principal.
+principioOracion(OracionPpio, sujeto(Persona, Num), cIndirecto(PersonaCI, NumCI)) -->
 	sujeto(Sujeto, Persona, Num, _),
 	[CI], {pronAtono(CI, PersonaCI, NumCI)}, 
 	[Verbo], {verboDecir(Verbo, Persona, Num)},
@@ -48,7 +48,7 @@ principioOracion(OracionPpio, Sujeto(Persona, Num), CIndirecto(PersonaCI, NumCI)
 	
 
 sujeto([Pronombre], Persona, Numero, Genero) --> [Pronombre], {pronPersonal(Pronombre,Persona, Numero, _)}.
-sujeto([Nombre], 3, singular, Genero) --> [Nombre], {nombrePropio(Nombre, _)}
+sujeto([Nombre], 3, singular, Genero) --> [Nombre], {nombrePropio(Nombre, _)}.
 
 % transforma la oración con verbos nominales, es decir, ser, estar, parecer.
 oracionFinal(OracionFinal) --> 
@@ -95,12 +95,12 @@ sNominal(SN) -->
 
 sNominal([Nombre]) --> [Nombre], {nombrePropio(Nombre, _)}.
 
-% sintagma verbal
+% sintagma verbal. Podría ser más complejo, como otra subordinada, pero lo hemos reducido a infinitivos (mas, opcionalmente, un sufijo).
 sVerbal([SV]) --> infinitivo(SV).
 
 % complemento directo, que puede ser un sintagma nominal o un sintagma preposicional 
-cDirecto(CD) --> sNominal(CD)
-cDirecto(CD) --> sPreposicional(CD)).
+cDirecto(CD) --> sNominal(CD).
+cDirecto(CD) --> sPreposicional(CD).
 
 
 %%%%%%%%%%%%%%%%
@@ -116,7 +116,7 @@ pronPersonal(ellos, 3, plural, masculino).
 pronPersonal(ellas, 3, plural, femenino).
 
 nombrePropio(María, femenino).
-nombrePropio(Juan masculino).
+nombrePropio(Juan, masculino).
 nombrePropio(Miguel, masculino).
 nombrePropio(Lucía, femenino).
 nombrePropio(Luis, masculino).
@@ -133,14 +133,14 @@ verboDecir(dijiste, 2, singular).
 verboDecir(dijo, 3, singular).
 verboDecir(dijimos, 1, plural).
 verboDecir(dijisteis, 2, plural).
-verboDecir(dijeron, 3, plural)
+verboDecir(dijeron, 3, plural).
 
 verboDecir(pregunté, 1, singular).
 verboDecir(preguntaste, 2, singular).
 verboDecir(preguntó, 3, singular).
 verboDecir(preguntamos, 1, plural).
 verboDecir(preguntasteis, 2, plural).
-verboDecir(preguntaron, 3, plural)
+verboDecir(preguntaron, 3, plural).
 
 verboCop(soy, ser, presente, 1, singular).
 verboCop(eres, ser, presente, 2, singular).
