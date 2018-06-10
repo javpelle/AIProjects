@@ -1,4 +1,4 @@
-% Convertidor de frases directas en indirectas y viceversa
+﻿% Convertidor de frases directas en indirectas y viceversa
 % Jaime Sevilla 2018
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
