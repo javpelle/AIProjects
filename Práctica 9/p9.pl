@@ -243,3 +243,6 @@ cambiarPalabra(Var, Var):- verboDecir(Var, _ ,_ ).
 cambiarPalabra(Var, Var):- adjetivo(Var, _ ,_ ).
 cambiarPalabra(Var, Var):- sustantivo(Var,_,_).
 % es decir, mantenos los nombres propio, conjugaciones de verbo decir, adjetivos y los sustantivos.
+
+% componerFraseIndirecta(Modo, FrasePrincipal, OracionSubordinadaIndirecta, Salida)
+% para componer la frase, usamos el método append de prolog
