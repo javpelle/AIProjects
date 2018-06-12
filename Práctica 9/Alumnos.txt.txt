@@ -1,15 +1,15 @@
 Javier Pellejero Ortega y Zhaoyan Ni.
 
-Nos ha sido imposible realizar la entraga por completo. La parte 2 relativa a la agrupación de noticias
-con Weka no la hemos podido realizar.
+Pese a el tiempo adicional no hemos conseguido acabar la entrega.
 
 En cuanto a la parte 1, hemos realizado la gramática junto cn un diccionario de tal manera que podemos
-analizar frases en estilo directo e indirecto, pero no hemos realizado las funciones que tranformarían
-de un estilo a otro tras el análisis. El archivo compila.
+analizar frases en estilo directo e indirecto. Al introducir una frase en estilo directo da fallo puesto
+que no conseguimos que lea comillas. El indirecto lo analiza sin problemas. En cuanto a la transformación de
+indirecto a directo funciona con la persona y tiempo de la oración subordinada, pero no con otros elementos
+sintácticos como pronombres posesivos (de "mi amigo" a "su amigo", por ejemplo) o coplementos indirectos arraigados
+como sufijos en infinitivos ("verte" a "verme"). Por último, la transformación de directo a indirecto está
+a medio implementar y no sabemos si funciona debido que no analiza oraciones directas.
 
-La razón de tan poca realización del trabajo ha sido la mala organización junto con un calendario de 
-exámenes más que comprimido. Si sirve de consuelo, hemos entendido la construcción de las herramientas que
-conforman la parte 1 y creemos que podríamos haber reproducido por completo dichas herramientas con un poco más
-de tiempo y que en el examen podremos realizar el correspondiente ejercicio relacionado con esta práctica correctamente.
+En cuanto a la parte 2, hemos realizado sólo la clasificación que se adjunta en la memoria.
 
 Un saludo de parte de los dos alumnos y disculpas por tan escueta entrega.

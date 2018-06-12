@@ -12,25 +12,27 @@ frase(Salida) --> directo(Salida).
 frase(Salida) --> indirecto(Salida).
 
 % tansformar una frase en directo a indirecto
+% No nos lee las comillas y da rechazo.
 directo(Salida) -->	
-	principioOracion(OracionPpio, Sujeto, CIndirecto), 
+	principioOracion(OracionPpio), 
 	[":"], ["\""],
 	interrogacion(Int),
-	oracionFinal(Directa), interrogacion(Int), ["\""],
+	{write(hola),nl},
+	oracionFinal(OracionFinal, Sujeto, Verbo, Persona, Numero), interrogacion(Int), ["\""],
 	{
-		%transformarAIndirecta(Sujeto, CIndirecto, Pregunta, Directa, Indirecta),
-		%fraseFinal(Oracion Ppio, Indirecta, Salida).
+		transformarAIndirecta(OracionFinal, Sujeto, Verbo, Persona, Numero, Int, Indirecta),
+		append([OracionPpio,Indirecta], Salida)
 	}.
 
 % transformar una frase indirecto a directo
 indirecto(Salida) -->
-	principioOracion(OracionPpio, Sujeto, CIndirecto), 
+	principioOracion(OracionPpio), 
 	[que],
 	pregunta(Pregunta),
-	oracionFinal(Indirecta),
+	oracionFinal(OracionFinal, Sujeto, Verbo, Persona, Numero),
 	{
-		%transformarADirecta(Sujeto, CIndirecto, Pregunta, Indirecta, Directa),
-		%fraseFinal(Oracion Ppio, Directa, Salida).
+		transformarADirecta(OracionFinal, Sujeto, Verbo, Persona, Numero, Pregunta, Directa),
+		append([OracionPpio,Directa], Salida)
 	}.
 
 pregunta(si) --> [si].
@@ -39,71 +41,95 @@ interrogacion(si) --> ["¿"].
 interrogacion(no) --> [].
 interrogacion(si) --> ["?"].
 
-% transforma la oración principal.
-principioOracion(OracionPpio, sujeto(Persona, Num), cIndirecto(PersonaCI, NumCI)) -->
+% Analiza la oración principal.
+principioOracion(OracionPpio) -->
 	sujeto(Sujeto, Persona, Num, _),
-	[CI], {pronAtono(CI, PersonaCI, NumCI)}, 
+	[CI], {pronAtono(CI, _, _)}, 
 	[Verbo], {verboDecir(Verbo, Persona, Num)},
-	{append([Sujeto, [Pronombre, Verbo]], OracionPpio)}.
+	{append([Sujeto, [CI, Verbo]], OracionPpio)}.
 	
 
-sujeto([Pronombre], Persona, Numero, Genero) --> [Pronombre], {pronPersonal(Pronombre,Persona, Numero, _)}.
-sujeto([Nombre], 3, singular, Genero) --> [Nombre], {nombrePropio(Nombre, _)}.
+sujeto([Pronombre], Persona, Numero, Genero) --> [Pronombre], {pronPersonal(Pronombre,Persona, Numero, Genero)}.
+sujeto([Nombre], 3, singular, Genero) --> [Nombre], {nombrePropio(Nombre, Genero)}.
 
-% transforma la oración con verbos nominales, es decir, ser, estar, parecer.
-oracionFinal(OracionFinal) --> 
+% Analiza la oración con verbos nominales, es decir, ser, estar, parecer.
+oracionFinal(OracionFinal, Sujeto, Verbo, Persona, Numero) -->
 	(sujeto(Sujeto, Persona, Numero, Genero) ; {Sujeto = []}),
 	[Verbo], {verboCop(Verbo, _, _, Persona, Numero)}, 
 	atributo(Atributo, Genero, Numero),
 	(sPreposicional(SP) ; {SP = []}),
-	{append([Sujeto, [Verbo], Atributo, SP], OracionSubordinada)}.
+	{append([Atributo, SP], OracionFinal)}.
 
-% transforma las oraciones con complemento directo
-oracionFinal(OracionFinal)-->
-	(sujeto(Sujeto, Persona, Numero) ; {Sujeto = []}), 
+% Analiza las oraciones con complemento directo
+oracionFinal(OracionFinal, Sujeto, Verbo, Persona, Numero)-->
+	(sujeto(Sujeto, Persona, Numero, _) ; {Sujeto = []}), 
 	[Verbo], {verboPred(Verbo, _, _, Persona, Numero)}, 
 	cDirecto(CD), 
 	(sPreposicional(SP) ; {SP = []}),
-	{append([Sujeto, [Verbo], CD, CC], OracionSubordinada)}.
+	{append([CD, CC], OracionFinal)}.
 
 atributo(Atributo, Genero, Numero) --> sAdjetival(Atributo, Genero, Numero).
-atributo(Atributo, _, _) --> sNominal(Atributo).
+atributo(Atributo, Genero, Numero) --> sNominal(Atributo, Genero, Numero).
 
 % sintagma adjetival
-sAdjetival(Adjetival, Genero, Numero) --> 
+sAdjetival(Adjetival, Genero, Numero) -->
 	[Adjetivo], {adjetivo(Adjetivo, Numero, Genero)},
 	(sPreposicional(SP) ; {SP = []}),
-	{append([[Adj], SP], Adjetival)}.
+	{append([[Adjetivo], SP], Adjetival)}.
 
 % sintagma preposicional con sintagma nomial
 sPreposicional(SP) --> 
 	[Prep], {preposicion(Prep)},
-	sNominal(SN),
+	sNominal(SN,_,_),
 	{append([[Prep], SN], SP)}.
 	
 % sintagma preposicional con sintagma verbal
 sPreposicional(SP) --> 
 	[Prep], {preposicion(Prep)},
 	sVerbal(SV),
-	{append([[Prep], SN], SP)}.
+	{append([[Prep], SV], SP)}.
 	
 % sintagma nominal
-sNominal(SN) --> 
+sNominal(SN, Genero, Numero) -->
 	[Det], {determinante(Det, Numero, Genero)}, 
-	[Sust],{sustantivo(Sust, Genero, Numero)}.
-	{append([[Det], Sust], SN)}.
+	[Sust],{sustantivo(Sust, Genero, Numero)},
+	{append([[Det], [Sust]], SN)}.
 
-sNominal([Nombre]) --> [Nombre], {nombrePropio(Nombre, _)}.
+sNominal([Nombre],Genero,_) --> [Nombre], {nombrePropio(Nombre, Genero)}.
 
 % sintagma verbal. Podría ser más complejo, como otra subordinada, pero lo hemos reducido a infinitivos (mas, opcionalmente, un sufijo).
-sVerbal([SV]) --> infinitivo(SV).
+sVerbal([Verbo]) --> [Verbo], {infinitivo(Verbo)}.
 
 % complemento directo, que puede ser un sintagma nominal o un sintagma preposicional 
 cDirecto(CD) --> sNominal(CD).
 cDirecto(CD) --> sPreposicional(CD).
 
+%--------------- FUNCIONES ------------------------%
 
-%%%%%%%%%%%%%%%%
+%-- Ambigüedad: me dijo que estaba bien puede ser
+%-- me dijo "yo estoy bien"
+%-- me dijo "él estaba bien" (nos quedamos con esta transformacion)
+transformarADirecta(OracionFinal, Sujeto, Verbo, 3, Numero, Pregunta, Directa) :-
+	((Pregunta = si, Inicio = ["¿"], Final = ["?"]) ; (Pregunta = no, Inicio = [], Final = [])),
+	verbo(Verbo, Infinitivo,_,_,_),
+	verbo(VerboNuevo, Infinitivo, presente, 3, Numero),	
+	append([[":\""],Inicio, Sujeto, [VerboNuevo], OracionFinal, Final,["\""]], Directa).
+	
+transformarADirecta(OracionFinal, Sujeto, Verbo, 1, Numero, Pregunta, Directa) :-
+	((Pregunta = si, Inicio = ["¿"], Final = ["?"]) ; (Pregunta = no, Inicio = [], Final = [])),
+	verbo(Verbo, Infinitivo,_,_,_),
+	verbo(VerboNuevo, Infinitivo, presente, 2, Numero),	
+	append([[":\""],Inicio, ["tú"], [VerboNuevo], OracionFinal, Final,["\""]], Directa).
+
+%-- Faltaría alguna más de transformacion a indirecta.
+transformarAIndirecta(OracionFinal, Sujeto, Verbo, 1, Numero, Pregunta, Directa) :-
+	((Pregunta = si, Inicio = [si]) ; (Pregunta = no, Inicio = [])),
+	verbo(Verbo, Infinitivo,_,_,_),
+	verbo(VerboNuevo, Infinitivo, pasado, 3, Numero),	
+	append([[que],Inicio, ["él"], [VerboNuevo], OracionFinal], Indirecta).
+
+
+%--------------- DICCIONARIO ----------------------%
 pronPersonal(yo, 1, singular, _).
 pronPersonal(tu, 2, singular, _).
 pronPersonal(él, 3, singular, masculino).
@@ -115,11 +141,11 @@ pronPersonal(vosotras, 2, plural, femenino).
 pronPersonal(ellos, 3, plural, masculino).
 pronPersonal(ellas, 3, plural, femenino).
 
-nombrePropio(María, femenino).
-nombrePropio(Juan, masculino).
-nombrePropio(Miguel, masculino).
-nombrePropio(Lucía, femenino).
-nombrePropio(Luis, masculino).
+nombrePropio(maría, femenino).
+nombrePropio(juan, masculino).
+nombrePropio(miguel, masculino).
+nombrePropio(lucía, femenino).
+nombrePropio(luis, masculino).
 
 pronAtono(me, 1, singular).
 pronAtono(te, 2, singular).
@@ -142,6 +168,9 @@ verboDecir(preguntamos, 1, plural).
 verboDecir(preguntasteis, 2, plural).
 verboDecir(preguntaron, 3, plural).
 
+verbo(Verbo, Infinitivo, Tiempo, Persona, Numero) :- verboCop(Verbo, Infinitivo, Tiempo, Persona, Numero).
+verbo(Verbo, Infinitivo, Tiempo, Persona, Numero) :- verboPred(Verbo, Infinitivo, Tiempo, Persona, Numero).
+
 verboCop(soy, ser, presente, 1, singular).
 verboCop(eres, ser, presente, 2, singular).
 verboCop(es, ser, presente, 3, singular).
@@ -163,19 +192,26 @@ verboCop(estamos, estar, presente, 1, plural).
 verboCop(estáis, estar, presente, 2, plural).
 verboCop(están, estar, presente, 3, plural).
 
-verboPred(necesitaba, estar, pasado, 1, singular).
-verboPred(necesitabas, estar, pasado, 2, singular).
-verboPred(necesitaba, estar, pasado, 3, singular).
-verboPred(necesitábamos, estar, pasado, 1, plural).
-verboPred(necesitábais, estar, pasado, 2, plural).
-verboPred(necesitaban, estar, pasado, 3, plural).
+verboCop(estaba, estar, pasado, 1, singular).
+verboCop(estabas, estar, pasado, 2, singular).
+verboCop(estaba, estar, pasado, 3, singular).
+verboCop(estábamos, estar, pasado, 1, plural).
+verboCop(estábais, estar, pasado, 2, plural).
+verboCop(estaban, estar, pasado, 3, plural).
 
-verboPred(necesito, estar, presente, 1, singular).
-verboPred(necesitas, estar, presente, 2, singular).
-verboPred(necesita, estar, presente, 3, singular).
-verboPred(necesitamos, estar, presente, 1, plural).
-verboPred(necesitais, estar, presente, 2, plural).
-verboPred(necesitan, estar, presente, 3, plural).
+verboPred(necesitaba, necesitar, pasado, 1, singular).
+verboPred(necesitabas, necesitar, pasado, 2, singular).
+verboPred(necesitaba, necesitar, pasado, 3, singular).
+verboPred(necesitábamos, necesitar, pasado, 1, plural).
+verboPred(necesitábais, necesitar, pasado, 2, plural).
+verboPred(necesitaban, necesitar, pasado, 3, plural).
+
+verboPred(necesito, necesitar, presente, 1, singular).
+verboPred(necesitas, necesitar, presente, 2, singular).
+verboPred(necesita, necesitar, presente, 3, singular).
+verboPred(necesitamos, necesitar, presente, 1, plural).
+verboPred(necesitais, necesitar, presente, 2, plural).
+verboPred(necesitan, necesitar, presente, 3, plural).
 
 adjetivo(guapo, singular, masculino).
 adjetivo(guapos, plural, masculino).
@@ -209,40 +245,30 @@ determinanteDemostrativo(esta, singular, femenino, cerca).
 determinanteDemostrativo(ese, singular, masculino, lejos).
 determinanteDemostrativo(esa, singular, femenino, lejos).
 
-sustantivo(cambio, masculino, sigular).
-sustantivo(amigo, masculino, sigular).
-sustantivo(vida, femenino, sigular).
-sustantivo(noche, femenino, sigular).
+sustantivo(cambio, masculino, singular).
+sustantivo(amigo, masculino, singular).
+sustantivo(amigo, femenino, singular).
+sustantivo(vida, femenino, singular).
+sustantivo(noche, femenino, singular).
 
 infinitivo(ver).
 infinitivo(verme).
 infinitivo(verte).
 
-prep(a).
-prep(de).
-prep(en).
+preposicion(a).
+preposicion(de).
+preposicion(en).
 
 
-%programa principal
+%------------- MAIN -------------%
 consulta:- write('Escribe frase entre corchetes separando palabras con comas '), nl,
-write('o lista vacía para parar '), nl,
-read(F),
-trata(F).
+	write('o lista vacía para parar '), nl,
+	read(F),
+	trata(F).
 
 
-trata(F):- frase(Salida, F, []), write(Salida), consulta.
+trata(F):- frase(Salida, F, []), write(Salida), nl, consulta.
 % tratamiento caso general
 
-trata([]):- write('final').
+trata([]):- write('final'),nl.
 % tratamiento final
-
-% transformarADirecta(Sujeto, CIndirecto, OracionSubordinadaDirecta, OracionSubordinadaIndirecta)
-% transforma de palabra a palabra en forma directa, por ejemplo
-cambiarPalabra(Var, Var):- nombrePropio(Var, _).
-cambiarPalabra(Var, Var):- verboDecir(Var, _ ,_ ).
-cambiarPalabra(Var, Var):- adjetivo(Var, _ ,_ ).
-cambiarPalabra(Var, Var):- sustantivo(Var,_,_).
-% es decir, mantenos los nombres propio, conjugaciones de verbo decir, adjetivos y los sustantivos.
-
-% componerFraseIndirecta(Modo, FrasePrincipal, OracionSubordinadaIndirecta, Salida)
-% para componer la frase, usamos el método append de prolog
