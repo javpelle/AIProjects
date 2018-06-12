@@ -1,0 +1,20 @@
+@relation noticias
+
+@attribute texto string
+@attribute seccion {world-news, science, business, environment, sport, culture}
+
+@data
+'in assessing the outcome, some analysts argued that the suspension of nuclear and missile tests coupled with a halt to military exercises at least defused tensions and created space for possible disarmament in the future.', world-news
+'mysterious streams of microwaves that come from far across the galaxy have been traced to immense clouds of spinning diamonds that swirl around newly-born stars.', science
+'the weakest outlook from the survey was reserved for the banking and finance industry, which recorded the worst outlook since the depths of the financial crisis almost a decade ago, suggesting job cuts may be on the way over the summer.', business
+'the tree serves as a massive store of water, and bears fruit that feeds animals and humans. Its leaves are boiled and eaten as an accompaniment similar to spinach, or used to make traditional medicines, while the bark is pounded and woven into rope', environment
+'a few cyclists formed a loose perimeter around the driver as he screamed and walked around his car. ', sport
+'there were first looks at some anticipated games from other developers. Later in the evening, in a press conference marred by some awkward stage moments and featuring, somewhat bizarrely,', culture
+'The story of German “degenerate art” and the British defence of it is to be told in a display opening to the public on Wednesday at the Wiener library in London, the world’s oldest archive of material on the Holocaust and the Nazi era.', culture
+'Prime minister Jacinda Ardern had her final day in the capital on Monday before heading home to Auckland in preparation for the birth of her first child on Sunday.', world-news
+'That the violence is now claiming the lives of candidates and members of the political class is prompting uncomfortable questions in Mexico,', world-news
+'An after-school coaching programme began in the spring, driven on by the tireless work of cricketing outreach figures such as Chris Willetts, known locally for the 10-year project of ferrying kids in a minibus from', sport
+' It was extremely fragile and at some point shortly after its discovery it apparently crumbled and fell apart. Such a fate is not uncommon for some kinds of fossils where exposure to the air or being freed from the supporting matrix can lead to specimens disintegrating but this was before the development of glues that could help consolidate and preserve fragile specimens' , science
+'A much-delayed fisheries white paper, now expected this month, will set out the government’s vision of an independent British fishing policy post-Brexit. Drafts circulating within the fishing industry are as slippery as freshly caught mackerel.', environment
+'The latest attack highlights the lack of security and weak regulation of global cryptocurrency markets.',business
+'Working conditions at the airline have been scrutinised, with aspiring crew members having to pay thousands of pounds to train to work for Ryanair, as well as facing sanctions for not hitting sales targets onboard.', business
